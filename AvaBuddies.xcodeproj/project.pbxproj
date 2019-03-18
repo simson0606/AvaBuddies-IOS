@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D239E0485DB001D3F349F51 /* Pods_AvaBuddies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D62F073C75BB01D93C6DA3 /* Pods_AvaBuddies.framework */; };
 		F4B624DE223FAE110098238C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B624DD223FAE110098238C /* AppDelegate.swift */; };
 		F4B624E3223FAE110098238C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B624E1223FAE110098238C /* Main.storyboard */; };
 		F4B624E5223FAE120098238C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B624E4223FAE120098238C /* Assets.xcassets */; };
@@ -26,6 +27,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CD620B56E03C2948D7B6BBF /* Pods-AvaBuddies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvaBuddies.release.xcconfig"; path = "Pods/Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies.release.xcconfig"; sourceTree = "<group>"; };
+		20D62F073C75BB01D93C6DA3 /* Pods_AvaBuddies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvaBuddies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C596E86C33A3472EB45C3DB7 /* Pods-AvaBuddies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvaBuddies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies.debug.xcconfig"; sourceTree = "<group>"; };
 		F4B624DA223FAE110098238C /* AvaBuddies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvaBuddies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B624DD223FAE110098238C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B624E2223FAE110098238C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D239E0485DB001D3F349F51 /* Pods_AvaBuddies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +61,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10E7F2EDF8F1D3590BA7863C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20D62F073C75BB01D93C6DA3 /* Pods_AvaBuddies.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52E83629E57ADCB640D9EB7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C596E86C33A3472EB45C3DB7 /* Pods-AvaBuddies.debug.xcconfig */,
+				0CD620B56E03C2948D7B6BBF /* Pods-AvaBuddies.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F4B624D1223FAE110098238C = {
 			isa = PBXGroup;
 			children = (
 				F4B624DC223FAE110098238C /* AvaBuddies */,
 				F4B624F1223FAE120098238C /* AvaBuddiesTests */,
 				F4B624DB223FAE110098238C /* Products */,
+				52E83629E57ADCB640D9EB7B /* Pods */,
+				10E7F2EDF8F1D3590BA7863C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4B624F7223FAE120098238C /* Build configuration list for PBXNativeTarget "AvaBuddies" */;
 			buildPhases = (
+				F29FBD5F468608E1D34D0BF4 /* [CP] Check Pods Manifest.lock */,
 				F4B624D6223FAE110098238C /* Sources */,
 				F4B624D7223FAE110098238C /* Frameworks */,
 				F4B624D8223FAE110098238C /* Resources */,
+				457E1DF9E64A5EB1B84169AA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -223,6 +249,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		457E1DF9E64A5EB1B84169AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MSAL/MSAL.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSAL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F29FBD5F468608E1D34D0BF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AvaBuddies-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F4B624D6223FAE110098238C /* Sources */ = {
@@ -390,6 +455,7 @@
 		};
 		F4B624F8223FAE120098238C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C596E86C33A3472EB45C3DB7 /* Pods-AvaBuddies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -408,6 +474,7 @@
 		};
 		F4B624F9223FAE120098238C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CD620B56E03C2948D7B6BBF /* Pods-AvaBuddies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

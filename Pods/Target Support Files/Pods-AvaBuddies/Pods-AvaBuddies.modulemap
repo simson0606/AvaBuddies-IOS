@@ -1,0 +1,6 @@
+framework module Pods_AvaBuddies {
+  umbrella header "Pods-AvaBuddies-umbrella.h"
+
+  export *
+  module * { export * }
+}
