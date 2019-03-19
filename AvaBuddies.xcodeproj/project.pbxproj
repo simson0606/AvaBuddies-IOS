@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1D239E0485DB001D3F349F51 /* Pods_AvaBuddies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D62F073C75BB01D93C6DA3 /* Pods_AvaBuddies.framework */; };
+		F48789E82241135C000760BB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789E72241135C000760BB /* Constants.swift */; };
+		F48789EA224113BC000760BB /* GraphUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789E9224113BC000760BB /* GraphUser.swift */; };
+		F48789EC2241149C000760BB /* MSALClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789EB2241149C000760BB /* MSALClient.swift */; };
+		F48789EE224114B9000760BB /* MSALClientDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789ED224114B9000760BB /* MSALClientDelegate.swift */; };
 		F4B624DE223FAE110098238C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B624DD223FAE110098238C /* AppDelegate.swift */; };
 		F4B624E3223FAE110098238C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B624E1223FAE110098238C /* Main.storyboard */; };
 		F4B624E5223FAE120098238C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4B624E4223FAE120098238C /* Assets.xcassets */; };
@@ -30,6 +34,11 @@
 		0CD620B56E03C2948D7B6BBF /* Pods-AvaBuddies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvaBuddies.release.xcconfig"; path = "Pods/Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies.release.xcconfig"; sourceTree = "<group>"; };
 		20D62F073C75BB01D93C6DA3 /* Pods_AvaBuddies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvaBuddies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C596E86C33A3472EB45C3DB7 /* Pods-AvaBuddies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvaBuddies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies.debug.xcconfig"; sourceTree = "<group>"; };
+		F48789E52241128B000760BB /* AvaBuddies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AvaBuddies.entitlements; sourceTree = "<group>"; };
+		F48789E72241135C000760BB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F48789E9224113BC000760BB /* GraphUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphUser.swift; sourceTree = "<group>"; };
+		F48789EB2241149C000760BB /* MSALClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSALClient.swift; sourceTree = "<group>"; };
+		F48789ED224114B9000760BB /* MSALClientDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSALClientDelegate.swift; sourceTree = "<group>"; };
 		F4B624DA223FAE110098238C /* AvaBuddies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvaBuddies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B624DD223FAE110098238C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B624E2223FAE110098238C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,6 +85,16 @@
 				0CD620B56E03C2948D7B6BBF /* Pods-AvaBuddies.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F48789E62241133E000760BB /* MSAL */ = {
+			isa = PBXGroup;
+			children = (
+				F48789E9224113BC000760BB /* GraphUser.swift */,
+				F48789EB2241149C000760BB /* MSALClient.swift */,
+				F48789ED224114B9000760BB /* MSALClientDelegate.swift */,
+			);
+			name = MSAL;
 			sourceTree = "<group>";
 		};
 		F4B624D1223FAE110098238C = {
@@ -138,7 +157,9 @@
 		F4C3B9A3223FAFF200291D26 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F48789E62241133E000760BB /* MSAL */,
 				F4B624DD223FAE110098238C /* AppDelegate.swift */,
+				F48789E72241135C000760BB /* Constants.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -146,6 +167,7 @@
 		F4C3B9A4223FAFF900291D26 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				F48789E52241128B000760BB /* AvaBuddies.entitlements */,
 				F4B624E4223FAE120098238C /* Assets.xcassets */,
 				F4B624E9223FAE120098238C /* Info.plist */,
 			);
@@ -204,6 +226,11 @@
 				TargetAttributes = {
 					F4B624D9223FAE110098238C = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					F4B624ED223FAE120098238C = {
 						CreatedOnToolsVersion = 10.1;
@@ -294,8 +321,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F48789EE224114B9000760BB /* MSALClientDelegate.swift in Sources */,
+				F48789EC2241149C000760BB /* MSALClient.swift in Sources */,
 				F4D29C5E223FAECF00EE40CD /* LoginViewController.swift in Sources */,
 				F4B624DE223FAE110098238C /* AppDelegate.swift in Sources */,
+				F48789E82241135C000760BB /* Constants.swift in Sources */,
+				F48789EA224113BC000760BB /* GraphUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +489,7 @@
 			baseConfigurationReference = C596E86C33A3472EB45C3DB7 /* Pods-AvaBuddies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AvaBuddies/AvaBuddies.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WFRP4F9Y8V;
 				INFOPLIST_FILE = AvaBuddies/Info.plist;
@@ -477,6 +509,7 @@
 			baseConfigurationReference = 0CD620B56E03C2948D7B6BBF /* Pods-AvaBuddies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AvaBuddies/AvaBuddies.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WFRP4F9Y8V;
 				INFOPLIST_FILE = AvaBuddies/Info.plist;

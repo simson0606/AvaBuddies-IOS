@@ -8,6 +8,19 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, MSALClientDelegate {
 
+    private let msalClient = MSALClient()
+    
+    override func viewDidLoad() {
+        msalClient.authenticationDelegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        msalClient.signIn()
+    }
+    
+    func receivedUserInfo(userinfo: GraphUser) {
+        performSegue(withIdentifier: "LoginCompletedSegue", sender: self)
+    }
 }
