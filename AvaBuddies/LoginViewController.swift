@@ -9,14 +9,21 @@
 import UIKit
 
 class LoginViewController: UIViewController, MSALClientDelegate {
-
+    @IBOutlet weak var logoImage: UIImageView!
+    
     private let msalClient = MSALClient()
     
     override func viewDidLoad() {
         msalClient.authenticationDelegate = self
+
+        logoImage.image = SvgFileLoader.getUIImageFrom(resource: Constants.logoOnly, size: logoImage.bounds.size)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        msalClient.signIn()
+    }
+    
+    @IBAction func manualLoginButtonTapped(_ sender: Any) {
         msalClient.signIn()
     }
     

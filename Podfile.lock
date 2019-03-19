@@ -1,18 +1,28 @@
 PODS:
+  - CocoaLumberjack (3.5.1):
+    - CocoaLumberjack/Core (= 3.5.1)
+  - CocoaLumberjack/Core (3.5.1)
   - MSAL (0.2.3):
     - MSAL/app-lib (= 0.2.3)
   - MSAL/app-lib (0.2.3)
+  - SVGKit (2.1.0):
+    - CocoaLumberjack (~> 3.0)
 
 DEPENDENCIES:
   - MSAL (~> 0.2)
+  - SVGKit (~> 2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - CocoaLumberjack
     - MSAL
+    - SVGKit
 
 SPEC CHECKSUMS:
+  CocoaLumberjack: 2101f8a5508197a305e737d16c5c2e9e2157628c
   MSAL: 2592b744b9215d9b7463f02fb9afd4e432c75c62
+  SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
 
-PODFILE CHECKSUM: 3bdcbc18a9082784ed75535d8bcfacc8a4a58fe7
+PODFILE CHECKSUM: ba940eeb3429f9ffcdf233d5b46e7f34414561fd
 
 COCOAPODS: 1.5.2
