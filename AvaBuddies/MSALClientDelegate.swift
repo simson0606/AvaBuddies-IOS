@@ -10,4 +10,5 @@ import Foundation
 
 protocol MSALClientDelegate {
     func receivedUserInfo(userinfo : GraphUser)
+    func signedOut()
 }

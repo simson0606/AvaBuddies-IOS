@@ -26,9 +26,15 @@ class MSALClient: NSObject, URLSessionDelegate {
     }
     
     public func signOut() {
-        guard let applicationContext = self.applicationContext else { return }
+        guard let applicationContext = self.applicationContext else {
+            authenticationDelegate?.signedOut()
+            return
+        }
         
-        guard let account = self.currentAccount() else { return }
+        guard let account = self.currentAccount() else {
+            authenticationDelegate?.signedOut()
+            return
+        }
         
         do {
             
@@ -39,9 +45,10 @@ class MSALClient: NSObject, URLSessionDelegate {
              */
             
             try applicationContext.remove(account)
+            authenticationDelegate?.signedOut()
             
         } catch let error as NSError {
-            
+            authenticationDelegate?.signedOut()
             print("Received error signing account out: \(error)")
         }
     }

@@ -4,4 +4,6 @@ use_frameworks!
 target 'AvaBuddies' do
   pod 'MSAL', '~> 0.2'
   pod 'SVGKit', '~> 2.0'
+  pod 'Swinject'
+  pod 'SwinjectStoryboard'
 end

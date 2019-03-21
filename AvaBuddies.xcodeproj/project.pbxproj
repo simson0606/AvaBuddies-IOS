@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1D239E0485DB001D3F349F51 /* Pods_AvaBuddies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D62F073C75BB01D93C6DA3 /* Pods_AvaBuddies.framework */; };
+		F406EEDC2243998B00E5068A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406EEDB2243998B00E5068A /* TabBarViewController.swift */; };
 		F40B5EA122413925008E88BE /* avanade-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = F40B5E9F22413925008E88BE /* avanade-logo.svg */; };
 		F40B5EA222413925008E88BE /* avanade-logo-only.svg in Resources */ = {isa = PBXBuildFile; fileRef = F40B5EA022413925008E88BE /* avanade-logo-only.svg */; };
 		F40B5EA922413DCF008E88BE /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B5EA822413DCF008E88BE /* FileLoader.swift */; };
 		F40B5EAB22413E73008E88BE /* SvgFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B5EAA22413E73008E88BE /* SvgFileLoader.swift */; };
 		F40B5EAD22413FB6008E88BE /* ResourceFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B5EAC22413FB6008E88BE /* ResourceFile.swift */; };
+		F43C05DF22438D730079513D /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05DE22438D730079513D /* AccountViewController.swift */; };
+		F43C05E1224393BA0079513D /* SwinjectStoryboardSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */; };
 		F48789E82241135C000760BB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789E72241135C000760BB /* Constants.swift */; };
 		F48789EA224113BC000760BB /* GraphUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789E9224113BC000760BB /* GraphUser.swift */; };
 		F48789EC2241149C000760BB /* MSALClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789EB2241149C000760BB /* MSALClient.swift */; };
@@ -39,13 +42,14 @@
 		0CD620B56E03C2948D7B6BBF /* Pods-AvaBuddies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvaBuddies.release.xcconfig"; path = "Pods/Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies.release.xcconfig"; sourceTree = "<group>"; };
 		20D62F073C75BB01D93C6DA3 /* Pods_AvaBuddies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvaBuddies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C596E86C33A3472EB45C3DB7 /* Pods-AvaBuddies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvaBuddies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies.debug.xcconfig"; sourceTree = "<group>"; };
-		F40B5E8F22411EDE008E88BE /* bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bridging-header.h"; sourceTree = "<group>"; };
+		F406EEDB2243998B00E5068A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F40B5E9F22413925008E88BE /* avanade-logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "avanade-logo.svg"; sourceTree = "<group>"; };
 		F40B5EA022413925008E88BE /* avanade-logo-only.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "avanade-logo-only.svg"; sourceTree = "<group>"; };
-		F40B5EA522413C2E008E88BE /* weblysleekuisb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = weblysleekuisb.ttf; sourceTree = "<group>"; };
 		F40B5EA822413DCF008E88BE /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
 		F40B5EAA22413E73008E88BE /* SvgFileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvgFileLoader.swift; sourceTree = "<group>"; };
 		F40B5EAC22413FB6008E88BE /* ResourceFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceFile.swift; sourceTree = "<group>"; };
+		F43C05DE22438D730079513D /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectStoryboardSetup.swift; sourceTree = "<group>"; };
 		F48789E52241128B000760BB /* AvaBuddies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AvaBuddies.entitlements; sourceTree = "<group>"; };
 		F48789E72241135C000760BB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F48789E9224113BC000760BB /* GraphUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphUser.swift; sourceTree = "<group>"; };
@@ -108,14 +112,6 @@
 			name = "Svg-images";
 			sourceTree = "<group>";
 		};
-		F40B5EA422413BF9008E88BE /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				F40B5EA522413C2E008E88BE /* weblysleekuisb.ttf */,
-			);
-			name = Fonts;
-			sourceTree = "<group>";
-		};
 		F48789E62241133E000760BB /* MSAL */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +145,6 @@
 		F4B624DC223FAE110098238C /* AvaBuddies */ = {
 			isa = PBXGroup;
 			children = (
-				F40B5EA422413BF9008E88BE /* Fonts */,
 				F40B5EA322413BED008E88BE /* Svg-images */,
 				F4C3B9A4223FAFF900291D26 /* Misc */,
 				F4C3B9A3223FAFF200291D26 /* Models */,
@@ -172,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				F4D29C5D223FAECF00EE40CD /* LoginViewController.swift */,
+				F43C05DE22438D730079513D /* AccountViewController.swift */,
+				F406EEDB2243998B00E5068A /* TabBarViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -194,6 +191,7 @@
 				F40B5EA822413DCF008E88BE /* FileLoader.swift */,
 				F40B5EAA22413E73008E88BE /* SvgFileLoader.swift */,
 				F40B5EAC22413FB6008E88BE /* ResourceFile.swift */,
+				F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -204,7 +202,6 @@
 				F48789E52241128B000760BB /* AvaBuddies.entitlements */,
 				F4B624E4223FAE120098238C /* Assets.xcassets */,
 				F4B624E9223FAE120098238C /* Info.plist */,
-				F40B5E8F22411EDE008E88BE /* bridging-header.h */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -325,12 +322,16 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/MSAL/MSAL.framework",
 				"${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSAL.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -366,8 +367,11 @@
 				F48789EC2241149C000760BB /* MSALClient.swift in Sources */,
 				F40B5EAD22413FB6008E88BE /* ResourceFile.swift in Sources */,
 				F40B5EA922413DCF008E88BE /* FileLoader.swift in Sources */,
+				F406EEDC2243998B00E5068A /* TabBarViewController.swift in Sources */,
+				F43C05E1224393BA0079513D /* SwinjectStoryboardSetup.swift in Sources */,
 				F4D29C5E223FAECF00EE40CD /* LoginViewController.swift in Sources */,
 				F4B624DE223FAE110098238C /* AppDelegate.swift in Sources */,
+				F43C05DF22438D730079513D /* AccountViewController.swift in Sources */,
 				F40B5EAB22413E73008E88BE /* SvgFileLoader.swift in Sources */,
 				F48789E82241135C000760BB /* Constants.swift in Sources */,
 				F48789EA224113BC000760BB /* GraphUser.swift in Sources */,
@@ -534,15 +538,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AvaBuddies/AvaBuddies.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WFRP4F9Y8V;
 				INFOPLIST_FILE = AvaBuddies/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.AvaBuddies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -554,15 +561,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AvaBuddies/AvaBuddies.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WFRP4F9Y8V;
 				INFOPLIST_FILE = AvaBuddies/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.AvaBuddies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

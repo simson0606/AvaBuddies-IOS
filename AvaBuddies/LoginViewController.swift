@@ -9,25 +9,38 @@
 import UIKit
 
 class LoginViewController: UIViewController, MSALClientDelegate {
+    
     @IBOutlet weak var logoImage: UIImageView!
     
-    private let msalClient = MSALClient()
+    var msalClient: MSALClient?
+    var firstStart = true
     
     override func viewDidLoad() {
-        msalClient.authenticationDelegate = self
+        msalClient?.authenticationDelegate = self
 
         logoImage.image = SvgFileLoader.getUIImageFrom(resource: Constants.logoOnly, size: logoImage.bounds.size)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        msalClient.signIn()
+        if firstStart {
+            firstStart = false
+            msalClient?.signIn()
+        }
     }
     
     @IBAction func manualLoginButtonTapped(_ sender: Any) {
-        msalClient.signIn()
+        msalClient?.signIn()
     }
     
     func receivedUserInfo(userinfo: GraphUser) {
-        performSegue(withIdentifier: "LoginCompletedSegue", sender: self)
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "LoginCompletedSegue", sender: self)
+        }
+        
+    }
+    func signedOut() {
+        DispatchQueue.main.async {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
     }
 }
