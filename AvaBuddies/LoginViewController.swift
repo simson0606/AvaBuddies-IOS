@@ -22,10 +22,15 @@ class LoginViewController: UIViewController, MSALClientDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         if firstStart {
             firstStart = false
             msalClient?.signIn()
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     @IBAction func manualLoginButtonTapped(_ sender: Any) {

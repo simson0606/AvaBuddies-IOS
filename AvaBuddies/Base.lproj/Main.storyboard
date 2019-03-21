@@ -203,7 +203,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al0-dT-yvK">
-                                                    <rect key="frame" x="160.5" y="5.5" width="54" height="33"/>
+                                                    <rect key="frame" x="160.5" y="0.0" width="54" height="43.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="Logout">
                                                         <color key="titleColor" red="1" green="0.32156862745098042" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -215,6 +215,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="al0-dT-yvK" firstAttribute="centerY" secondItem="rhr-YU-5A5" secondAttribute="centerY" id="Spq-b4-nCv"/>
+                                                <constraint firstAttribute="bottom" secondItem="al0-dT-yvK" secondAttribute="bottom" id="ZDo-3l-hZM"/>
+                                                <constraint firstItem="al0-dT-yvK" firstAttribute="top" secondItem="rhr-YU-5A5" secondAttribute="top" id="dk9-hg-CUf"/>
                                                 <constraint firstItem="al0-dT-yvK" firstAttribute="centerX" secondItem="rhr-YU-5A5" secondAttribute="centerX" id="g5d-3K-7kg"/>
                                             </constraints>
                                         </tableViewCellContentView>
