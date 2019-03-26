@@ -1,13 +1,13 @@
 PODS:
-  - CocoaLumberjack (3.5.1):
-    - CocoaLumberjack/Core (= 3.5.1)
-  - CocoaLumberjack/Core (3.5.1)
+  - CocoaLumberjack (3.5.2):
+    - CocoaLumberjack/Core (= 3.5.2)
+  - CocoaLumberjack/Core (3.5.2)
   - MSAL (0.2.3):
     - MSAL/app-lib (= 0.2.3)
   - MSAL/app-lib (0.2.3)
   - SVGKit (2.1.0):
     - CocoaLumberjack (~> 3.0)
-  - Swinject (2.5.0)
+  - Swinject (2.6.0)
   - SwinjectStoryboard (2.1.0):
     - Swinject (~> 2.5)
 
@@ -26,10 +26,10 @@ SPEC REPOS:
     - SwinjectStoryboard
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: 2101f8a5508197a305e737d16c5c2e9e2157628c
+  CocoaLumberjack: 118bf4a820efc641f79fa487b75ed928dccfae23
   MSAL: 2592b744b9215d9b7463f02fb9afd4e432c75c62
   SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
-  Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
+  Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
 
 PODFILE CHECKSUM: c2a1c1d7e57eaabe409243bbfe67828f9ee6fdb3
