@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+class ServerConnection : ServerConnectionProtocol {
+    func send(message: String, to url: String){
+        
+    }
+}
