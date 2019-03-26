@@ -14,6 +14,10 @@
 		F40B5EA922413DCF008E88BE /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B5EA822413DCF008E88BE /* FileLoader.swift */; };
 		F40B5EAB22413E73008E88BE /* SvgFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B5EAA22413E73008E88BE /* SvgFileLoader.swift */; };
 		F40B5EAD22413FB6008E88BE /* ResourceFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B5EAC22413FB6008E88BE /* ResourceFile.swift */; };
+		F434E377224A44B80005BD3B /* ServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E375224A44B80005BD3B /* ServerConnection.swift */; };
+		F434E378224A44B80005BD3B /* ServerConnectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E376224A44B80005BD3B /* ServerConnectionProtocol.swift */; };
+		F434E37C224A44C90005BD3B /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E37A224A44C90005BD3B /* AuthenticationRepository.swift */; };
+		F434E37D224A44C90005BD3B /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E37B224A44C90005BD3B /* AuthUser.swift */; };
 		F43C05DF22438D730079513D /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05DE22438D730079513D /* AccountViewController.swift */; };
 		F43C05E1224393BA0079513D /* SwinjectStoryboardSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */; };
 		F48789E82241135C000760BB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789E72241135C000760BB /* Constants.swift */; };
@@ -48,6 +52,10 @@
 		F40B5EA822413DCF008E88BE /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
 		F40B5EAA22413E73008E88BE /* SvgFileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvgFileLoader.swift; sourceTree = "<group>"; };
 		F40B5EAC22413FB6008E88BE /* ResourceFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceFile.swift; sourceTree = "<group>"; };
+		F434E375224A44B80005BD3B /* ServerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConnection.swift; sourceTree = "<group>"; };
+		F434E376224A44B80005BD3B /* ServerConnectionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConnectionProtocol.swift; sourceTree = "<group>"; };
+		F434E37A224A44C90005BD3B /* AuthenticationRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
+		F434E37B224A44C90005BD3B /* AuthUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
 		F43C05DE22438D730079513D /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectStoryboardSetup.swift; sourceTree = "<group>"; };
 		F48789E52241128B000760BB /* AvaBuddies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AvaBuddies.entitlements; sourceTree = "<group>"; };
@@ -110,6 +118,24 @@
 				F40B5E9F22413925008E88BE /* avanade-logo.svg */,
 			);
 			name = "Svg-images";
+			sourceTree = "<group>";
+		};
+		F434E374224A44990005BD3B /* ServerConnection */ = {
+			isa = PBXGroup;
+			children = (
+				F434E375224A44B80005BD3B /* ServerConnection.swift */,
+				F434E376224A44B80005BD3B /* ServerConnectionProtocol.swift */,
+			);
+			name = ServerConnection;
+			sourceTree = "<group>";
+		};
+		F434E379224A44BC0005BD3B /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				F434E37A224A44C90005BD3B /* AuthenticationRepository.swift */,
+				F434E37B224A44C90005BD3B /* AuthUser.swift */,
+			);
+			name = Authentication;
 			sourceTree = "<group>";
 		};
 		F48789E62241133E000760BB /* MSAL */ = {
@@ -185,6 +211,8 @@
 		F4C3B9A3223FAFF200291D26 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F434E379224A44BC0005BD3B /* Authentication */,
+				F434E374224A44990005BD3B /* ServerConnection */,
 				F48789E62241133E000760BB /* MSAL */,
 				F4B624DD223FAE110098238C /* AppDelegate.swift */,
 				F48789E72241135C000760BB /* Constants.swift */,
@@ -258,6 +286,7 @@
 				TargetAttributes = {
 					F4B624D9223FAE110098238C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -266,6 +295,7 @@
 					};
 					F4B624ED223FAE120098238C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = F4B624D9223FAE110098238C;
 					};
 				};
@@ -363,13 +393,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F434E378224A44B80005BD3B /* ServerConnectionProtocol.swift in Sources */,
 				F48789EE224114B9000760BB /* MSALClientDelegate.swift in Sources */,
 				F48789EC2241149C000760BB /* MSALClient.swift in Sources */,
+				F434E37C224A44C90005BD3B /* AuthenticationRepository.swift in Sources */,
 				F40B5EAD22413FB6008E88BE /* ResourceFile.swift in Sources */,
 				F40B5EA922413DCF008E88BE /* FileLoader.swift in Sources */,
 				F406EEDC2243998B00E5068A /* TabBarViewController.swift in Sources */,
 				F43C05E1224393BA0079513D /* SwinjectStoryboardSetup.swift in Sources */,
 				F4D29C5E223FAECF00EE40CD /* LoginViewController.swift in Sources */,
+				F434E377224A44B80005BD3B /* ServerConnection.swift in Sources */,
+				F434E37D224A44C90005BD3B /* AuthUser.swift in Sources */,
 				F4B624DE223FAE110098238C /* AppDelegate.swift in Sources */,
 				F43C05DF22438D730079513D /* AccountViewController.swift in Sources */,
 				F40B5EAB22413E73008E88BE /* SvgFileLoader.swift in Sources */,
@@ -550,7 +584,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.AvaBuddies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -573,7 +607,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.AvaBuddies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -593,7 +627,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.AvaBuddiesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AvaBuddies.app/AvaBuddies";
 			};
@@ -614,7 +648,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.AvaBuddiesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AvaBuddies.app/AvaBuddies";
 			};

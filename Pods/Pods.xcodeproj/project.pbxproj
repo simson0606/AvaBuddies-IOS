@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -874,7 +874,7 @@
 		1DA9E9E4026DC6654BA0E30246262650 /* MSIDBaseToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSIDBaseToken.h; path = MSAL/IdentityCore/IdentityCore/src/oauth2/token/MSIDBaseToken.h; sourceTree = "<group>"; };
 		1E7FC630A2174579FF12FFFDEDC043E5 /* MSALOauth2FactoryProducer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSALOauth2FactoryProducer.m; path = MSAL/src/instance/MSALOauth2FactoryProducer.m; sourceTree = "<group>"; };
 		1EA9D7EF816F0289622669F656B2A40A /* MSIDURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSIDURLSessionManager.h; path = MSAL/IdentityCore/IdentityCore/src/network/MSIDURLSessionManager.h; sourceTree = "<group>"; };
-		1F327E781C4ECD26D6571EB8F58B9FE9 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaLumberjack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F327E781C4ECD26D6571EB8F58B9FE9 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaLumberjack.framework; path = CocoaLumberjack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		200E905B48C10F848E4E740052A585BF /* Pods-AvaBuddies-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AvaBuddies-dummy.m"; sourceTree = "<group>"; };
 		2010DAD9B8E21E383D3E0DEBA42D91C1 /* SVGPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVGPoint.h; path = "Source/DOM classes/SVG-DOM/SVGPoint.h"; sourceTree = "<group>"; };
 		204FCF927080DD1BBF213239898886D0 /* DDLoggerNames.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDLoggerNames.m; path = Classes/DDLoggerNames.m; sourceTree = "<group>"; };
@@ -1179,7 +1179,7 @@
 		83691D71DD9596026E5CDD5A1B3BBA0C /* SVGKExporterNSData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVGKExporterNSData.m; path = Source/Exporters/SVGKExporterNSData.m; sourceTree = "<group>"; };
 		83E12CEFB851956ADD3600A00AF8ED26 /* SVGDocument.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVGDocument.m; path = "Source/DOM classes/SVG-DOM/SVGDocument.m"; sourceTree = "<group>"; };
 		84AA0D3F79FD3169D2A387AABA392015 /* MSIDWebFingerRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSIDWebFingerRequest.h; path = MSAL/IdentityCore/IdentityCore/src/network/request/MSIDWebFingerRequest.h; sourceTree = "<group>"; };
-		84B4C1023D5B84A2477D9E2F76F49F34 /* SwinjectStoryboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwinjectStoryboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B4C1023D5B84A2477D9E2F76F49F34 /* SwinjectStoryboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwinjectStoryboard.framework; path = SwinjectStoryboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DD195B10021D4BD70DCC0B110C5BE6 /* MSIDAuthorityCacheRecord.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSIDAuthorityCacheRecord.h; path = MSAL/IdentityCore/IdentityCore/src/validation/MSIDAuthorityCacheRecord.h; sourceTree = "<group>"; };
 		84E4BCAE172A3B1FAE9D65C771A051E0 /* SVGRectElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVGRectElement.m; path = "Source/DOM classes/Unported or Partial DOM/SVGRectElement.m"; sourceTree = "<group>"; };
 		84F43486CC1183D311611DDF74D00BF7 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDAbstractDatabaseLogger.m; path = Classes/DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
@@ -1202,7 +1202,7 @@
 		8B6FA530F18FB1EC4B7CE616513492D7 /* MSIDDRSDiscoveryResponseSerializer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSIDDRSDiscoveryResponseSerializer.m; path = MSAL/IdentityCore/IdentityCore/src/network/request/MSIDDRSDiscoveryResponseSerializer.m; sourceTree = "<group>"; };
 		8B70FF9FF12E9F3EDE76C0FFB5B0D304 /* ObjectScope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjectScope.swift; path = Sources/ObjectScope.swift; sourceTree = "<group>"; };
 		8BAB835DEC641EBE632F4C2B905D6800 /* SwinjectStoryboard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwinjectStoryboard-prefix.pch"; sourceTree = "<group>"; };
-		8BEC871C3311CA7642D1B45331967690 /* SVGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BEC871C3311CA7642D1B45331967690 /* SVGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SVGKit.framework; path = SVGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2699980639B697CE67C3FCDB574407 /* MSIDAADV2IdTokenClaims.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSIDAADV2IdTokenClaims.h; path = MSAL/IdentityCore/IdentityCore/src/oauth2/aad_v2/MSIDAADV2IdTokenClaims.h; sourceTree = "<group>"; };
 		8CAF34C8AB6CBBCACFE8812D2BBDD275 /* MSIDAADV1RefreshTokenGrantRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSIDAADV1RefreshTokenGrantRequest.m; path = MSAL/IdentityCore/IdentityCore/src/network/request/MSIDAADV1RefreshTokenGrantRequest.m; sourceTree = "<group>"; };
 		8CB8181620574E310C90A8B7A63BC0EA /* MSIDNotifications.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSIDNotifications.m; path = MSAL/IdentityCore/IdentityCore/src/MSIDNotifications.m; sourceTree = "<group>"; };
@@ -1223,7 +1223,7 @@
 		92596AD77B9E51C55A27568E454AFB7E /* MSIDAadAuthorityResolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSIDAadAuthorityResolver.h; path = MSAL/IdentityCore/IdentityCore/src/validation/MSIDAadAuthorityResolver.h; sourceTree = "<group>"; };
 		92991E5D2DC356D8A1B8E061420F82B1 /* CSSRuleList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSSRuleList.h; path = "Source/DOM classes/Core DOM/CSSRuleList.h"; sourceTree = "<group>"; };
 		92D1BA7A07CC026BBA141D84FB083984 /* SVGHelperUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVGHelperUtilities.h; path = "Source/DOM classes/SVG-DOM/SVGHelperUtilities.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94207B450B4B39C4B5DBA4539203C58A /* SVGElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVGElement.m; path = "Source/DOM classes/Unported or Partial DOM/SVGElement.m"; sourceTree = "<group>"; };
 		9484BAE9C3C7A7407921DB5382D55E8B /* MSIDHttpRequestTelemetry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSIDHttpRequestTelemetry.m; path = MSAL/IdentityCore/IdentityCore/src/network/request_telemetry/MSIDHttpRequestTelemetry.m; sourceTree = "<group>"; };
 		94E70DD7D2F31772D63BDD7639458353 /* Pods-AvaBuddies-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AvaBuddies-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -1239,7 +1239,7 @@
 		984FAFB2C23CABFA8FF9E282BA143F17 /* MSIDDRSDiscoveryResponseSerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSIDDRSDiscoveryResponseSerializer.h; path = MSAL/IdentityCore/IdentityCore/src/network/request/MSIDDRSDiscoveryResponseSerializer.h; sourceTree = "<group>"; };
 		990F6F11E7A35803AFA0BCFB21EB24B3 /* CLIColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLIColor.h; path = Classes/CLI/CLIColor.h; sourceTree = "<group>"; };
 		9925C285537853058C8CBF1CE7A326E3 /* EntityReference.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EntityReference.m; path = "Source/DOM classes/Core DOM/EntityReference.m"; sourceTree = "<group>"; };
-		995C8D61CD7D48458EDE0929818E52A0 /* Pods_AvaBuddies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvaBuddies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		995C8D61CD7D48458EDE0929818E52A0 /* Pods_AvaBuddies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AvaBuddies.framework; path = "Pods-AvaBuddies.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9983C6CAB17FA9BA6AE7356F9CE0162B /* MSIDLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSIDLogger.h; path = MSAL/IdentityCore/IdentityCore/src/logger/MSIDLogger.h; sourceTree = "<group>"; };
 		99EAFB697767FD3D883F8CC679986290 /* MSIDDRSDiscoveryRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSIDDRSDiscoveryRequest.h; path = MSAL/IdentityCore/IdentityCore/src/network/request/MSIDDRSDiscoveryRequest.h; sourceTree = "<group>"; };
 		9A039A5F586C5A054D32EABEBE56BE28 /* DDFileLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDFileLogger.h; path = Classes/DDFileLogger.h; sourceTree = "<group>"; };
@@ -1406,7 +1406,7 @@
 		D22546A04C933F464B7FE45AD5C8902E /* MSALTelemetry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSALTelemetry.m; path = MSAL/src/telemetry/MSALTelemetry.m; sourceTree = "<group>"; };
 		D2B1C531CC700EC8F95D3DA9B61415CD /* SwinjectStoryboardProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwinjectStoryboardProtocol.h; path = Sources/SwinjectStoryboardProtocol.h; sourceTree = "<group>"; };
 		D2CDD25064F6775BFC49B3E5DD6DC0D5 /* MSIDTelemetry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSIDTelemetry.h; path = MSAL/IdentityCore/IdentityCore/src/telemetry/MSIDTelemetry.h; sourceTree = "<group>"; };
-		D2E450A055C8811F9B66CE762A20E4FB /* Swinject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swinject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2E450A055C8811F9B66CE762A20E4FB /* Swinject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Swinject.framework; path = Swinject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2FCF74A34EFCBA0ECF8DBBAE95EC8B7 /* MSALRequestParameters.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSALRequestParameters.m; path = MSAL/src/requests/MSALRequestParameters.m; sourceTree = "<group>"; };
 		D3507CFA0DC64247232D57BAD93F2CAC /* MSAL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSAL.h; path = MSAL/src/public/MSAL.h; sourceTree = "<group>"; };
 		D36D16AFBE955F19093BE75E0DA73B63 /* Swinject.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Swinject.modulemap; sourceTree = "<group>"; };
@@ -1511,7 +1511,7 @@
 		F21C5FF4F5A366F94D1281D70F42E756 /* MSIDKeychainTokenCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSIDKeychainTokenCache.h; path = MSAL/IdentityCore/IdentityCore/src/cache/ios/MSIDKeychainTokenCache.h; sourceTree = "<group>"; };
 		F24C1F6A83536213B7BD7D46AF58F64D /* MSIDRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSIDRequestSerialization.h; path = MSAL/IdentityCore/IdentityCore/src/network/request_serializer/MSIDRequestSerialization.h; sourceTree = "<group>"; };
 		F28128752435F1A7E695847ABDE8847C /* DDLog+LOGV.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DDLog+LOGV.h"; path = "Classes/DDLog+LOGV.h"; sourceTree = "<group>"; };
-		F311EFCAD4AE0ABF0CDECCB2721DE532 /* MSAL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MSAL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F311EFCAD4AE0ABF0CDECCB2721DE532 /* MSAL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MSAL.framework; path = MSAL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F396FAECFE4230E22B413389952FA101 /* MSALUIBehavior_Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSALUIBehavior_Internal.h; path = MSAL/src/MSALUIBehavior_Internal.h; sourceTree = "<group>"; };
 		F3A65F832E11974A78FD74BBE5DDB51F /* MSIDDeviceId.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSIDDeviceId.h; path = MSAL/IdentityCore/IdentityCore/src/MSIDDeviceId.h; sourceTree = "<group>"; };
 		F42A1C2A99DA1E3153548A8DB25418EC /* Element.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Element.h; path = "Source/DOM classes/Core DOM/Element.h"; sourceTree = "<group>"; };
@@ -1962,6 +1962,7 @@
 				641DC4D87566A2F439282534604A6C2A /* TinySVGTextAreaElement.m */,
 				58676D69E75077F61DADCD14554A51E3 /* Support Files */,
 			);
+			name = SVGKit;
 			path = SVGKit;
 			sourceTree = "<group>";
 		};
@@ -2027,6 +2028,7 @@
 				0B9C9EFFF5D5CBAE9D25EB996E9DAFDB /* UnavailableItems.swift */,
 				65095039F6D9AC889D4A8F33AD4F509E /* Support Files */,
 			);
+			name = Swinject;
 			path = Swinject;
 			sourceTree = "<group>";
 		};
@@ -2466,6 +2468,7 @@
 				4296CE81735726177CFEF865A2530633 /* Core */,
 				09C12F907A1FFEE2A327214ADCDD4F90 /* Support Files */,
 			);
+			name = CocoaLumberjack;
 			path = CocoaLumberjack;
 			sourceTree = "<group>";
 		};
@@ -2475,6 +2478,7 @@
 				D4B78BED9A5DAE04BBCC6EDA8C54CB1E /* app-lib */,
 				19FF4B1295FB2D17A9B2D88910AE2B35 /* Support Files */,
 			);
+			name = MSAL;
 			path = MSAL;
 			sourceTree = "<group>";
 		};
@@ -2507,6 +2511,7 @@
 				05DC63005B7E2810F688ACD1E4B8C2D6 /* ViewController+Swinject.swift */,
 				68582D453B9D84DF7E3ECE464E308587 /* Support Files */,
 			);
+			name = SwinjectStoryboard;
 			path = SwinjectStoryboard;
 			sourceTree = "<group>";
 		};
@@ -3066,7 +3071,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -3521,38 +3526,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0F49AD83CD77713F3218E0D27E2595AE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5A6B7482287661634AEC31C428F0D7D /* SVGKit.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SVGKit/SVGKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SVGKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SVGKit/SVGKit.modulemap";
-				PRODUCT_MODULE_NAME = SVGKit;
-				PRODUCT_NAME = SVGKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		276AD5E287226EA237FA630DF48E3D69 /* Release */ = {
+		0AA42CE4C48F30D53463C6C33DB50BBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8FA4439DB3EF30E9F1B09969423F15F1 /* MSAL.xcconfig */;
 			buildSettings = {
@@ -3570,14 +3544,18 @@
 				INFOPLIST_FILE = "Target Support Files/MSAL/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/MSAL/MSAL.modulemap";
 				PRODUCT_MODULE_NAME = MSAL;
 				PRODUCT_NAME = MSAL;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3585,7 +3563,43 @@
 			};
 			name = Release;
 		};
-		47DDAFEDF91F1858F5F01C39C4716A2C /* Debug */ = {
+		2E543AADE3788CA29D7BDAE397FAD328 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5A6B7482287661634AEC31C428F0D7D /* SVGKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SVGKit/SVGKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SVGKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SVGKit/SVGKit.modulemap";
+				PRODUCT_MODULE_NAME = SVGKit;
+				PRODUCT_NAME = SVGKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		303C0297DC73C66C20E6E7836FFF0092 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E09B24097CA31987CFBD5B54380DDF60 /* SwinjectStoryboard.xcconfig */;
 			buildSettings = {
@@ -3602,7 +3616,11 @@
 				INFOPLIST_FILE = "Target Support Files/SwinjectStoryboard/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/SwinjectStoryboard/SwinjectStoryboard.modulemap";
 				PRODUCT_MODULE_NAME = SwinjectStoryboard;
 				PRODUCT_NAME = SwinjectStoryboard;
@@ -3610,7 +3628,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3734,7 +3752,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
@@ -3756,7 +3773,11 @@
 				INFOPLIST_FILE = "Target Support Files/CocoaLumberjack/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/CocoaLumberjack/CocoaLumberjack.modulemap";
 				PRODUCT_MODULE_NAME = CocoaLumberjack;
 				PRODUCT_NAME = CocoaLumberjack;
@@ -3769,6 +3790,43 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		5F3A8E198A359A84BC901491A8943925 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3EC9F595BCE43A4AF36849939445B5D /* Swinject.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Swinject/Swinject-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Swinject/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Swinject/Swinject.modulemap";
+				PRODUCT_MODULE_NAME = Swinject;
+				PRODUCT_NAME = Swinject;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		67064FF9E564EE407282CBAD0C5606F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3788,7 +3846,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-AvaBuddies/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies.modulemap";
 				OTHER_LDFLAGS = "";
@@ -3823,7 +3885,11 @@
 				INFOPLIST_FILE = "Target Support Files/CocoaLumberjack/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/CocoaLumberjack/CocoaLumberjack.modulemap";
 				PRODUCT_MODULE_NAME = CocoaLumberjack;
 				PRODUCT_NAME = CocoaLumberjack;
@@ -3838,9 +3904,9 @@
 			};
 			name = Release;
 		};
-		7DFD0FAABAD4569DCA7AEC0C0B404965 /* Release */ = {
+		872AC796469654F6B5181502CB94246A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3EC9F595BCE43A4AF36849939445B5D /* Swinject.xcconfig */;
+			baseConfigurationReference = E5A6B7482287661634AEC31C428F0D7D /* SVGKit.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3851,25 +3917,27 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Swinject/Swinject-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Swinject/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SVGKit/SVGKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SVGKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Swinject/Swinject.modulemap";
-				PRODUCT_MODULE_NAME = Swinject;
-				PRODUCT_NAME = Swinject;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SVGKit/SVGKit.modulemap";
+				PRODUCT_MODULE_NAME = SVGKit;
+				PRODUCT_NAME = SVGKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		89AB340494BB9492650B10CD2E6052D0 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -3889,7 +3957,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-AvaBuddies/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies.modulemap";
 				OTHER_LDFLAGS = "";
@@ -3907,7 +3979,44 @@
 			};
 			name = Release;
 		};
-		8C3D863DDA6F04CE225A54173C6A7172 /* Debug */ = {
+		9C170001EEB78F2936A35D6FD36B7781 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E09B24097CA31987CFBD5B54380DDF60 /* SwinjectStoryboard.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwinjectStoryboard/SwinjectStoryboard-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwinjectStoryboard/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwinjectStoryboard/SwinjectStoryboard.modulemap";
+				PRODUCT_MODULE_NAME = SwinjectStoryboard;
+				PRODUCT_NAME = SwinjectStoryboard;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A810E63A621AF53FB3E30A4F04FB7132 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B3EC9F595BCE43A4AF36849939445B5D /* Swinject.xcconfig */;
 			buildSettings = {
@@ -3924,7 +4033,11 @@
 				INFOPLIST_FILE = "Target Support Files/Swinject/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/Swinject/Swinject.modulemap";
 				PRODUCT_MODULE_NAME = Swinject;
 				PRODUCT_NAME = Swinject;
@@ -3932,14 +4045,14 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		C9CD8A09F8D11491A8C7EB9D2A19CA50 /* Debug */ = {
+		B469773ED95BE79FE52E49885DE5F927 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8FA4439DB3EF30E9F1B09969423F15F1 /* MSAL.xcconfig */;
 			buildSettings = {
@@ -3957,84 +4070,23 @@
 				INFOPLIST_FILE = "Target Support Files/MSAL/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/MSAL/MSAL.modulemap";
 				PRODUCT_MODULE_NAME = MSAL;
 				PRODUCT_NAME = MSAL;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		E093FF196983472B722D0C9101D4CCE6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5A6B7482287661634AEC31C428F0D7D /* SVGKit.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SVGKit/SVGKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SVGKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SVGKit/SVGKit.modulemap";
-				PRODUCT_MODULE_NAME = SVGKit;
-				PRODUCT_NAME = SVGKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		FEA88054E4C2AFCC0D4BA7289EB1A8B6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E09B24097CA31987CFBD5B54380DDF60 /* SwinjectStoryboard.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwinjectStoryboard/SwinjectStoryboard-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwinjectStoryboard/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwinjectStoryboard/SwinjectStoryboard.modulemap";
-				PRODUCT_MODULE_NAME = SwinjectStoryboard;
-				PRODUCT_NAME = SwinjectStoryboard;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -4051,8 +4103,8 @@
 		5E3B91703CCC2D3E62CCC87C608EE1C6 /* Build configuration list for PBXNativeTarget "SwinjectStoryboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				47DDAFEDF91F1858F5F01C39C4716A2C /* Debug */,
-				FEA88054E4C2AFCC0D4BA7289EB1A8B6 /* Release */,
+				303C0297DC73C66C20E6E7836FFF0092 /* Debug */,
+				9C170001EEB78F2936A35D6FD36B7781 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4069,8 +4121,8 @@
 		96CFFA82B294A39926B9CF80C6E75F25 /* Build configuration list for PBXNativeTarget "SVGKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0F49AD83CD77713F3218E0D27E2595AE /* Debug */,
-				E093FF196983472B722D0C9101D4CCE6 /* Release */,
+				872AC796469654F6B5181502CB94246A /* Debug */,
+				2E543AADE3788CA29D7BDAE397FAD328 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4087,8 +4139,8 @@
 		F6A777FB494C3A653E3398FF16B6F8B0 /* Build configuration list for PBXNativeTarget "Swinject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C3D863DDA6F04CE225A54173C6A7172 /* Debug */,
-				7DFD0FAABAD4569DCA7AEC0C0B404965 /* Release */,
+				A810E63A621AF53FB3E30A4F04FB7132 /* Debug */,
+				5F3A8E198A359A84BC901491A8943925 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4096,8 +4148,8 @@
 		FE922E7E99D0155C8F02FE8EAB69FEE2 /* Build configuration list for PBXNativeTarget "MSAL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C9CD8A09F8D11491A8C7EB9D2A19CA50 /* Debug */,
-				276AD5E287226EA237FA630DF48E3D69 /* Release */,
+				B469773ED95BE79FE52E49885DE5F927 /* Debug */,
+				0AA42CE4C48F30D53463C6C33DB50BBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
