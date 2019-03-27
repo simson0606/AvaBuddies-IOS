@@ -18,6 +18,8 @@
 		F434E378224A44B80005BD3B /* ServerConnectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E376224A44B80005BD3B /* ServerConnectionProtocol.swift */; };
 		F434E37C224A44C90005BD3B /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E37A224A44C90005BD3B /* AuthenticationRepository.swift */; };
 		F434E37D224A44C90005BD3B /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E37B224A44C90005BD3B /* AuthUser.swift */; };
+		F434E382224C18E50005BD3B /* MockServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E381224C18E50005BD3B /* MockServerConnection.swift */; };
+		F434E384224C19630005BD3B /* AuthenticationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E383224C19630005BD3B /* AuthenticationTest.swift */; };
 		F43C05DF22438D730079513D /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05DE22438D730079513D /* AccountViewController.swift */; };
 		F43C05E1224393BA0079513D /* SwinjectStoryboardSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */; };
 		F48789E82241135C000760BB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789E72241135C000760BB /* Constants.swift */; };
@@ -56,6 +58,8 @@
 		F434E376224A44B80005BD3B /* ServerConnectionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConnectionProtocol.swift; sourceTree = "<group>"; };
 		F434E37A224A44C90005BD3B /* AuthenticationRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		F434E37B224A44C90005BD3B /* AuthUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
+		F434E381224C18E50005BD3B /* MockServerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockServerConnection.swift; sourceTree = "<group>"; };
+		F434E383224C19630005BD3B /* AuthenticationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationTest.swift; sourceTree = "<group>"; };
 		F43C05DE22438D730079513D /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectStoryboardSetup.swift; sourceTree = "<group>"; };
 		F48789E52241128B000760BB /* AvaBuddies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AvaBuddies.entitlements; sourceTree = "<group>"; };
@@ -138,6 +142,14 @@
 			name = Authentication;
 			sourceTree = "<group>";
 		};
+		F434E380224C18C80005BD3B /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				F434E381224C18E50005BD3B /* MockServerConnection.swift */,
+			);
+			name = Mock;
+			sourceTree = "<group>";
+		};
 		F48789E62241133E000760BB /* MSAL */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,7 +195,9 @@
 		F4B624F1223FAE120098238C /* AvaBuddiesTests */ = {
 			isa = PBXGroup;
 			children = (
+				F434E380224C18C80005BD3B /* Mock */,
 				F4B624F2223FAE120098238C /* AvaBuddiesTests.swift */,
+				F434E383224C19630005BD3B /* AuthenticationTest.swift */,
 				F4B624F4223FAE120098238C /* Info.plist */,
 			);
 			path = AvaBuddiesTests;
@@ -416,6 +430,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F434E384224C19630005BD3B /* AuthenticationTest.swift in Sources */,
+				F434E382224C18E50005BD3B /* MockServerConnection.swift in Sources */,
 				F4B624F3223FAE120098238C /* AvaBuddiesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
