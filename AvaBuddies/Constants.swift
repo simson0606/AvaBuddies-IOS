@@ -20,6 +20,13 @@ struct Constants {
         static let Authority = "https://login.microsoftonline.com/common"
     }
     
+    struct ServerConnection {
+        static let BaseURL = "https://dev.avabuddies.nl"
+        static let RegisterRoute = "/auth/register"
+        static let LoginRoute = "/auth/login"
+        static let Secret = "SamplePassword"
+    }
+    
     static let logoOnly = ResourceFile(filename: "avanade-logo-only", filetype: "svg")
 }
 
