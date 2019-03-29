@@ -20,6 +20,8 @@
 		F434E37D224A44C90005BD3B /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E37B224A44C90005BD3B /* AuthUser.swift */; };
 		F434E382224C18E50005BD3B /* MockServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E381224C18E50005BD3B /* MockServerConnection.swift */; };
 		F434E384224C19630005BD3B /* AuthenticationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E383224C19630005BD3B /* AuthenticationTest.swift */; };
+		F434E386224D16CD0005BD3B /* AccessTokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E385224D16CD0005BD3B /* AccessTokenAdapter.swift */; };
+		F434E388224E0FBC0005BD3B /* AuthenticationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E387224E0FBC0005BD3B /* AuthenticationDelegate.swift */; };
 		F43C05DF22438D730079513D /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05DE22438D730079513D /* AccountViewController.swift */; };
 		F43C05E1224393BA0079513D /* SwinjectStoryboardSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */; };
 		F48789E82241135C000760BB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789E72241135C000760BB /* Constants.swift */; };
@@ -60,6 +62,8 @@
 		F434E37B224A44C90005BD3B /* AuthUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
 		F434E381224C18E50005BD3B /* MockServerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockServerConnection.swift; sourceTree = "<group>"; };
 		F434E383224C19630005BD3B /* AuthenticationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationTest.swift; sourceTree = "<group>"; };
+		F434E385224D16CD0005BD3B /* AccessTokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenAdapter.swift; sourceTree = "<group>"; };
+		F434E387224E0FBC0005BD3B /* AuthenticationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDelegate.swift; sourceTree = "<group>"; };
 		F43C05DE22438D730079513D /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectStoryboardSetup.swift; sourceTree = "<group>"; };
 		F48789E52241128B000760BB /* AvaBuddies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AvaBuddies.entitlements; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 			children = (
 				F434E375224A44B80005BD3B /* ServerConnection.swift */,
 				F434E376224A44B80005BD3B /* ServerConnectionProtocol.swift */,
+				F434E385224D16CD0005BD3B /* AccessTokenAdapter.swift */,
 			);
 			name = ServerConnection;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 			children = (
 				F434E37A224A44C90005BD3B /* AuthenticationRepository.swift */,
 				F434E37B224A44C90005BD3B /* AuthUser.swift */,
+				F434E387224E0FBC0005BD3B /* AuthenticationDelegate.swift */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -363,6 +369,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/MSAL/MSAL.framework",
 				"${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework",
@@ -371,6 +378,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSAL.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGKit.framework",
@@ -417,9 +425,11 @@
 				F43C05E1224393BA0079513D /* SwinjectStoryboardSetup.swift in Sources */,
 				F4D29C5E223FAECF00EE40CD /* LoginViewController.swift in Sources */,
 				F434E377224A44B80005BD3B /* ServerConnection.swift in Sources */,
+				F434E386224D16CD0005BD3B /* AccessTokenAdapter.swift in Sources */,
 				F434E37D224A44C90005BD3B /* AuthUser.swift in Sources */,
 				F4B624DE223FAE110098238C /* AppDelegate.swift in Sources */,
 				F43C05DF22438D730079513D /* AccountViewController.swift in Sources */,
+				F434E388224E0FBC0005BD3B /* AuthenticationDelegate.swift in Sources */,
 				F40B5EAB22413E73008E88BE /* SvgFileLoader.swift in Sources */,
 				F48789E82241135C000760BB /* Constants.swift in Sources */,
 				F48789EA224113BC000760BB /* GraphUser.swift in Sources */,

@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.8.1)
   - CocoaLumberjack (3.5.2):
     - CocoaLumberjack/Core (= 3.5.2)
   - CocoaLumberjack/Core (3.5.2)
@@ -12,6 +13,7 @@ PODS:
     - Swinject (~> 2.5)
 
 DEPENDENCIES:
+  - Alamofire
   - MSAL
   - SVGKit
   - Swinject
@@ -19,6 +21,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - CocoaLumberjack
     - MSAL
     - SVGKit
@@ -26,12 +29,13 @@ SPEC REPOS:
     - SwinjectStoryboard
 
 SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   CocoaLumberjack: 118bf4a820efc641f79fa487b75ed928dccfae23
   MSAL: 2592b744b9215d9b7463f02fb9afd4e432c75c62
   SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
 
-PODFILE CHECKSUM: 898578beac92efac91d377b971eba37f129e3e78
+PODFILE CHECKSUM: 3ac8c66edd8818fa9c2bb07ae0f1bac962ba664c
 
 COCOAPODS: 1.5.2

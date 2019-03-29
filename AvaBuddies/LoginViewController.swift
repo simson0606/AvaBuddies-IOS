@@ -13,6 +13,7 @@ class LoginViewController: UIViewController, MSALClientDelegate {
     @IBOutlet weak var logoImage: UIImageView!
     
     var msalClient: MSALClient?
+    var authenticationRepository: AuthenticationRepository?
     var firstStart = true
     
     override func viewDidLoad() {
@@ -38,9 +39,10 @@ class LoginViewController: UIViewController, MSALClientDelegate {
     }
     
     func receivedUserInfo(userinfo: GraphUser) {
-        DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "LoginCompletedSegue", sender: self)
-        }
+        authenticationRepository?.login(with: userinfo.userPrincipalName!)
+//        DispatchQueue.main.async {
+//            self.performSegue(withIdentifier: "LoginCompletedSegue", sender: self)
+//        }
         
     }
     func signedOut() {

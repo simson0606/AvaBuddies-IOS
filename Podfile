@@ -6,4 +6,5 @@ target 'AvaBuddies' do
   pod 'SVGKit'
   pod 'Swinject'
   pod 'SwinjectStoryboard'
+  pod 'Alamofire'
 end

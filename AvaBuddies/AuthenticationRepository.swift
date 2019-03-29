@@ -11,7 +11,25 @@ class AuthenticationRepository {
     
     var serverConnection: ServerConnectionProtocol?
     
-    func authenticate(with email: String){
-        serverConnection?.send(message: "Authenticate \(email)", to: "avabuddies")
+    func register(with email: String){
+        let parameters = [
+            "email": email,
+            "password": Constants.ServerConnection.Secret
+        ]
+        serverConnection?.post(parameters: parameters, to: Constants.ServerConnection.RegisterRoute, completion: {
+            (result) -> () in
+            print(result)
+        })
+    }
+    
+    func login(with email: String){
+        let parameters = [
+            "email": email,
+            "password": Constants.ServerConnection.Secret
+        ]
+        serverConnection?.post(parameters: parameters, to: Constants.ServerConnection.LoginRoute, completion: {
+            (result) -> () in
+            print(result)
+        })
     }
 }
