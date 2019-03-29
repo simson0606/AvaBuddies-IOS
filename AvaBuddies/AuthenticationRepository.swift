@@ -34,7 +34,7 @@ class AuthenticationRepository {
         serverConnection?.post(parameters: parameters, to: Constants.ServerConnection.LoginRoute, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
-            self.token = try! decoder.decode(LoginResponse.self, from: result.data(using: .utf8)!)
+            self.token = try! decoder.decode(LoginResponse.self, from: result)
             self.loginDelegate?.loggedIn()
         })
     }

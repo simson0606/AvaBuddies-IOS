@@ -11,11 +11,11 @@ import Alamofire
 
 class ServerConnection : ServerConnectionProtocol {
     
-    func post(parameters: [String : Any], to route: String, completion: @escaping (_ result: String)->()) {
+    func post(parameters: [String : Any], to route: String, completion: @escaping (_ result: Data)->()) {
         Alamofire.request(Constants.ServerConnection.BaseURL + route, method: .post, parameters: parameters).validate().responseJSON { response in
             switch response.result {
             case .success:
-                completion(String(data: response.data!, encoding: .utf8)!)
+                completion(response.data!)
             case .failure(let error):
                 print(error)
             }

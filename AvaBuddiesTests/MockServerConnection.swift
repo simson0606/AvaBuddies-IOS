@@ -14,10 +14,10 @@ class MockServerConnection: ServerConnectionProtocol {
     var parameters: [String: Any]?
     var route: String?
     
-    func post(parameters: [String: Any], to route: String, completion: @escaping (_ result: String)->()) {
+    func post(parameters: [String: Any], to route: String, completion: @escaping (_ result: Data)->()) {
         self.parameters = parameters
         self.route = route
-        completion("{\"token\":\"MockServerConnection\"}")
+        completion("{\"token\":\"MockServerConnection\"}".data(using: .utf8)!)
     }
     
     

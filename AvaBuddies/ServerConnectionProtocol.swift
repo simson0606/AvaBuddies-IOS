@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ServerConnectionProtocol {
-    func post(parameters: [String: Any], to route: String, completion: @escaping (_ result: String)->())
+    func post(parameters: [String: Any], to route: String, completion: @escaping (_ result: Data)->())
 }
