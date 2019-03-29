@@ -1,5 +1,5 @@
 //
-//  AuthenticationDelegate.swift
+//  LoginResponse.swift
 //  AvaBuddies
 //
 //  Created by simon heij on 29/03/2019.
@@ -8,10 +8,6 @@
 
 import Foundation
 
-protocol RegisterDelegate {
-    func registered()
-}
-
-protocol LoginDelegate {
-    func loggedIn()
+struct LoginResponse : Codable {
+    var token: String
 }

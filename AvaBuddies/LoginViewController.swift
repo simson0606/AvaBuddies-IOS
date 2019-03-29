@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, MSALClientDelegate {
+class LoginViewController: UIViewController, MSALClientDelegate, LoginDelegate {
     
     @IBOutlet weak var logoImage: UIImageView!
     
@@ -18,7 +18,8 @@ class LoginViewController: UIViewController, MSALClientDelegate {
     
     override func viewDidLoad() {
         msalClient?.authenticationDelegate = self
-
+        authenticationRepository?.loginDelegate = self
+        
         logoImage.image = SvgFileLoader.getUIImageFrom(resource: Constants.logoOnly, size: logoImage.bounds.size)
     }
     
@@ -40,10 +41,12 @@ class LoginViewController: UIViewController, MSALClientDelegate {
     
     func receivedUserInfo(userinfo: GraphUser) {
         authenticationRepository?.login(with: userinfo.userPrincipalName!)
-//        DispatchQueue.main.async {
-//            self.performSegue(withIdentifier: "LoginCompletedSegue", sender: self)
-//        }
-        
+    }
+    
+    func loggedIn() {
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "LoginCompletedSegue", sender: self)
+        }
     }
     func signedOut() {
         DispatchQueue.main.async {

@@ -9,7 +9,11 @@
 import Foundation
 class AuthenticationRepository {
     
+    var registerDelegate: RegisterDelegate?
+    var loginDelegate: LoginDelegate?
     var serverConnection: ServerConnectionProtocol?
+    private var token: LoginResponse?
+    
     
     func register(with email: String){
         let parameters = [
@@ -18,7 +22,7 @@ class AuthenticationRepository {
         ]
         serverConnection?.post(parameters: parameters, to: Constants.ServerConnection.RegisterRoute, completion: {
             (result) -> () in
-            print(result)
+            self.registerDelegate?.registered()
         })
     }
     
@@ -29,7 +33,9 @@ class AuthenticationRepository {
         ]
         serverConnection?.post(parameters: parameters, to: Constants.ServerConnection.LoginRoute, completion: {
             (result) -> () in
-            print(result)
+            let decoder = JSONDecoder()
+            self.token = try! decoder.decode(LoginResponse.self, from: result.data(using: .utf8)!)
+            self.loginDelegate?.loggedIn()
         })
     }
 }

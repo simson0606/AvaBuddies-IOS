@@ -9,24 +9,36 @@
 import XCTest
 @testable import AvaBuddies
 
-class AuthenticationTest: XCTestCase {
+class AuthenticationTest: XCTestCase, LoginDelegate {
+
+    var loginCompleted = false
 
     let serverConnection = MockServerConnection()
     let authenticationRepository = AuthenticationRepository()
     
     override func setUp() {
         authenticationRepository.serverConnection = serverConnection
+        authenticationRepository.loginDelegate = self
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testAuthenticationString() {
+    func testLogin() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        authenticationRepository.authenticate(with: "AuthenticationTest")
+        let email = "AuthenticationTest@email.com"
+        authenticationRepository.login(with: email)
         
-        XCTAssertTrue(serverConnection.message == "Authenticate AuthenticationTest")
+        XCTAssertTrue(serverConnection.route == "/auth/login")
+        XCTAssertTrue(serverConnection.parameters!["email"] as! String == email)
+
+        XCTAssertTrue(loginCompleted)
     }
+    
+    func loggedIn() {
+        loginCompleted = true
+    }
+   
 }

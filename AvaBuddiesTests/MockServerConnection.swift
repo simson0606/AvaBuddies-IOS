@@ -11,12 +11,13 @@ import Foundation
 
 class MockServerConnection: ServerConnectionProtocol {
     
-    var message: String?
-    var url: String?
+    var parameters: [String: Any]?
+    var route: String?
     
-    func send(message: String, to url: String) {
-        self.message = message
-        self.url = url
+    func post(parameters: [String: Any], to route: String, completion: @escaping (_ result: String)->()) {
+        self.parameters = parameters
+        self.route = route
+        completion("{\"token\":\"MockServerConnection\"}")
     }
     
     
