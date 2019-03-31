@@ -20,7 +20,10 @@ class MockServerConnection: ServerConnectionProtocol {
         completion("{\"token\":\"MockServerConnection\"}".data(using: .utf8)!)
     }
     
-    
+    func get(parameters: [String : Any]?, to route: String, completion: @escaping (Data) -> ()) {
+        self.parameters = parameters
+        self.route = route
+    }
     
     
 }
