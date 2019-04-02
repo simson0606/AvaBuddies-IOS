@@ -27,7 +27,7 @@ extension SwinjectStoryboard {
             c.msalClient = r.resolve(MSALClient.self)
             c.authenticationRepository = r.resolve(AuthenticationRepository.self)
         }
-        defaultContainer.storyboardInitCompleted(AccountViewController.self) { r, c in
+        defaultContainer.storyboardInitCompleted(ProfileViewController.self) { r, c in
             c.msalClient = r.resolve(MSALClient.self)
             c.userRepository = r.resolve(UserRepository.self)
         }

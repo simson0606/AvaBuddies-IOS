@@ -120,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="2834" y="-350"/>
         </scene>
-        <!--Account-->
+        <!--Profile-->
         <scene sceneID="CUw-Nh-B49">
             <objects>
-                <tableViewController title="Account" id="NQk-7b-35d" customClass="AccountViewController" customModule="AvaBuddies" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="NQk-7b-35d" customClass="ProfileViewController" customModule="AvaBuddies" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OIv-ri-S35">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -356,15 +356,21 @@
                             <outlet property="delegate" destination="NQk-7b-35d" id="wyW-mk-nJi"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Account" image="icon_Client_Grey_30d" id="wuM-rs-e9s">
+                    <tabBarItem key="tabBarItem" title="Profile" image="icon_Client_Grey_30d" id="wuM-rs-e9s">
                         <color key="badgeColor" red="1" green="0.32156862749999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <toolbarItems>
+                        <barButtonItem title="Save" id="KNm-DO-DbR">
+                            <color key="tintColor" red="1" green="0.32156862749999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="aboutMeText" destination="nkE-OM-0hC" id="8c3-sb-MJd"/>
                         <outlet property="mailLabel" destination="m2G-Cl-jCm" id="JMI-7M-8AC"/>
                         <outlet property="nameLabel" destination="vPs-v0-CPb" id="9rc-fy-u4d"/>
                         <outlet property="profileImage" destination="6gt-N8-oWZ" id="jpF-Jt-V62"/>
+                        <outlet property="saveButton" destination="KNm-DO-DbR" id="n93-fN-1kY"/>
                         <outlet property="shareLocationToggle" destination="PWX-o8-Xei" id="hLZ-IM-Qft"/>
                     </connections>
                 </tableViewController>

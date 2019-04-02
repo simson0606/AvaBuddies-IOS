@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import Localize_Swift
 
-class AccountViewController: UITableViewController, UserDelegate {
+class ProfileViewController: UITableViewController, UserDelegate {
 
     @IBOutlet weak var profileImage: RoundedImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var mailLabel: UILabel!
     @IBOutlet weak var aboutMeText: UITextView!
     @IBOutlet weak var shareLocationToggle: UISwitch!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var msalClient: MSALClient?
     var userRepository: UserRepository?
@@ -23,8 +25,18 @@ class AccountViewController: UITableViewController, UserDelegate {
         userRepository?.userDelegate = self
         userRepository?.getUser()
 
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        parent?.title = "Profile".localized()
+        parent?.navigationItem.setRightBarButton(saveButton, animated: false)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        parent?.navigationItem.setRightBarButton(nil, animated: false)
     }
     
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {

@@ -23,6 +23,8 @@ class LoginViewController: UIViewController, MSALClientDelegate, LoginDelegate {
         logoImage.image = SvgFileLoader.getUIImageFrom(resource: Constants.logoOnly, size: logoImage.bounds.size)
     }
     
+
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
         if firstStart {
