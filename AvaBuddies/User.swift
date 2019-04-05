@@ -15,6 +15,7 @@ struct UserResponse : Codable {
 
 
 struct User: Codable {
+    var _id: String
     var name: String
     var email: String
     var aboutme: String?

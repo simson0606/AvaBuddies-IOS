@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol ServerConnectionProtocol {
-    func post(parameters: [String: Any], to route: String, completion: @escaping (_ result: Data)->())
     
-    func get(parameters: [String: Any]?, to route: String, completion: @escaping (_ result: Data)->())
+    func request(parameters: [String : Any]?, to route: String, with method: HTTPMethod,  completion: @escaping (_ result: Data)->(), fail: ((_ result: Data)->())?)
 }

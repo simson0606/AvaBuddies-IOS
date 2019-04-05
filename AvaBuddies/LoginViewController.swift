@@ -9,6 +9,7 @@
 import UIKit
 
 class LoginViewController: UIViewController, MSALClientDelegate, LoginDelegate {
+   
     
     @IBOutlet weak var logoImage: UIImageView!
     
@@ -22,8 +23,6 @@ class LoginViewController: UIViewController, MSALClientDelegate, LoginDelegate {
         
         logoImage.image = SvgFileLoader.getUIImageFrom(resource: Constants.logoOnly, size: logoImage.bounds.size)
     }
-    
-
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -50,6 +49,15 @@ class LoginViewController: UIViewController, MSALClientDelegate, LoginDelegate {
             self.performSegue(withIdentifier: "LoginCompletedSegue", sender: self)
         }
     }
+    
+    func loginFailed() {
+        let alert = UIAlertController(title: "Cannot login".localized(), message: "Cannot login at this moment, please try again later".localized(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: { action in
+            self.msalClient?.signOut()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func signedOut() {
         DispatchQueue.main.async {
             self.navigationController?.popToRootViewController(animated: true)

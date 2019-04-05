@@ -20,9 +20,13 @@ class AuthenticationRepository {
             "email": email,
             "password": Constants.ServerConnection.Secret
         ]
-        serverConnection?.post(parameters: parameters, to: Constants.ServerConnection.RegisterRoute, completion: {
+        
+        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileRoute, with: .post, completion: {
             (result) -> () in
             self.registerDelegate?.registered()
+        }, fail: {
+            (result) -> () in
+            self.registerDelegate?.registerFailed()
         })
     }
     
@@ -31,12 +35,16 @@ class AuthenticationRepository {
             "email": email,
             "password": Constants.ServerConnection.Secret
         ]
-        serverConnection?.post(parameters: parameters, to: Constants.ServerConnection.LoginRoute, completion: {
+        
+        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileRoute, with: .post, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
             let token = try! decoder.decode(LoginResponse.self, from: result)
             self.accessTokenAdapter?.accessToken = token.token
             self.loginDelegate?.loggedIn()
+        }, fail: {
+            (result) -> () in
+            self.loginDelegate?.loginFailed()
         })
     }
 }
