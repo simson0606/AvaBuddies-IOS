@@ -13,6 +13,10 @@ struct UserResponse : Codable {
     var user: User
 }
 
+struct UsersResponse: Codable {
+    var users: [User]
+}
+
 
 struct User: Codable {
     var _id: String

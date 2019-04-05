@@ -14,3 +14,8 @@ protocol UserDelegate {
     func userDeleted()
     func failed()
 }
+
+protocol UserListDelegate {
+    func userListReceived(users: [User])
+    func failed()
+}

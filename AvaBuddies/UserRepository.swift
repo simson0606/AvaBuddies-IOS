@@ -13,6 +13,7 @@ class UserRepository {
     var serverConnection: ServerConnectionProtocol?
     
     var userDelegate: UserDelegate?
+    var userListDelegate: UserListDelegate?
     var user: User?
     
 
@@ -70,6 +71,22 @@ class UserRepository {
         }, fail: {
             (result) -> () in
             self.userDelegate?.failed()
+        })
+    }
+    
+    func getUserList() {
+        serverConnection?.request(parameters: nil, to: Constants.ServerConnection.UserListRoute, with: .get, completion: {
+            (result) -> () in
+            let decoder = JSONDecoder()
+            do {
+                let usersResponse = try decoder.decode(UsersResponse.self, from: result)
+                self.userListDelegate?.userListReceived(users: usersResponse.users)
+            } catch {
+                self.userListDelegate?.failed()
+            }
+        }, fail: {
+            (result) -> () in
+            self.userListDelegate?.failed()
         })
     }
 }

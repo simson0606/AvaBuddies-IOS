@@ -28,6 +28,7 @@ struct Constants {
         static let UpdateProfileImageRoute = "/user/updateprofilepicture"
         static let UpdateProfileRoute = "/user/updateprofile"
         static let DeleteProfileRoute = "/user/destroy/"
+        static let UserListRoute = "/user/list"
         static let Secret = "SamplePassword"
     }
     

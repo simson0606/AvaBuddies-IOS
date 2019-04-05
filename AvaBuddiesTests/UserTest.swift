@@ -9,7 +9,7 @@
 import XCTest
 @testable import AvaBuddies
 
-class UserTest: XCTestCase, UserDelegate {
+class UserTest: XCTestCase, UserDelegate, UserListDelegate {
     
     var user: User?
 
@@ -17,17 +17,20 @@ class UserTest: XCTestCase, UserDelegate {
     let userRepository = UserRepository()
     
     var userIsReceived = false
+    var userListIsReceived = false
     var userIsDeleted = false
     var isFailed = false
     override func setUp() {
         userRepository.serverConnection = serverConnection
         userRepository.userDelegate = self
+        userRepository.userListDelegate = self
     }
 
     override func tearDown() {
         userIsReceived = false
         userIsDeleted = false
         isFailed = false
+        userListIsReceived = false
     }
 
     func testReceiveUser() {
@@ -68,7 +71,33 @@ class UserTest: XCTestCase, UserDelegate {
         XCTAssertFalse(userIsDeleted)
         XCTAssertTrue(isFailed)
     }
+    
+    func testReceiveUserList() {
+        
+        serverConnection.setMockResponse(response:
+            "{\"users\": [ {\"name\": \"User Test\",\"sharelocation\": true,\"isAdmin\": false,\"image\": \"\",\"_id\": \"5ca72bdad120192a4a4de201\",\"email\": \"UserTest@email.com\",\"password\": \"UserTest\"} ] }", success: true)
+        
+        userRepository.getUserList()
+        
+        XCTAssertTrue(serverConnection.route == "/user/list")
+        
+        XCTAssertTrue(userListIsReceived)
+        XCTAssertFalse(isFailed)
+    }
 
+    func testMalformedReceiveUserList() {
+        
+        serverConnection.setMockResponse(response:
+            "{\"users\": [ {\"name\": \"User Test\",\"sharelocation}", success: true)
+        
+        userRepository.getUserList()
+        
+        XCTAssertTrue(serverConnection.route == "/user/list")
+        
+        XCTAssertTrue(isFailed)
+        XCTAssertFalse(userListIsReceived)
+    }
+    
     func userReceived(user: User) {
         userIsReceived = true
     }
@@ -79,5 +108,9 @@ class UserTest: XCTestCase, UserDelegate {
     
     func failed() {
         isFailed = true
+    }
+    
+    func userListReceived(users: [User]) {
+        userListIsReceived = true
     }
 }
