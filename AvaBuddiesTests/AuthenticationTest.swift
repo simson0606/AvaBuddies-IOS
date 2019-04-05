@@ -11,8 +11,9 @@ import XCTest
 
 class AuthenticationTest: XCTestCase, LoginDelegate {
 
-    var loginCompleted = false
-
+    var loginIsCompleted = false
+    var loginIsFailed = false
+    
     let serverConnection = MockServerConnection()
     let authenticationRepository = AuthenticationRepository()
     
@@ -22,23 +23,51 @@ class AuthenticationTest: XCTestCase, LoginDelegate {
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+         loginIsCompleted = false
+         loginIsFailed = false
     }
 
     func testLogin() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        serverConnection.setMockResponse(response: "{\"token\":\"MockServerConnection\"}", success: true)
         let email = "AuthenticationTest@email.com"
         authenticationRepository.login(with: email)
         
         XCTAssertTrue(serverConnection.route == "/auth/login")
         XCTAssertTrue(serverConnection.parameters!["email"] as! String == email)
 
-        XCTAssertTrue(loginCompleted)
+        XCTAssertTrue(loginIsCompleted)
+        XCTAssertFalse(loginIsFailed)
+    }
+    
+    func testMalformedResponseLogin() {
+        serverConnection.setMockResponse(response: "{\"token\";\"}", success: true)
+        let email = "AuthenticationTest@email.com"
+        authenticationRepository.login(with: email)
+        
+        XCTAssertTrue(serverConnection.route == "/auth/login")
+        XCTAssertTrue(serverConnection.parameters!["email"] as! String == email)
+        
+        XCTAssertTrue(loginIsFailed)
+        XCTAssertFalse(loginIsCompleted)
+    }
+    
+    func testFailedLogin() {
+        serverConnection.setMockResponse(response: "Failed", success: false)
+        let email = "AuthenticationTest@email.com"
+        authenticationRepository.login(with: email)
+        
+        XCTAssertTrue(serverConnection.route == "/auth/login")
+        XCTAssertTrue(serverConnection.parameters!["email"] as! String == email)
+        
+        XCTAssertTrue(loginIsFailed)
+        XCTAssertFalse(loginIsCompleted)
     }
     
     func loggedIn() {
-        loginCompleted = true
+        loginIsCompleted = true
     }
    
+    func loginFailed() {
+        loginIsFailed = true
+    }
 }

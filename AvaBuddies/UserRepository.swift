@@ -20,10 +20,17 @@ class UserRepository {
         serverConnection?.request(parameters: nil, to: Constants.ServerConnection.UserProfileRoute, with: .get, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
-            let userResponse = try! decoder.decode(UserResponse.self, from: result)
-            self.user = userResponse.user
-            self.userDelegate?.userReceived(user: self.user!)
-        }, fail: nil)
+            do {
+                let userResponse = try decoder.decode(UserResponse.self, from: result)
+                self.user = userResponse.user
+                self.userDelegate?.userReceived(user: self.user!)
+            } catch {
+                self.userDelegate?.failed()
+            }
+        }, fail: {
+            (result) -> () in
+            self.userDelegate?.failed()
+        })
     }
     
     func updateProfileImage(){
@@ -34,7 +41,10 @@ class UserRepository {
         serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileImageRoute, with: .post, completion: {
             (result) -> () in
             print("Image Change: \(result)")
-        }, fail: nil)
+        }, fail: {
+            (result) -> () in
+            self.userDelegate?.failed()
+        })
         
     }
     
@@ -47,13 +57,19 @@ class UserRepository {
         serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileRoute, with: .post, completion: {
             (result) -> () in
             print("Profile Change: \(result)")
-        }, fail: nil)
+        }, fail: {
+            (result) -> () in
+            self.userDelegate?.failed()
+        })
     }
     
     func deleteProfile() {
         serverConnection?.request(parameters: nil, to: Constants.ServerConnection.DeleteProfileRoute + (user?._id ?? ""), with: .delete, completion: {
             (result) -> () in
             self.userDelegate?.userDeleted()
-        }, fail: nil)
+        }, fail: {
+            (result) -> () in
+            self.userDelegate?.failed()
+        })
     }
 }

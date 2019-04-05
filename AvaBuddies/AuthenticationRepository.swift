@@ -21,7 +21,7 @@ class AuthenticationRepository {
             "password": Constants.ServerConnection.Secret
         ]
         
-        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileRoute, with: .post, completion: {
+        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.RegisterRoute, with: .post, completion: {
             (result) -> () in
             self.registerDelegate?.registered()
         }, fail: {
@@ -36,12 +36,17 @@ class AuthenticationRepository {
             "password": Constants.ServerConnection.Secret
         ]
         
-        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileRoute, with: .post, completion: {
+        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.LoginRoute, with: .post, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
-            let token = try! decoder.decode(LoginResponse.self, from: result)
-            self.accessTokenAdapter?.accessToken = token.token
-            self.loginDelegate?.loggedIn()
+            do {
+                let token = try decoder.decode(LoginResponse.self, from: result)
+                self.accessTokenAdapter?.accessToken = token.token
+                self.loginDelegate?.loggedIn()
+            } catch {
+                self.loginDelegate?.loginFailed()
+            }
+            
         }, fail: {
             (result) -> () in
             self.loginDelegate?.loginFailed()
