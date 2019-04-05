@@ -272,13 +272,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PWX-o8-Xei">
-                                                    <rect key="frame" x="320" y="4" width="51" height="35.5"/>
+                                                    <rect key="frame" x="312" y="6.5" width="51" height="30.5"/>
                                                     <connections>
                                                         <action selector="shareLocationToggled:" destination="NQk-7b-35d" eventType="valueChanged" id="JIQ-kf-x7k"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share my location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3j-jQ-8nu">
-                                                    <rect key="frame" x="8" y="8" width="137" height="27.5"/>
+                                                    <rect key="frame" x="16" y="10.5" width="137" height="22.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -301,6 +301,20 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ffw-YR-Hqk" id="CG0-dc-v1M">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiS-y5-fqA">
+                                                    <rect key="frame" x="128.5" y="5.5" width="118" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Delete Account"/>
+                                                    <connections>
+                                                        <action selector="deleteTapped:" destination="NQk-7b-35d" eventType="touchUpInside" id="Qed-7e-1XZ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HiS-y5-fqA" firstAttribute="centerX" secondItem="CG0-dc-v1M" secondAttribute="centerX" id="FJ9-Gh-xPs"/>
+                                                <constraint firstItem="HiS-y5-fqA" firstAttribute="centerY" secondItem="CG0-dc-v1M" secondAttribute="centerY" id="xKg-F0-NSc"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fHS-4S-CiO">

@@ -69,6 +69,19 @@ class ProfileViewController: UITableViewController, UserDelegate {
         userRepository?.updateProfile()
     }
     
+    @IBAction func deleteTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "Are you sure?".localized(), message: "Are you sure you want to permanantly delete your account? \nThis cannot be reversed!".localized(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Delete".localized(), style: .destructive, handler: { action in
+            self.userRepository?.deleteProfile()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func userDeleted() {
+        logoutTapped(self)
+    }
+    
     @IBAction func logoutTapped(_ sender: Any) {
         msalClient?.signOut()
     }

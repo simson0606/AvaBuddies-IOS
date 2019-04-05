@@ -46,4 +46,8 @@ class UserRepository {
             print("Profile Change: \(result)")
         })
     }
+    
+    func deleteProfile() {
+        userDelegate?.userDeleted()
+    }
 }

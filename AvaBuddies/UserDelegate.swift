@@ -11,4 +11,5 @@ import Foundation
 protocol UserDelegate {
     
     func userReceived(user: User)
+    func userDeleted()
 }
