@@ -205,14 +205,14 @@
 			name = User;
 			sourceTree = "<group>";
 		};
-		F434E3B4225B695B0005BD3B /* Friends */ = {
+		F434E3B4225B695B0005BD3B /* Connection */ = {
 			isa = PBXGroup;
 			children = (
 				F434E3B2225B69550005BD3B /* ConnectionRepository.swift */,
 				F434E3B5225B6A450005BD3B /* ConnectionDelegate.swift */,
 				F434E3B7225B6CA60005BD3B /* Connection.swift */,
 			);
-			name = Friends;
+			name = Connection;
 			sourceTree = "<group>";
 		};
 		F48789E62241133E000760BB /* MSAL */ = {
@@ -294,7 +294,7 @@
 		F4C3B9A3223FAFF200291D26 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F434E3B4225B695B0005BD3B /* Friends */,
+				F434E3B4225B695B0005BD3B /* Connection */,
 				F434E390224E68EC0005BD3B /* User */,
 				F434E379224A44BC0005BD3B /* Authentication */,
 				F434E374224A44990005BD3B /* ServerConnection */,
