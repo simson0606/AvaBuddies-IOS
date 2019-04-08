@@ -25,7 +25,6 @@ class ProfileViewController: UITableViewController, UserDelegate {
     override func viewDidLoad() {
         userRepository?.userDelegate = self
         userRepository?.getUser()
-
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
@@ -45,7 +44,9 @@ class ProfileViewController: UITableViewController, UserDelegate {
     }
 
     func userReceived(user: User) {
-        self.profileImage.image = user.getUIImage()
+        if user.getUIImage() != nil {
+            profileImage.image = user.getUIImage()
+        }
         self.nameLabel.text = user.name
         self.mailLabel.text = user.email
         self.aboutMeText.text = user.aboutme

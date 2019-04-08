@@ -61,7 +61,8 @@ class UserTest: XCTestCase, UserDelegate, UserListDelegate {
     }
     
     func testDeleteUser() {
-        
+        serverConnection.setMockResponse(response: "{}", success: true)
+
         userRepository.user = User(_id: "id-testDeleteUser", name: "testDeleteUser", email: "testDeleteUser", aboutme: "testDeleteUser", image: "", sharelocation: true)
         
         userRepository.deleteProfile()

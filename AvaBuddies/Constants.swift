@@ -29,6 +29,9 @@ struct Constants {
         static let UpdateProfileRoute = "/user/updateprofile"
         static let DeleteProfileRoute = "/user/destroy/"
         static let UserListRoute = "/user/list"
+        static let ConnectionListRoute = "/friend/allconnections"
+        static let RequestConnectionRoute = "/friend/request"
+        static let CancelRequestConnectionRoute = "/friend/cancelrequest"
         static let Secret = "SamplePassword"
     }
     
