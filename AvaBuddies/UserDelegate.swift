@@ -11,4 +11,11 @@ import Foundation
 protocol UserDelegate {
     
     func userReceived(user: User)
+    func userDeleted()
+    func failed()
+}
+
+protocol UserListDelegate {
+    func userListReceived(users: [User])
+    func failed()
 }

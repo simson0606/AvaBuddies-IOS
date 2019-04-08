@@ -10,8 +10,10 @@ import Foundation
 
 protocol RegisterDelegate {
     func registered()
+    func registerFailed()
 }
 
 protocol LoginDelegate {
     func loggedIn()
+    func loginFailed()
 }

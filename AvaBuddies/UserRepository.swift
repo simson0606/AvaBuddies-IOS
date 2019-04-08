@@ -13,16 +13,24 @@ class UserRepository {
     var serverConnection: ServerConnectionProtocol?
     
     var userDelegate: UserDelegate?
+    var userListDelegate: UserListDelegate?
     var user: User?
     
 
     func getUser(){
-        serverConnection?.get(parameters: nil, to: Constants.ServerConnection.UserProfileRoute, completion: {
+        serverConnection?.request(parameters: nil, to: Constants.ServerConnection.UserProfileRoute, with: .get, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
-            let userResponse = try! decoder.decode(UserResponse.self, from: result)
-            self.user = userResponse.user
-            self.userDelegate?.userReceived(user: self.user!)
+            do {
+                let userResponse = try decoder.decode(UserResponse.self, from: result)
+                self.user = userResponse.user
+                self.userDelegate?.userReceived(user: self.user!)
+            } catch {
+                self.userDelegate?.failed()
+            }
+        }, fail: {
+            (result) -> () in
+            self.userDelegate?.failed()
         })
     }
     
@@ -30,10 +38,15 @@ class UserRepository {
         let parameters = [
             "image": user?.image ?? "",
         ]
-        serverConnection?.post(parameters: parameters, to: Constants.ServerConnection.UpdateProfileImageRoute, completion: {
+
+        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileImageRoute, with: .post, completion: {
             (result) -> () in
             print("Image Change: \(result)")
+        }, fail: {
+            (result) -> () in
+            self.userDelegate?.failed()
         })
+        
     }
     
     func updateProfile(){
@@ -41,9 +54,39 @@ class UserRepository {
             "aboutme": user?.aboutme ?? "",
             "sharelocation": user?.sharelocation ?? false
             ] as [String : Any]
-        serverConnection?.post(parameters: parameters, to: Constants.ServerConnection.UpdateProfileRoute, completion: {
+
+        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileRoute, with: .post, completion: {
             (result) -> () in
             print("Profile Change: \(result)")
+        }, fail: {
+            (result) -> () in
+            self.userDelegate?.failed()
+        })
+    }
+    
+    func deleteProfile() {
+        serverConnection?.request(parameters: nil, to: Constants.ServerConnection.DeleteProfileRoute + (user?._id ?? ""), with: .delete, completion: {
+            (result) -> () in
+            self.userDelegate?.userDeleted()
+        }, fail: {
+            (result) -> () in
+            self.userDelegate?.failed()
+        })
+    }
+    
+    func getUserList() {
+        serverConnection?.request(parameters: nil, to: Constants.ServerConnection.UserListRoute, with: .get, completion: {
+            (result) -> () in
+            let decoder = JSONDecoder()
+            do {
+                let usersResponse = try decoder.decode(UsersResponse.self, from: result)
+                self.userListDelegate?.userListReceived(users: usersResponse.users)
+            } catch {
+                self.userListDelegate?.failed()
+            }
+        }, fail: {
+            (result) -> () in
+            self.userListDelegate?.failed()
         })
     }
 }

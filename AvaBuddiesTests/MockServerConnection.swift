@@ -7,23 +7,33 @@
 //
 
 import Foundation
+import Alamofire
 @testable import AvaBuddies
 
 class MockServerConnection: ServerConnectionProtocol {
     
+    var response = ""
+    var success = false
+    
     var parameters: [String: Any]?
     var route: String?
+    var method: HTTPMethod?
     
-    func post(parameters: [String: Any], to route: String, completion: @escaping (_ result: Data)->()) {
-        self.parameters = parameters
-        self.route = route
-        completion("{\"token\":\"MockServerConnection\"}".data(using: .utf8)!)
-    }
     
-    func get(parameters: [String : Any]?, to route: String, completion: @escaping (Data) -> ()) {
-        self.parameters = parameters
-        self.route = route
+    func setMockResponse(response: String, success: Bool){
+        self.response = response
+        self.success = success
     }
     
     
+    func request(parameters: [String : Any]?, to route: String, with method: HTTPMethod, completion: @escaping (Data) -> (), fail: ((Data) -> ())?) {
+        self.parameters = parameters
+        self.route = route
+        if success {
+            completion(response.data(using: .utf8)!)
+        } else {
+            fail!(response.data(using: .utf8)!)
+        }
+    }
+
 }

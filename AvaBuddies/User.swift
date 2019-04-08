@@ -13,15 +13,21 @@ struct UserResponse : Codable {
     var user: User
 }
 
+struct UsersResponse: Codable {
+    var users: [User]
+}
+
 
 struct User: Codable {
+    var _id: String
     var name: String
     var email: String
     var aboutme: String?
     var image: String?
     var sharelocation: Bool
-    func getUIImage() -> UIImage {        
-        
+    
+    
+    func getUIImage() -> UIImage {
         if image != nil {
             let imageData = Data(base64Encoded: self.image!)!
             return UIImage(data: imageData) ?? UIImage()

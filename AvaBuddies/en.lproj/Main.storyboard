@@ -95,6 +95,7 @@
                     <connections>
                         <segue destination="cF4-ZR-b4k" kind="relationship" relationship="viewControllers" id="Gdv-tG-NwX"/>
                         <segue destination="AZ6-qC-TFe" kind="relationship" relationship="viewControllers" id="GRu-jo-9mr"/>
+                        <segue destination="7EC-aj-0e1" kind="relationship" relationship="viewControllers" id="TLP-OJ-CRw"/>
                         <segue destination="NQk-7b-35d" kind="relationship" relationship="viewControllers" id="ksC-Ta-JTZ"/>
                     </connections>
                 </tabBarController>
@@ -119,6 +120,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBD-ho-zXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2834" y="-350"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="rdH-Ic-wJb">
+            <objects>
+                <tableViewController id="7EC-aj-0e1" customClass="SearchPeopleViewController" customModule="AvaBuddies" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9wH-jt-MFE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="peopleCell" textLabel="3T8-5l-QRZ" detailTextLabel="EdF-cG-e9F" style="IBUITableViewCellStyleSubtitle" id="wPe-rA-o76">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wPe-rA-o76" id="dcG-yz-CGH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3T8-5l-QRZ">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EdF-cG-e9F">
+                                            <rect key="frame" x="16" y="25.5" width="33" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7EC-aj-0e1" id="2Rt-SL-q7y"/>
+                            <outlet property="delegate" destination="7EC-aj-0e1" id="o1v-jh-eSh"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Search" image="icon_Person_Greys_30d" id="fXU-OP-8ui"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BDA-MK-7OQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2153" y="390"/>
         </scene>
         <!--Profile-->
         <scene sceneID="CUw-Nh-B49">
@@ -272,13 +318,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PWX-o8-Xei">
-                                                    <rect key="frame" x="320" y="4" width="51" height="35.5"/>
+                                                    <rect key="frame" x="312" y="6.5" width="51" height="30.5"/>
                                                     <connections>
                                                         <action selector="shareLocationToggled:" destination="NQk-7b-35d" eventType="valueChanged" id="JIQ-kf-x7k"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share my location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3j-jQ-8nu">
-                                                    <rect key="frame" x="8" y="8" width="137" height="27.5"/>
+                                                    <rect key="frame" x="16" y="10.5" width="137" height="22.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -301,6 +347,20 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ffw-YR-Hqk" id="CG0-dc-v1M">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiS-y5-fqA">
+                                                    <rect key="frame" x="128.5" y="5.5" width="118" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Delete Account"/>
+                                                    <connections>
+                                                        <action selector="deleteTapped:" destination="NQk-7b-35d" eventType="touchUpInside" id="Qed-7e-1XZ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HiS-y5-fqA" firstAttribute="centerX" secondItem="CG0-dc-v1M" secondAttribute="centerX" id="FJ9-Gh-xPs"/>
+                                                <constraint firstItem="HiS-y5-fqA" firstAttribute="centerY" secondItem="CG0-dc-v1M" secondAttribute="centerY" id="xKg-F0-NSc"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fHS-4S-CiO">
@@ -335,7 +395,7 @@
                             <outlet property="delegate" destination="NQk-7b-35d" id="wyW-mk-nJi"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Profile" image="icon_Client_Grey_30d" id="wuM-rs-e9s">
+                    <tabBarItem key="tabBarItem" title="Profile" image="icon_Person_Grey_30d" id="wuM-rs-e9s">
                         <color key="badgeColor" red="1" green="0.32156862749999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems>
@@ -358,7 +418,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i3Z-dT-50a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2153" y="401"/>
+            <point key="canvasLocation" x="2833" y="390"/>
         </scene>
         <!--Nearby-->
         <scene sceneID="K5c-yS-zvq">
@@ -381,10 +441,11 @@
     </scenes>
     <resources>
         <image name="default_profile" width="240" height="240"/>
-        <image name="icon_Client_Grey_30d" width="30" height="30"/>
         <image name="icon_Design_Flip_Gray_30d" width="30" height="30"/>
         <image name="icon_Global_Person_Grey_30d" width="30" height="30"/>
         <image name="icon_People_Grey_30d" width="30" height="30"/>
+        <image name="icon_Person_Grey_30d" width="30" height="30"/>
+        <image name="icon_Person_Greys_30d" width="30" height="30"/>
     </resources>
     <color key="tintColor" red="1" green="0.32156862749999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

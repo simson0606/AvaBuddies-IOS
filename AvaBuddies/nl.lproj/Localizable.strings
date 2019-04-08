@@ -5,4 +5,8 @@
   Created by simon heij on 02/04/2019.
   Copyright © 2019 simon heij. All rights reserved.
 */
-"Profile" = "Profiel";
+"Are you sure you want to permanantly delete your account? \nThis cannot be reversed!" = "Are you sure you want to permanantly delete your account? \nThis cannot be reversed!";
+"Are you sure?" = "Are you sure?";
+"Cancel" = "Cancel";
+"Delete" = "Delete";
+"Profile" = "Profile"; 

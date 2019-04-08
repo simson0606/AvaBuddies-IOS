@@ -11,6 +11,7 @@ import Localize_Swift
 
 class ProfileViewController: UITableViewController, UserDelegate {
 
+
     @IBOutlet weak var profileImage: RoundedImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var mailLabel: UILabel!
@@ -68,6 +69,26 @@ class ProfileViewController: UITableViewController, UserDelegate {
         userRepository?.user?.sharelocation = sender.isOn
         userRepository?.updateProfile()
     }
+    
+    @IBAction func deleteTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "Are you sure?".localized(), message: "Are you sure you want to permanantly delete your account? \nThis cannot be reversed!".localized(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Delete".localized(), style: .destructive, handler: { action in
+            self.userRepository?.deleteProfile()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func userDeleted() {
+        logoutTapped(self)
+    }
+    
+    func failed() {
+        let alert = UIAlertController(title: "Failed".localized(), message: "Request failed".localized(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK".localized(), style: .default))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     @IBAction func logoutTapped(_ sender: Any) {
         msalClient?.signOut()
