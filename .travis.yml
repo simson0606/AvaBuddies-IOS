@@ -1,5 +1,5 @@
 language: objective-c
 osx_image: xcode10.2
 xcode_workspace: AvaBuddies.xcworkspace
-xcode_scheme: AvaBuddiesTests
+xcode_scheme: AvaBuddies
 xcode_sdk: iphonesimulator12.2
