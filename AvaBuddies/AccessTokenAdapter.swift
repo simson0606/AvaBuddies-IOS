@@ -10,17 +10,15 @@ import Foundation
 import Alamofire
 
 class AccessTokenAdapter: RequestAdapter {
-    private let accessToken: String
     
-    init(accessToken: String) {
-        self.accessToken = accessToken
-    }
+    var accessToken: String?
+    
     
     func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
         var urlRequest = urlRequest
         
-        if let urlString = urlRequest.url?.absoluteString, urlString.hasPrefix(Constants.ServerConnection.BaseURL) {
-            urlRequest.setValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
+        if accessToken != nil, let urlString = urlRequest.url?.absoluteString, urlString.hasPrefix(Constants.ServerConnection.BaseURL) {
+            urlRequest.setValue("Bearer " + accessToken!, forHTTPHeaderField: "Authorization")
         }
         
         return urlRequest

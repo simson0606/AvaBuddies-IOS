@@ -12,7 +12,7 @@ class AuthenticationRepository {
     var registerDelegate: RegisterDelegate?
     var loginDelegate: LoginDelegate?
     var serverConnection: ServerConnectionProtocol?
-    private var token: LoginResponse?
+    var accessTokenAdapter: AccessTokenAdapter?
     
     
     func register(with email: String){
@@ -34,7 +34,8 @@ class AuthenticationRepository {
         serverConnection?.post(parameters: parameters, to: Constants.ServerConnection.LoginRoute, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
-            self.token = try! decoder.decode(LoginResponse.self, from: result)
+            let token = try! decoder.decode(LoginResponse.self, from: result)
+            self.accessTokenAdapter?.accessToken = token.token
             self.loginDelegate?.loggedIn()
         })
     }

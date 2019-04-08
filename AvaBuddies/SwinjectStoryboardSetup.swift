@@ -14,20 +14,26 @@ extension SwinjectStoryboard {
     
      @objc class func setup() {
         let msalClient = MSALClient()
-        let serverConnection = ServerConnection()
+        let accessTokenAdapter = AccessTokenAdapter()
+        let serverConnection = ServerConnection(accessTokenAdapter: accessTokenAdapter)
         let authenticationRepository = AuthenticationRepository()
+        let userRepository = UserRepository()
         
         authenticationRepository.serverConnection = serverConnection
+        authenticationRepository.accessTokenAdapter = accessTokenAdapter
+        userRepository.serverConnection = serverConnection
         
         defaultContainer.storyboardInitCompleted(LoginViewController.self) { r, c in
             c.msalClient = r.resolve(MSALClient.self)
             c.authenticationRepository = r.resolve(AuthenticationRepository.self)
         }
-        defaultContainer.storyboardInitCompleted(AccountViewController.self) { r, c in
+        defaultContainer.storyboardInitCompleted(ProfileViewController.self) { r, c in
             c.msalClient = r.resolve(MSALClient.self)
+            c.userRepository = r.resolve(UserRepository.self)
         }
         
         defaultContainer.register(MSALClient.self) { _ in msalClient }
         defaultContainer.register(AuthenticationRepository.self) {_ in authenticationRepository}
+        defaultContainer.register(UserRepository.self) {_ in userRepository}
     }
 }
