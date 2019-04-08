@@ -69,8 +69,8 @@ class UserTest: XCTestCase, UserDelegate, UserListDelegate {
         
         XCTAssertTrue(serverConnection.route == "/user/destroy/id-testDeleteUser")
         
-        XCTAssertFalse(userIsDeleted)
-        XCTAssertTrue(isFailed)
+        XCTAssertTrue(userIsDeleted)
+        XCTAssertFalse(isFailed)
     }
     
     func testReceiveUserList() {
