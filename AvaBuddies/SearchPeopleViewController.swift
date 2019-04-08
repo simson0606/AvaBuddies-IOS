@@ -11,7 +11,7 @@ import UIKit
 class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating, UserListDelegate {
 
     var people = [User]()
-    var fileredPeople = [User]()
+    var filteredPeople = [User]()
     var resultSearchController = UISearchController()
     
     var userRepository: UserRepository?
@@ -47,7 +47,7 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if  (resultSearchController.isActive) {
-            return fileredPeople.count
+            return filteredPeople.count
         } else {
             return people.count
         }
@@ -58,8 +58,8 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
         let cell = tableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath)
 
         if (resultSearchController.isActive) {
-            cell.textLabel?.text = fileredPeople[indexPath.row].name
-            cell.detailTextLabel?.text = fileredPeople[indexPath.row].email
+            cell.textLabel?.text = filteredPeople[indexPath.row].name
+            cell.detailTextLabel?.text = filteredPeople[indexPath.row].email
             return cell
         }
         else {
@@ -71,12 +71,12 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
  
 
     func updateSearchResults(for searchController: UISearchController) {
-        fileredPeople.removeAll(keepingCapacity: false)
+        filteredPeople.removeAll(keepingCapacity: false)
         
-        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
-        let array = (people as NSArray).filtered(using: searchPredicate)
-        fileredPeople = array as! [User]
-        
+        filteredPeople = people.filter { result in
+            return result.name.contains(searchController.searchBar.text!)
+        }
+
         self.tableView.reloadData()
     }
     
