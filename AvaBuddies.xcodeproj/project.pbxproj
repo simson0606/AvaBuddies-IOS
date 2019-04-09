@@ -36,6 +36,11 @@
 		F434E3B3225B69550005BD3B /* ConnectionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3B2225B69550005BD3B /* ConnectionRepository.swift */; };
 		F434E3B6225B6A450005BD3B /* ConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3B5225B6A450005BD3B /* ConnectionDelegate.swift */; };
 		F434E3B8225B6CA60005BD3B /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3B7225B6CA60005BD3B /* Connection.swift */; };
+		F434E3BA225C98E90005BD3B /* RoundedTableViewImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3B9225C98E90005BD3B /* RoundedTableViewImageView.swift */; };
+		F434E3BC225C9A220005BD3B /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3BB225C9A220005BD3B /* ContactsViewController.swift */; };
+		F434E3BE225CCA8D0005BD3B /* QRFriendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3BD225CCA8D0005BD3B /* QRFriendRequestViewController.swift */; };
+		F434E3C0225CDE470005BD3B /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3BF225CDE470005BD3B /* QRCodeGenerator.swift */; };
+		F434E3C2225CDFE00005BD3B /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3C1225CDFE00005BD3B /* FriendRequest.swift */; };
 		F43C05DF22438D730079513D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05DE22438D730079513D /* ProfileViewController.swift */; };
 		F43C05E1224393BA0079513D /* SwinjectStoryboardSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */; };
 		F48789E82241135C000760BB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789E72241135C000760BB /* Constants.swift */; };
@@ -96,6 +101,11 @@
 		F434E3B2225B69550005BD3B /* ConnectionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionRepository.swift; sourceTree = "<group>"; };
 		F434E3B5225B6A450005BD3B /* ConnectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionDelegate.swift; sourceTree = "<group>"; };
 		F434E3B7225B6CA60005BD3B /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		F434E3B9225C98E90005BD3B /* RoundedTableViewImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTableViewImageView.swift; sourceTree = "<group>"; };
+		F434E3BB225C9A220005BD3B /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		F434E3BD225CCA8D0005BD3B /* QRFriendRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRFriendRequestViewController.swift; sourceTree = "<group>"; };
+		F434E3BF225CDE470005BD3B /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
+		F434E3C1225CDFE00005BD3B /* FriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
 		F43C05DE22438D730079513D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectStoryboardSetup.swift; sourceTree = "<group>"; };
 		F48789E52241128B000760BB /* AvaBuddies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AvaBuddies.entitlements; sourceTree = "<group>"; };
@@ -191,6 +201,7 @@
 			children = (
 				F434E38C224E5AA10005BD3B /* RoundedImageView.swift */,
 				F434E397224E7CB10005BD3B /* ImagePickerManager.swift */,
+				F434E3B9225C98E90005BD3B /* RoundedTableViewImageView.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -211,6 +222,7 @@
 				F434E3B2225B69550005BD3B /* ConnectionRepository.swift */,
 				F434E3B5225B6A450005BD3B /* ConnectionDelegate.swift */,
 				F434E3B7225B6CA60005BD3B /* Connection.swift */,
+				F434E3C1225CDFE00005BD3B /* FriendRequest.swift */,
 			);
 			name = Connection;
 			sourceTree = "<group>";
@@ -277,6 +289,8 @@
 				F406EEDB2243998B00E5068A /* TabBarViewController.swift */,
 				F434E3AE2257BA670005BD3B /* SearchPeopleViewController.swift */,
 				F434E3B0225B4BEE0005BD3B /* PublicProfileViewController.swift */,
+				F434E3BB225C9A220005BD3B /* ContactsViewController.swift */,
+				F434E3BD225CCA8D0005BD3B /* QRFriendRequestViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -300,11 +314,12 @@
 				F434E374224A44990005BD3B /* ServerConnection */,
 				F48789E62241133E000760BB /* MSAL */,
 				F4B624DD223FAE110098238C /* AppDelegate.swift */,
-				F48789E72241135C000760BB /* Constants.swift */,
 				F40B5EA822413DCF008E88BE /* FileLoader.swift */,
 				F40B5EAA22413E73008E88BE /* SvgFileLoader.swift */,
 				F40B5EAC22413FB6008E88BE /* ResourceFile.swift */,
+				F48789E72241135C000760BB /* Constants.swift */,
 				F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */,
+				F434E3BF225CDE470005BD3B /* QRCodeGenerator.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -486,18 +501,22 @@
 			files = (
 				F434E378224A44B80005BD3B /* ServerConnectionProtocol.swift in Sources */,
 				F434E394224E69170005BD3B /* UserDelegate.swift in Sources */,
+				F434E3C0225CDE470005BD3B /* QRCodeGenerator.swift in Sources */,
 				F48789EE224114B9000760BB /* MSALClientDelegate.swift in Sources */,
 				F48789EC2241149C000760BB /* MSALClient.swift in Sources */,
 				F434E396224E69270005BD3B /* User.swift in Sources */,
 				F434E37C224A44C90005BD3B /* AuthenticationRepository.swift in Sources */,
+				F434E3BA225C98E90005BD3B /* RoundedTableViewImageView.swift in Sources */,
 				F40B5EAD22413FB6008E88BE /* ResourceFile.swift in Sources */,
 				F40B5EA922413DCF008E88BE /* FileLoader.swift in Sources */,
+				F434E3BE225CCA8D0005BD3B /* QRFriendRequestViewController.swift in Sources */,
 				F434E38A224E219D0005BD3B /* LoginResponse.swift in Sources */,
 				F406EEDC2243998B00E5068A /* TabBarViewController.swift in Sources */,
 				F43C05E1224393BA0079513D /* SwinjectStoryboardSetup.swift in Sources */,
 				F4D29C5E223FAECF00EE40CD /* LoginViewController.swift in Sources */,
 				F434E377224A44B80005BD3B /* ServerConnection.swift in Sources */,
 				F434E3B1225B4BEE0005BD3B /* PublicProfileViewController.swift in Sources */,
+				F434E3C2225CDFE00005BD3B /* FriendRequest.swift in Sources */,
 				F434E386224D16CD0005BD3B /* AccessTokenAdapter.swift in Sources */,
 				F434E37D224A44C90005BD3B /* AuthUser.swift in Sources */,
 				F4B624DE223FAE110098238C /* AppDelegate.swift in Sources */,
@@ -513,6 +532,7 @@
 				F434E3B6225B6A450005BD3B /* ConnectionDelegate.swift in Sources */,
 				F434E3B8225B6CA60005BD3B /* Connection.swift in Sources */,
 				F434E3B3225B69550005BD3B /* ConnectionRepository.swift in Sources */,
+				F434E3BC225C9A220005BD3B /* ContactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

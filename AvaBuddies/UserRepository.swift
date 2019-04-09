@@ -99,4 +99,8 @@ class UserRepository {
             self.userListDelegate?.failed()
         })
     }
+    
+    func getUserBy(id: String) -> User? {
+        return users?.first(where: {$0._id == id})
+    }
 }

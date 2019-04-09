@@ -33,7 +33,9 @@ class PublicProfileViewController: UITableViewController, ConnectionDelegate {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let connectionExists = connectionRepository!.connectionExists(with: profile!)
-        
+        let connectionIsReceived = connectionRepository!.connectionIsReceived(with: profile!)
+        let connectionIsSent = connectionRepository!.connectionIsSent(with: profile!)
+
         if indexPath.row == 0 {
             return 276
         }
@@ -41,9 +43,12 @@ class PublicProfileViewController: UITableViewController, ConnectionDelegate {
             return connectionExists ? 0 : 44
         }
         if indexPath.row == 2 {
-            return connectionExists ? 44 : 0
+            return connectionIsSent ? 44 : 0
         }
-        if (indexPath.row == 5) {
+        if indexPath.row == 3 {
+            return connectionIsReceived ? 44 : 0
+        }
+        if (indexPath.row == 6) {
             return 148
         }
         return 44
@@ -57,6 +62,11 @@ class PublicProfileViewController: UITableViewController, ConnectionDelegate {
     @IBAction func cancelConnectionRequestTapped(_ sender: Any) {
         connectionRepository?.cancelConnection(with: profile!)
     }
+    
+    @IBAction func DenyConnectionRequestTapped(_ sender: Any) {
+        connectionRepository?.denyConnection(with: profile!)
+    }
+    
     
     func connectionsReceived(connections: [Connection]) {
         tableView.reloadData()
@@ -72,4 +82,11 @@ class PublicProfileViewController: UITableViewController, ConnectionDelegate {
         self.present(alert, animated: true, completion: nil)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is QRFriendRequestViewController {
+            let publicProfileViewController = segue.destination as! QRFriendRequestViewController
+            publicProfileViewController.profile = profile
+        }
+    }
+    
 }

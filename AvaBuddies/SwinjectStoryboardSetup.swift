@@ -39,6 +39,14 @@ extension SwinjectStoryboard {
         defaultContainer.storyboardInitCompleted(PublicProfileViewController.self) { r, c in
             c.connectionRepository = r.resolve(ConnectionRepository.self)
         }
+        defaultContainer.storyboardInitCompleted(ContactsViewController.self) { r, c in
+            c.connectionRepository = r.resolve(ConnectionRepository.self)
+            c.userRepository = r.resolve(UserRepository.self)
+        }
+        defaultContainer.storyboardInitCompleted(QRFriendRequestViewController.self) { r, c in
+            c.connectionRepository = r.resolve(ConnectionRepository.self)
+            c.userRepository = r.resolve(UserRepository.self)
+        }
         
         defaultContainer.register(MSALClient.self) { _ in msalClient }
         defaultContainer.register(AuthenticationRepository.self) {_ in authenticationRepository}

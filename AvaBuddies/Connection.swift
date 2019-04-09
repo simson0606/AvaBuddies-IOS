@@ -12,6 +12,11 @@ struct ConnectionsResponse: Codable {
     var connections: [Connection]
 }
 
+struct RequestsResponse: Codable {
+    var own_requests: [Connection]
+    var requests: [Connection]
+}
+
 struct Connection: Codable {
     var confirmed: Bool
     var _id: String

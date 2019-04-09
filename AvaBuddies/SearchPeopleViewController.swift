@@ -19,7 +19,6 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        parent?.title = "Search people".localized()
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
@@ -43,6 +42,8 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        parent?.title = "Search people".localized()
+
         userRepository?.userListDelegate = self
         userRepository?.userDelegate = self
         userRepository?.getUserList()
@@ -68,11 +69,15 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
         if (resultSearchController.isActive) {
             cell.textLabel?.text = filteredPeople[indexPath.row].name
             cell.detailTextLabel?.text = filteredPeople[indexPath.row].email
+            cell.imageView?.image = filteredPeople[indexPath.row].getUIImage() ?? UIImage(named: "default_profile")
+            
             return cell
         }
         else {
             cell.textLabel?.text = people[indexPath.row].name
             cell.detailTextLabel?.text = people[indexPath.row].email
+            cell.imageView?.image = people[indexPath.row].getUIImage() ?? UIImage(named: "default_profile")
+           
             return cell
         }
     }
