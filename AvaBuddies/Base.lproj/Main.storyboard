@@ -94,6 +94,7 @@
                         <color key="selectedImageTintColor" red="1" green="0.32156862749999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
+                        <segue destination="ldB-UD-Yic" kind="relationship" relationship="viewControllers" id="igS-mi-RkL"/>
                         <segue destination="cF4-ZR-b4k" kind="relationship" relationship="viewControllers" id="Gdv-tG-NwX"/>
                         <segue destination="7EC-aj-0e1" kind="relationship" relationship="viewControllers" id="TLP-OJ-CRw"/>
                         <segue destination="iN0-pt-Rjd" kind="relationship" relationship="viewControllers" id="Sdk-EG-eAj"/>
@@ -391,7 +392,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiS-y5-fqA">
-                                                    <rect key="frame" x="101" y="5.5" width="118" height="33"/>
+                                                    <rect key="frame" x="128.5" y="5.5" width="118" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="Delete Account">
                                                         <color key="titleColor" red="0.99617189169999998" green="0.0" blue="0.02797058606" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -415,7 +416,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al0-dT-yvK">
-                                                    <rect key="frame" x="133" y="5.5" width="54" height="33"/>
+                                                    <rect key="frame" x="160.5" y="5.5" width="54" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="Logout">
                                                         <color key="titleColor" red="1" green="0.32156862745098042" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -464,6 +465,22 @@
             </objects>
             <point key="canvasLocation" x="2153" y="367"/>
         </scene>
+        <!--QR-->
+        <scene sceneID="nWu-eX-DgG">
+            <objects>
+                <viewController id="ldB-UD-Yic" customClass="QRScannerViewController" customModule="AvaBuddies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="POv-JK-OmM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="HzI-3R-zcS"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="QR" image="icon_Handshake_Grey_30d" id="nTy-6b-BEJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUi-Kf-l3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2153" y="-1090"/>
+        </scene>
         <!--Nearby-->
         <scene sceneID="K5c-yS-zvq">
             <objects>
@@ -504,24 +521,19 @@
                                                     <rect key="frame" x="55.5" y="6" width="264" height="264"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_profile" translatesAutoresizingMaskIntoConstraints="NO" id="Gxa-R3-obX" customClass="RoundedImageView" customModule="AvaBuddies" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="264" height="264"/>
+                                                            <rect key="frame" x="12" y="12" width="240" height="240"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="264" id="9Md-VW-q78"/>
-                                                                <constraint firstAttribute="height" constant="264" id="EhH-KX-WGw"/>
-                                                                <constraint firstAttribute="width" constant="264" id="Jt1-Lw-5GU"/>
-                                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="264" id="iV8-Jb-qoM"/>
-                                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="264" id="rmI-IJ-2bD"/>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="264" id="suv-mU-I6s"/>
+                                                                <constraint firstAttribute="width" secondItem="Gxa-R3-obX" secondAttribute="height" multiplier="1:1" id="469-PB-sEw"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="Gxa-R3-obX" firstAttribute="centerY" secondItem="u86-BE-fEt" secondAttribute="centerY" id="8fZ-Uw-Jz4"/>
                                                         <constraint firstAttribute="width" secondItem="u86-BE-fEt" secondAttribute="height" multiplier="1:1" id="A83-na-IuX"/>
                                                         <constraint firstAttribute="height" constant="264" id="bpS-nW-BZV"/>
                                                         <constraint firstAttribute="width" constant="264" id="efd-Tu-Fem"/>
-                                                        <constraint firstItem="Gxa-R3-obX" firstAttribute="centerY" secondItem="u86-BE-fEt" secondAttribute="centerY" id="kWM-Ak-lDq"/>
-                                                        <constraint firstItem="Gxa-R3-obX" firstAttribute="centerX" secondItem="u86-BE-fEt" secondAttribute="centerX" id="uh4-pd-Vi0"/>
+                                                        <constraint firstItem="Gxa-R3-obX" firstAttribute="centerX" secondItem="u86-BE-fEt" secondAttribute="centerX" id="iXO-LS-nhf"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -779,6 +791,7 @@
         <image name="default_profile" width="240" height="240"/>
         <image name="icon_Design_Flip_Gray_30d" width="30" height="30"/>
         <image name="icon_Global_Person_Grey_30d" width="30" height="30"/>
+        <image name="icon_Handshake_Grey_30d" width="30" height="30"/>
         <image name="icon_People_Grey_30d" width="30" height="30"/>
         <image name="icon_Person_Grey_30d" width="30" height="30"/>
         <image name="icon_Person_Greys_30d" width="30" height="30"/>

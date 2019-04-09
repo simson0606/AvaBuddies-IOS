@@ -8,9 +8,9 @@
 
 import UIKit
 
-class QRFriendRequestViewController: UIViewController, UserDelegate {
+class QRFriendRequestViewController: UIViewController, UserDelegate, ConnectionDelegate {
     
-    var profile: User?
+    var friend: User?
     var userRepository: UserRepository?
     var connectionRepository: ConnectionRepository?
     var qrCodeGenerator = QRCodeGenerator()
@@ -26,10 +26,11 @@ class QRFriendRequestViewController: UIViewController, UserDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        requestFromLabel.text = String(format: "Friend request from %@".localized(), profile!.name)
-        explanationLabel.text = String(format: "Let %@ scan this QR code".localized(), profile!.name)
+        requestFromLabel.text = String(format: "Friend request from %@".localized(), friend!.name)
+        explanationLabel.text = String(format: "Let %@ scan this QR code".localized(), friend!.name)
 
         userRepository?.userDelegate = self
+        connectionRepository?.connectionDelegate = self
         userRepository?.getUser()
     }
     
@@ -50,11 +51,22 @@ class QRFriendRequestViewController: UIViewController, UserDelegate {
         } else {
             creatingLabel.isHidden = false
         }
+        connectionRepository?.getConnectionList(refresh: true)
     }
     
     func userReceived(user: User) {
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(Constants.QrValidSeconds-1), target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         timer?.fire()
+    }
+    
+    func connectionsReceived(connections: [Connection]) {
+        if (connectionRepository?.connectionValidated(with: userRepository!.user!, and: friend!))! {
+            connectionRepository?.acceptConnection(with: friend!)
+        }
+    }
+    
+    func requestUpdated() {
+        navigationController?.popViewController(animated: true)
     }
     
     func userDeleted() {

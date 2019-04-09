@@ -106,7 +106,7 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is PublicProfileViewController {
             let publicProfileViewController = segue.destination as! PublicProfileViewController
-            publicProfileViewController.profile = selectedPerson
+            publicProfileViewController.friend = selectedPerson
         }
     }
     

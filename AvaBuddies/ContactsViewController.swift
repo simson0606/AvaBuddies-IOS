@@ -24,7 +24,7 @@ class ContactsViewController: UITableViewController, UserListDelegate, Connectio
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         parent?.title = "Contacts".localized()
 
         connectionRepository?.connectionDelegate = self
@@ -110,7 +110,7 @@ class ContactsViewController: UITableViewController, UserListDelegate, Connectio
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is PublicProfileViewController {
             let publicProfileViewController = segue.destination as! PublicProfileViewController
-            publicProfileViewController.profile = selectedPerson
+            publicProfileViewController.friend = selectedPerson
         }
     }
     

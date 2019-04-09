@@ -23,8 +23,8 @@ class RoundedImageView: UIImageView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        assert(bounds.height == bounds.width, "The aspect ratio isn't 1/1. You can never round this image view!")
+        bounds = CGRect(x: bounds.minX, y: bounds.minY, width: bounds.height, height: bounds.height)
+        //assert(bounds.height == bounds.width, "The aspect ratio isn't 1/1. You can never round this image view!")
         layer.cornerRadius = bounds.height / 2
     }
 }
