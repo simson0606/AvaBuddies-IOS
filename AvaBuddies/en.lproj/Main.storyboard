@@ -75,6 +75,7 @@
                     <connections>
                         <outlet property="logoImage" destination="7gv-xJ-Vr3" id="VzY-Sp-K2j"/>
                         <segue destination="YX8-Bd-HYn" kind="show" identifier="LoginCompletedSegue" id="Ecq-1B-Xo7"/>
+                        <segue destination="OYv-Hp-xG8" kind="show" identifier="NeedRegisterSegue" id="jfd-zm-BAs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QXf-Yk-cg4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -438,6 +439,101 @@
             </objects>
             <point key="canvasLocation" x="2154" y="-350"/>
         </scene>
+        <!--Register View Controller-->
+        <scene sceneID="h9I-e0-Chb">
+            <objects>
+                <viewController id="OYv-Hp-xG8" customClass="RegisterViewController" customModule="AvaBuddies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AGt-yY-WZn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to AvaBuddies!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ve9-tW-AWx">
+                                <rect key="frame" x="16" y="80" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.32156862749999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Before we can create your profile, you have to accept our terms and conditions." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAG-3C-gb4">
+                                <rect key="frame" x="16" y="126" width="343" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bhf-uJ-aJ4">
+                                <rect key="frame" x="312" y="204.5" width="49" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Bjm-yD-tbI"/>
+                                    <constraint firstAttribute="width" constant="47" id="e02-RR-uOz"/>
+                                </constraints>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I accept the terms and conditions." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2V7-hb-2Gg">
+                                <rect key="frame" x="16" y="204.5" width="280" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="cD0-hq-bID"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryI-DR-Y7a">
+                                <rect key="frame" x="75" y="243.5" width="225" height="30"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <action selector="continueButtonTapped:" destination="OYv-Hp-xG8" eventType="touchUpInside" id="bqs-qT-TUE"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tO1-s3-hGS">
+                                <rect key="frame" x="312" y="169" width="49" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="HN5-Dy-zwO"/>
+                                    <constraint firstAttribute="height" constant="31" id="OLL-Ae-zsa"/>
+                                </constraints>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I accept that AvaBuddies uses my location in the background." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCi-kU-9Bd">
+                                <rect key="frame" x="16" y="163" width="288" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="nfK-8D-7Fi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ve9-tW-AWx" firstAttribute="top" secondItem="Mlz-BU-pTA" secondAttribute="top" constant="16" id="2Ke-vL-K2T"/>
+                            <constraint firstItem="tO1-s3-hGS" firstAttribute="top" secondItem="UAG-3C-gb4" secondAttribute="bottom" constant="16.5" id="2TE-4B-DMd"/>
+                            <constraint firstItem="Bhf-uJ-aJ4" firstAttribute="top" secondItem="UAG-3C-gb4" secondAttribute="bottom" constant="52" id="7D1-q5-ytx"/>
+                            <constraint firstItem="UAG-3C-gb4" firstAttribute="leading" secondItem="Mlz-BU-pTA" secondAttribute="leading" constant="16" id="7KO-YT-4wP"/>
+                            <constraint firstItem="Mlz-BU-pTA" firstAttribute="trailing" secondItem="ve9-tW-AWx" secondAttribute="trailing" constant="16" id="AaZ-b0-GqO"/>
+                            <constraint firstItem="2V7-hb-2Gg" firstAttribute="leading" secondItem="Mlz-BU-pTA" secondAttribute="leading" constant="16" id="HAD-1x-CKM"/>
+                            <constraint firstItem="ve9-tW-AWx" firstAttribute="leading" secondItem="AGt-yY-WZn" secondAttribute="leading" constant="16" id="HOZ-5X-EqE"/>
+                            <constraint firstItem="Mlz-BU-pTA" firstAttribute="trailing" secondItem="Bhf-uJ-aJ4" secondAttribute="trailing" constant="16" id="StK-l5-UK2"/>
+                            <constraint firstItem="ryI-DR-Y7a" firstAttribute="leading" secondItem="Mlz-BU-pTA" secondAttribute="leading" constant="75" id="WQr-Bh-VtL"/>
+                            <constraint firstItem="xCi-kU-9Bd" firstAttribute="leading" secondItem="Mlz-BU-pTA" secondAttribute="leading" constant="16" id="YDW-g1-ATb"/>
+                            <constraint firstItem="ryI-DR-Y7a" firstAttribute="top" secondItem="2V7-hb-2Gg" secondAttribute="bottom" constant="8" id="Yvp-dV-ZUD"/>
+                            <constraint firstItem="UAG-3C-gb4" firstAttribute="top" secondItem="ve9-tW-AWx" secondAttribute="bottom" constant="10" id="cta-nt-Kqa"/>
+                            <constraint firstItem="Bhf-uJ-aJ4" firstAttribute="leading" secondItem="2V7-hb-2Gg" secondAttribute="trailing" constant="16" id="frI-Gn-H12"/>
+                            <constraint firstItem="Mlz-BU-pTA" firstAttribute="trailing" secondItem="UAG-3C-gb4" secondAttribute="trailing" constant="16" id="hiV-Tk-Bxb"/>
+                            <constraint firstItem="xCi-kU-9Bd" firstAttribute="top" secondItem="UAG-3C-gb4" secondAttribute="bottom" constant="10.5" id="iPU-fd-B68"/>
+                            <constraint firstItem="tO1-s3-hGS" firstAttribute="leading" secondItem="xCi-kU-9Bd" secondAttribute="trailing" constant="8" id="piP-G7-Gkv"/>
+                            <constraint firstItem="2V7-hb-2Gg" firstAttribute="top" secondItem="UAG-3C-gb4" secondAttribute="bottom" constant="52" id="tlH-MT-y94"/>
+                            <constraint firstItem="Mlz-BU-pTA" firstAttribute="trailing" secondItem="ryI-DR-Y7a" secondAttribute="trailing" constant="75" id="uBu-so-de9"/>
+                            <constraint firstItem="xCi-kU-9Bd" firstAttribute="leading" secondItem="Mlz-BU-pTA" secondAttribute="leading" constant="16" id="vPO-rL-CZO"/>
+                            <constraint firstItem="Mlz-BU-pTA" firstAttribute="trailing" secondItem="tO1-s3-hGS" secondAttribute="trailing" constant="16" id="wis-mJ-gTu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mlz-BU-pTA"/>
+                    </view>
+                    <connections>
+                        <outlet property="agreementSwitch" destination="Bhf-uJ-aJ4" id="IR1-Sp-ZFn"/>
+                        <outlet property="locationSwitch" destination="tO1-s3-hGS" id="zff-Ce-6Fy"/>
+                        <segue destination="YX8-Bd-HYn" kind="show" identifier="RegisterCompletedSegue" id="J4F-md-liJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GKI-2y-8ga" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="486" y="799"/>
+        </scene>
     </scenes>
     <resources>
         <image name="default_profile" width="240" height="240"/>
@@ -447,5 +543,8 @@
         <image name="icon_Person_Grey_30d" width="30" height="30"/>
         <image name="icon_Person_Greys_30d" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="J4F-md-liJ"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.32156862749999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

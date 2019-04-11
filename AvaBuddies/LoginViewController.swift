@@ -46,7 +46,7 @@ class LoginViewController: UIViewController, MSALClientDelegate, LoginDelegate {
     
     func loggedIn() {
         DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "LoginCompletedSegue", sender: self)
+            self.performSegue(withIdentifier: "NeedRegisterSegue", sender: self)
         }
     }
     
