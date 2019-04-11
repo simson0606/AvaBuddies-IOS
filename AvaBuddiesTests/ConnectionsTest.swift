@@ -93,6 +93,42 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
         XCTAssertFalse(isFailed)
     }
 
+    func testValidateConnection() {
+        serverConnection.setMockResponse(response: "{}", success: true)
+        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true)
+        connectionRepository.validateConnection(with: user._id)
+        
+        XCTAssertTrue(serverConnection.route == "/friend/validaterequest")
+        XCTAssertTrue(serverConnection.parameters!["friend"] as! String == user._id)
+        
+        XCTAssertTrue(requestIsUpdated)
+        XCTAssertFalse(isFailed)
+    }
+    
+    func testAcceptConnection() {
+        serverConnection.setMockResponse(response: "{}", success: true)
+        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true)
+        connectionRepository.acceptConnection(with: user)
+        
+        XCTAssertTrue(serverConnection.route == "/friend/acceptrequest")
+        XCTAssertTrue(serverConnection.parameters!["friend"] as! String == user._id)
+        
+        XCTAssertTrue(requestIsUpdated)
+        XCTAssertFalse(isFailed)
+    }
+    
+    func testDenyConnection() {
+        serverConnection.setMockResponse(response: "{}", success: true)
+        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true)
+        connectionRepository.denyConnection(with: user)
+        
+        XCTAssertTrue(serverConnection.route == "/friend/denyrequest")
+        XCTAssertTrue(serverConnection.parameters!["friend"] as! String == user._id)
+        
+        XCTAssertTrue(requestIsUpdated)
+        XCTAssertFalse(isFailed)
+    }
+    
     func connectionsReceived(connections: [Connection]) {
         connectionsIsReceived = true
     }
