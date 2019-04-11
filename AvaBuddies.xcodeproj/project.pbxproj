@@ -38,7 +38,7 @@
 		F434E3B6225B6A450005BD3B /* ConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3B5225B6A450005BD3B /* ConnectionDelegate.swift */; };
 		F434E3B8225B6CA60005BD3B /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3B7225B6CA60005BD3B /* Connection.swift */; };
 		F434E3BA225C98E90005BD3B /* RoundedTableViewImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3B9225C98E90005BD3B /* RoundedTableViewImageView.swift */; };
-		F434E3BC225C9A220005BD3B /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3BB225C9A220005BD3B /* ContactsViewController.swift */; };
+		F434E3BC225C9A220005BD3B /* NearbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3BB225C9A220005BD3B /* NearbyViewController.swift */; };
 		F434E3BE225CCA8D0005BD3B /* QRFriendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3BD225CCA8D0005BD3B /* QRFriendRequestViewController.swift */; };
 		F434E3C0225CDE470005BD3B /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3BF225CDE470005BD3B /* QRCodeGenerator.swift */; };
 		F434E3C2225CDFE00005BD3B /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3C1225CDFE00005BD3B /* FriendRequest.swift */; };
@@ -102,7 +102,7 @@
 		F434E3B5225B6A450005BD3B /* ConnectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionDelegate.swift; sourceTree = "<group>"; };
 		F434E3B7225B6CA60005BD3B /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		F434E3B9225C98E90005BD3B /* RoundedTableViewImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTableViewImageView.swift; sourceTree = "<group>"; };
-		F434E3BB225C9A220005BD3B /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		F434E3BB225C9A220005BD3B /* NearbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyViewController.swift; sourceTree = "<group>"; };
 		F434E3BD225CCA8D0005BD3B /* QRFriendRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRFriendRequestViewController.swift; sourceTree = "<group>"; };
 		F434E3BF225CDE470005BD3B /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
 		F434E3C1225CDFE00005BD3B /* FriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
@@ -299,7 +299,7 @@
 				F406EEDB2243998B00E5068A /* TabBarViewController.swift */,
 				F434E3AE2257BA670005BD3B /* SearchPeopleViewController.swift */,
 				F434E3B0225B4BEE0005BD3B /* PublicProfileViewController.swift */,
-				F434E3BB225C9A220005BD3B /* ContactsViewController.swift */,
+				F434E3BB225C9A220005BD3B /* NearbyViewController.swift */,
 				F434E3BD225CCA8D0005BD3B /* QRFriendRequestViewController.swift */,
 				F434E3C3225CF8190005BD3B /* QRScannerViewController.swift */,
 			);
@@ -545,7 +545,7 @@
 				F434E3B6225B6A450005BD3B /* ConnectionDelegate.swift in Sources */,
 				F434E3B8225B6CA60005BD3B /* Connection.swift in Sources */,
 				F434E3B3225B69550005BD3B /* ConnectionRepository.swift in Sources */,
-				F434E3BC225C9A220005BD3B /* ContactsViewController.swift in Sources */,
+				F434E3BC225C9A220005BD3B /* NearbyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

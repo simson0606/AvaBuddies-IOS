@@ -30,12 +30,18 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
     }
 
     func testConnectionsReceived() {
-        serverConnection.setMockResponse(response: "{\"connections\":[{\"confirmed\":false,\"_id\":\"5cab3876675cf6363382115a\",\"friend1\":\"id-testUser\",\"friend2\":\"5ca796e9d120192a4a4de202\",\"__v\":0},{\"confirmed\":false,\"_id\":\"5cab3888675cf6363382115b\",\"friend1\":\"5ca72bdad120192a4a4de201\",\"friend2\":\"5ca72bdad120192a4a4de201\",\"__v\":0}]}", success: true)
+        
+        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true)
+        let friend = User(_id: "id-testUser2", name: "testUser2", email: "testUser2", aboutme: "testUser2", image: "", sharelocation: true)
+        serverConnection.setMockResponse(response: "{\"connections\":[{\"confirmed\":false,\"validated\":false,\"_id\":\"5cab3876675cf6363382115a\",\"friend1\":\"\(user._id)\",\"friend2\":\"\(friend._id)\"},{\"confirmed\":false,\"validated\":false,\"_id\":\"5cab3888675cf6363382115b\",\"friend1\":\"5ca72bdad120192a4a4de201\",\"friend2\":\"5ca72bdad120192a4a4de201\"}]}", success: true)
         
         connectionRepository.getConnectionList()
         
         XCTAssertTrue(serverConnection.route == "/friend/allconnections")
-        XCTAssertTrue(connectionRepository.connectionExists(with: User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true)))
+        
+        let exists = connectionRepository.connectionExists(with: user , and: friend)
+        
+        XCTAssertTrue(exists)
         
         XCTAssertTrue(connectionsIsReceived)
         XCTAssertFalse(isFailed)

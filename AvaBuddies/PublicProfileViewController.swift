@@ -40,24 +40,27 @@ class PublicProfileViewController: UITableViewController, UserDelegate, Connecti
             let connectionIsSent = connectionRepository!.connectionIsSent(with: userRepository!.user!, and: friend!)
             let connectionIsConfirmed = connectionRepository!.connectionConfirmed(with: userRepository!.user!, and: friend!)
             
-            if indexPath.row == 0 {
-                return 276
-            }
+            
             if indexPath.row == 1 {
-                return connectionExists ? 0 : 44
+                return !connectionExists && !connectionIsConfirmed ? 44 : 0
             }
             if indexPath.row == 2 {
-                return connectionIsSent ? 44 : 0
+                return connectionIsSent && !connectionIsConfirmed ? 44 : 0
             }
             if indexPath.row == 3 {
                 return connectionIsReceived && !connectionIsConfirmed ? 44 : 0
             }
-            if (indexPath.row == 6) {
-                return 148
-            }
+        }
+        if indexPath.row == 0 {
+            return 276
+        }
+        if (indexPath.row == 6) {
+            return 148
+        }
+        if indexPath.row == 3 || indexPath.row == 2 || indexPath.row == 1 {
+            return 0
         }
         return 44
-        
     }
     
     @IBAction func sendConnectionRequestTapped(_ sender: Any) {

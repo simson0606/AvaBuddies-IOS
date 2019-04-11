@@ -43,12 +43,13 @@ class UserRepository {
         let parameters = [
             "image": user?.image ?? "",
         ]
-
+        print("Image length: \(user?.image?.count ?? 0)")
         serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileImageRoute, with: .post, completion: {
             (result) -> () in
             print("Image Change: \(result)")
         }, fail: {
             (result) -> () in
+            print("Image Change Failed: \(result)")
             self.userDelegate?.failed()
         })
         

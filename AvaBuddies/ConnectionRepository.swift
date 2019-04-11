@@ -46,7 +46,8 @@ class ConnectionRepository {
     
     func connectionConfirmed(with user: User, and friend: User) -> Bool {
         return connections?.filter{element in
-            return element.friend1 == friend._id && element.friend2 == user._id && element.validated && element.confirmed
+            return (element.friend1 == friend._id && element.friend2 == user._id && element.validated && element.confirmed) ||
+                    (element.friend1 == user._id && element.friend2 == friend._id && element.validated && element.confirmed)
             }.count ?? 0 > 0
     }
     

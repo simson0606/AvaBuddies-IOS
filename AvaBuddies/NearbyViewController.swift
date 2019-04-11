@@ -9,7 +9,7 @@
 import UIKit
 import Localize_Swift
 
-class ContactsViewController: UITableViewController, UserListDelegate, ConnectionDelegate {
+class NearbyViewController: UITableViewController, UserListDelegate, ConnectionDelegate {
  
     var selectedPerson: User?
     var userRepository: UserRepository?
@@ -25,7 +25,7 @@ class ContactsViewController: UITableViewController, UserListDelegate, Connectio
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        parent?.title = "Contacts".localized()
+        parent?.title = "Friend requests".localized()
 
         connectionRepository?.connectionDelegate = self
         userRepository?.userListDelegate = self

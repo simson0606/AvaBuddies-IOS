@@ -40,7 +40,7 @@ extension SwinjectStoryboard {
             c.connectionRepository = r.resolve(ConnectionRepository.self)
             c.userRepository = r.resolve(UserRepository.self)
         }
-        defaultContainer.storyboardInitCompleted(ContactsViewController.self) { r, c in
+        defaultContainer.storyboardInitCompleted(NearbyViewController.self) { r, c in
             c.connectionRepository = r.resolve(ConnectionRepository.self)
             c.userRepository = r.resolve(UserRepository.self)
         }
