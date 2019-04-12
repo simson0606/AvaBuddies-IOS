@@ -9,11 +9,11 @@
 import Foundation
 
 protocol RegisterDelegate {
-    func registered()
+    func register()
     func registerFailed()
 }
 
 protocol LoginDelegate {
     func loggedIn()
-    func loginFailed()
+    func loginFailed(message: FailedLoginResponse)
 }

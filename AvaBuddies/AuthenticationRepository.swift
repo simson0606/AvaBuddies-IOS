@@ -15,17 +15,20 @@ class AuthenticationRepository {
     var accessTokenAdapter: AccessTokenAdapter?
     
     
-    func register(with email: String){
+    func register(with email: String, with name: String, location sharelocation: Bool){
         let parameters = [
             "email": email,
-            "password": Constants.ServerConnection.Secret
-        ]
+            "password": Constants.ServerConnection.Secret,
+            "name": name,
+            "sharelocation": sharelocation
+            ] as [String : Any]
         
         serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.RegisterRoute, with: .post, completion: {
             (result) -> () in
-            self.registerDelegate?.registered()
+                self.registerDelegate?.register()
         }, fail: {
             (result) -> () in
+            print("Tester: \(String(data: result, encoding: .utf8) ?? "no result")")
             self.registerDelegate?.registerFailed()
         })
     }
@@ -44,12 +47,19 @@ class AuthenticationRepository {
                 self.accessTokenAdapter?.accessToken = token.token
                 self.loginDelegate?.loggedIn()
             } catch {
-                self.loginDelegate?.loginFailed()
+                self.loginDelegate?.loginFailed(message: FailedLoginResponse(message: ""))
             }
             
         }, fail: {
             (result) -> () in
-            self.loginDelegate?.loginFailed()
+            let decoder = JSONDecoder()
+            do {
+                let message = try decoder.decode(FailedLoginResponse.self, from: result)
+                self.loginDelegate?.loginFailed(message: message)
+
+            } catch {
+                self.loginDelegate?.loginFailed(message: FailedLoginResponse(message: ""))
+            }
         })
     }
 }

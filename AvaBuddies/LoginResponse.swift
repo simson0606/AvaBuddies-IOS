@@ -11,3 +11,7 @@ import Foundation
 struct LoginResponse : Codable {
     var token: String
 }
+
+struct FailedLoginResponse : Codable {
+    var message: String
+}

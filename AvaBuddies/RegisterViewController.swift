@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController, MSALClientDelegate, RegisterDelegate, UserDelegate {
+class RegisterViewController: UIViewController, RegisterDelegate, UserDelegate {
    
     var msalClient: MSALClient?
     var userRepository: UserRepository?
@@ -21,21 +21,20 @@ class RegisterViewController: UIViewController, MSALClientDelegate, RegisterDele
     override func viewDidLoad() {
         userRepository?.userDelegate = self
         userRepository?.getUser()
-        
-        msalClient?.authenticationDelegate = self
         authenticationRepository?.registerDelegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         if (!goingForwards) {
-            userRepository?.deleteProfile()
             msalClient?.signOut()
         }
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {
         if (agreementSwitch.isOn) {
-            registered()
+            if let mail = msalClient?.userInfo?.userPrincipalName, let givenName = msalClient?.userInfo?.givenName , let surName =  msalClient?.userInfo?.surname {
+                authenticationRepository?.register(with: mail, with: givenName + " " + surName, location: locationSwitch.isOn)
+            }
         } else {
             let alert = UIAlertController(title: "Cannot register".localized(), message: "You need to accept the terms and conditions, before you can continue".localized(), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: nil))
@@ -43,16 +42,8 @@ class RegisterViewController: UIViewController, MSALClientDelegate, RegisterDele
         }
     }
     
-    func receivedUserInfo(userinfo: GraphUser) {
-        authenticationRepository?.register(with: userinfo.userPrincipalName!)
-    }
-    
-    func registered() {
+    func register() {
         goingForwards = true
-        if (locationSwitch.isOn) {
-            userRepository?.user?.sharelocation = true
-        }
-        userRepository?.user?.isRegistered = true
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "RegisterCompletedSegue", sender: self)
         }
@@ -71,7 +62,6 @@ class RegisterViewController: UIViewController, MSALClientDelegate, RegisterDele
     }
     
     func userDeleted() {
-        signedOut()
     }
     
     func failed() {
@@ -80,9 +70,6 @@ class RegisterViewController: UIViewController, MSALClientDelegate, RegisterDele
         self.present(alert, animated: true, completion: nil)
     }
     
-    func signedOut() {
-        DispatchQueue.main.async { self.navigationController?.popToRootViewController(animated: true)
-        }
-    }
+
 
 }

@@ -25,7 +25,6 @@ struct User: Codable {
     var aboutme: String?
     var image: String?
     var sharelocation: Bool
-    var isRegistered: Bool
     
     
     func getUIImage() -> UIImage {

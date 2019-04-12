@@ -35,6 +35,11 @@ extension SwinjectStoryboard {
             c.userRepository = r.resolve(UserRepository.self)
         }
         
+        defaultContainer.storyboardInitCompleted(RegisterViewController.self) { r, c in
+            c.msalClient = r.resolve(MSALClient.self)
+            c.authenticationRepository = r.resolve(AuthenticationRepository.self)
+        }
+        
         defaultContainer.register(MSALClient.self) { _ in msalClient }
         defaultContainer.register(AuthenticationRepository.self) {_ in authenticationRepository}
         defaultContainer.register(UserRepository.self) {_ in userRepository}

@@ -24,7 +24,7 @@ class ServerConnection : ServerConnectionProtocol {
             case .success:
                 completion(response.data!)
             case .failure(let error):
-                fail?(error.localizedDescription.data(using: .utf8) ?? Data())
+                fail?(response.data ?? Data())
             }
         }
     }
