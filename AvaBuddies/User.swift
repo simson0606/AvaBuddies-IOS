@@ -27,12 +27,12 @@ struct User: Codable {
     var sharelocation: Bool
     
     
-    func getUIImage() -> UIImage {
+    func getUIImage() -> UIImage? {
         if image != nil {
             let imageData = Data(base64Encoded: self.image!)!
-            return UIImage(data: imageData) ?? UIImage()
+            return UIImage(data: imageData)
         }
-        return UIImage()
+        return nil
     }
     
     mutating func setImage(image: UIImage) {

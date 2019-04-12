@@ -8,19 +8,22 @@
 
 import UIKit
 
-class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating, UserListDelegate {
+class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating, UserListDelegate, UserDelegate {
+    
 
     var people = [User]()
     var filteredPeople = [User]()
     var resultSearchController = UISearchController()
-    
+    var selectedPerson: User?
     var userRepository: UserRepository?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         parent?.title = "Search people".localized()
         
-        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+
         self.clearsSelectionOnViewWillAppear = false
         
         resultSearchController = ({
@@ -35,8 +38,13 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
         tableView.reloadData()
     }
     
+    @objc private func refreshData(_ sender: Any) {
+        userRepository?.getUserList(refresh: true)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         userRepository?.userListDelegate = self
+        userRepository?.userDelegate = self
         userRepository?.getUserList()
     }
 
@@ -80,9 +88,41 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
         self.tableView.reloadData()
     }
     
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if  (resultSearchController.isActive) {
+            selectedPerson = filteredPeople[indexPath.row]
+        } else {
+            selectedPerson = people[indexPath.row]
+        }
+        performSegue(withIdentifier: "viewProfilesegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is PublicProfileViewController {
+            let publicProfileViewController = segue.destination as! PublicProfileViewController
+            publicProfileViewController.profile = selectedPerson
+        }
+    }
+    
     func userListReceived(users: [User]) {
-        people = users
-        self.tableView.reloadData()
+        userRepository?.getUser()
+    }
+    
+    func userReceived(user: User) {
+        self.refreshControl!.endRefreshing()
+
+        if userRepository?.users != nil && userRepository?.user != nil {
+            people = (userRepository?.users!.filter {user in
+                return user._id != userRepository?.user?._id
+                })!
+            self.tableView.reloadData()
+        }
+    }
+    
+    
+    func userDeleted() {
+        //nothing
     }
     
     func failed() {
