@@ -14,6 +14,7 @@
 		F40B5EA922413DCF008E88BE /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B5EA822413DCF008E88BE /* FileLoader.swift */; };
 		F40B5EAB22413E73008E88BE /* SvgFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B5EAA22413E73008E88BE /* SvgFileLoader.swift */; };
 		F40B5EAD22413FB6008E88BE /* ResourceFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B5EAC22413FB6008E88BE /* ResourceFile.swift */; };
+		F40F1F64225D189700487CA8 /* QRCodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F1F63225D189700487CA8 /* QRCodeValidator.swift */; };
 		F434E377224A44B80005BD3B /* ServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E375224A44B80005BD3B /* ServerConnection.swift */; };
 		F434E378224A44B80005BD3B /* ServerConnectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E376224A44B80005BD3B /* ServerConnectionProtocol.swift */; };
 		F434E37C224A44C90005BD3B /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E37A224A44C90005BD3B /* AuthenticationRepository.swift */; };
@@ -36,6 +37,12 @@
 		F434E3B3225B69550005BD3B /* ConnectionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3B2225B69550005BD3B /* ConnectionRepository.swift */; };
 		F434E3B6225B6A450005BD3B /* ConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3B5225B6A450005BD3B /* ConnectionDelegate.swift */; };
 		F434E3B8225B6CA60005BD3B /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3B7225B6CA60005BD3B /* Connection.swift */; };
+		F434E3BA225C98E90005BD3B /* RoundedTableViewImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3B9225C98E90005BD3B /* RoundedTableViewImageView.swift */; };
+		F434E3BC225C9A220005BD3B /* NearbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3BB225C9A220005BD3B /* NearbyViewController.swift */; };
+		F434E3BE225CCA8D0005BD3B /* QRFriendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3BD225CCA8D0005BD3B /* QRFriendRequestViewController.swift */; };
+		F434E3C0225CDE470005BD3B /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3BF225CDE470005BD3B /* QRCodeGenerator.swift */; };
+		F434E3C2225CDFE00005BD3B /* FriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3C1225CDFE00005BD3B /* FriendRequest.swift */; };
+		F434E3C4225CF8190005BD3B /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3C3225CF8190005BD3B /* QRScannerViewController.swift */; };
 		F43C05DF22438D730079513D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05DE22438D730079513D /* ProfileViewController.swift */; };
 		F43C05E1224393BA0079513D /* SwinjectStoryboardSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */; };
 		F48789E82241135C000760BB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789E72241135C000760BB /* Constants.swift */; };
@@ -69,6 +76,9 @@
 		F40B5EA822413DCF008E88BE /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
 		F40B5EAA22413E73008E88BE /* SvgFileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvgFileLoader.swift; sourceTree = "<group>"; };
 		F40B5EAC22413FB6008E88BE /* ResourceFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceFile.swift; sourceTree = "<group>"; };
+		F40F1F60225D037A00487CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F40F1F61225D037A00487CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F40F1F63225D189700487CA8 /* QRCodeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeValidator.swift; sourceTree = "<group>"; };
 		F434E375224A44B80005BD3B /* ServerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConnection.swift; sourceTree = "<group>"; };
 		F434E376224A44B80005BD3B /* ServerConnectionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConnectionProtocol.swift; sourceTree = "<group>"; };
 		F434E37A224A44C90005BD3B /* AuthenticationRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
@@ -85,17 +95,18 @@
 		F434E395224E69270005BD3B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F434E397224E7CB10005BD3B /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
 		F434E39E225156A00005BD3B /* UserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
-		F434E3A42253936E0005BD3B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F434E3A52253936E0005BD3B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F434E3A6225393BD0005BD3B /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = nl; path = nl.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F434E3A7225393BE0005BD3B /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = nl; path = nl.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F434E3A9225393C90005BD3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F434E3AB225393CC0005BD3B /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F434E3AE2257BA670005BD3B /* SearchPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPeopleViewController.swift; sourceTree = "<group>"; };
 		F434E3B0225B4BEE0005BD3B /* PublicProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicProfileViewController.swift; sourceTree = "<group>"; };
 		F434E3B2225B69550005BD3B /* ConnectionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionRepository.swift; sourceTree = "<group>"; };
 		F434E3B5225B6A450005BD3B /* ConnectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionDelegate.swift; sourceTree = "<group>"; };
 		F434E3B7225B6CA60005BD3B /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		F434E3B9225C98E90005BD3B /* RoundedTableViewImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTableViewImageView.swift; sourceTree = "<group>"; };
+		F434E3BB225C9A220005BD3B /* NearbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyViewController.swift; sourceTree = "<group>"; };
+		F434E3BD225CCA8D0005BD3B /* QRFriendRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRFriendRequestViewController.swift; sourceTree = "<group>"; };
+		F434E3BF225CDE470005BD3B /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
+		F434E3C1225CDFE00005BD3B /* FriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequest.swift; sourceTree = "<group>"; };
+		F434E3C3225CF8190005BD3B /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		F43C05DE22438D730079513D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectStoryboardSetup.swift; sourceTree = "<group>"; };
 		F48789E52241128B000760BB /* AvaBuddies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AvaBuddies.entitlements; sourceTree = "<group>"; };
@@ -157,6 +168,16 @@
 			name = "Svg-images";
 			sourceTree = "<group>";
 		};
+		F40F1F62225D188500487CA8 /* QR */ = {
+			isa = PBXGroup;
+			children = (
+				F434E3C1225CDFE00005BD3B /* FriendRequest.swift */,
+				F434E3BF225CDE470005BD3B /* QRCodeGenerator.swift */,
+				F40F1F63225D189700487CA8 /* QRCodeValidator.swift */,
+			);
+			name = QR;
+			sourceTree = "<group>";
+		};
 		F434E374224A44990005BD3B /* ServerConnection */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +212,7 @@
 			children = (
 				F434E38C224E5AA10005BD3B /* RoundedImageView.swift */,
 				F434E397224E7CB10005BD3B /* ImagePickerManager.swift */,
+				F434E3B9225C98E90005BD3B /* RoundedTableViewImageView.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -277,6 +299,9 @@
 				F406EEDB2243998B00E5068A /* TabBarViewController.swift */,
 				F434E3AE2257BA670005BD3B /* SearchPeopleViewController.swift */,
 				F434E3B0225B4BEE0005BD3B /* PublicProfileViewController.swift */,
+				F434E3BB225C9A220005BD3B /* NearbyViewController.swift */,
+				F434E3BD225CCA8D0005BD3B /* QRFriendRequestViewController.swift */,
+				F434E3C3225CF8190005BD3B /* QRScannerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -294,16 +319,17 @@
 		F4C3B9A3223FAFF200291D26 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F40F1F62225D188500487CA8 /* QR */,
 				F434E3B4225B695B0005BD3B /* Connection */,
 				F434E390224E68EC0005BD3B /* User */,
 				F434E379224A44BC0005BD3B /* Authentication */,
 				F434E374224A44990005BD3B /* ServerConnection */,
 				F48789E62241133E000760BB /* MSAL */,
 				F4B624DD223FAE110098238C /* AppDelegate.swift */,
-				F48789E72241135C000760BB /* Constants.swift */,
 				F40B5EA822413DCF008E88BE /* FileLoader.swift */,
 				F40B5EAA22413E73008E88BE /* SvgFileLoader.swift */,
 				F40B5EAC22413FB6008E88BE /* ResourceFile.swift */,
+				F48789E72241135C000760BB /* Constants.swift */,
 				F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */,
 			);
 			name = Models;
@@ -392,7 +418,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				nl,
+				Base,
 			);
 			mainGroup = F4B624D1223FAE110098238C;
 			productRefGroup = F4B624DB223FAE110098238C /* Products */;
@@ -484,22 +510,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F40F1F64225D189700487CA8 /* QRCodeValidator.swift in Sources */,
 				F434E378224A44B80005BD3B /* ServerConnectionProtocol.swift in Sources */,
 				F434E394224E69170005BD3B /* UserDelegate.swift in Sources */,
+				F434E3C0225CDE470005BD3B /* QRCodeGenerator.swift in Sources */,
 				F48789EE224114B9000760BB /* MSALClientDelegate.swift in Sources */,
 				F48789EC2241149C000760BB /* MSALClient.swift in Sources */,
 				F434E396224E69270005BD3B /* User.swift in Sources */,
 				F434E37C224A44C90005BD3B /* AuthenticationRepository.swift in Sources */,
+				F434E3BA225C98E90005BD3B /* RoundedTableViewImageView.swift in Sources */,
 				F40B5EAD22413FB6008E88BE /* ResourceFile.swift in Sources */,
 				F40B5EA922413DCF008E88BE /* FileLoader.swift in Sources */,
+				F434E3BE225CCA8D0005BD3B /* QRFriendRequestViewController.swift in Sources */,
 				F434E38A224E219D0005BD3B /* LoginResponse.swift in Sources */,
 				F406EEDC2243998B00E5068A /* TabBarViewController.swift in Sources */,
 				F43C05E1224393BA0079513D /* SwinjectStoryboardSetup.swift in Sources */,
 				F4D29C5E223FAECF00EE40CD /* LoginViewController.swift in Sources */,
 				F434E377224A44B80005BD3B /* ServerConnection.swift in Sources */,
 				F434E3B1225B4BEE0005BD3B /* PublicProfileViewController.swift in Sources */,
+				F434E3C2225CDFE00005BD3B /* FriendRequest.swift in Sources */,
 				F434E386224D16CD0005BD3B /* AccessTokenAdapter.swift in Sources */,
 				F434E37D224A44C90005BD3B /* AuthUser.swift in Sources */,
+				F434E3C4225CF8190005BD3B /* QRScannerViewController.swift in Sources */,
 				F4B624DE223FAE110098238C /* AppDelegate.swift in Sources */,
 				F43C05DF22438D730079513D /* ProfileViewController.swift in Sources */,
 				F434E388224E0FBC0005BD3B /* AuthenticationDelegate.swift in Sources */,
@@ -513,6 +545,7 @@
 				F434E3B6225B6A450005BD3B /* ConnectionDelegate.swift in Sources */,
 				F434E3B8225B6CA60005BD3B /* Connection.swift in Sources */,
 				F434E3B3225B69550005BD3B /* ConnectionRepository.swift in Sources */,
+				F434E3BC225C9A220005BD3B /* NearbyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,7 +575,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				F434E3A9225393C90005BD3B /* en */,
-				F434E3AB225393CC0005BD3B /* nl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -550,8 +582,7 @@
 		F4B624E1223FAE110098238C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F434E3A42253936E0005BD3B /* en */,
-				F434E3A6225393BD0005BD3B /* nl */,
+				F40F1F60225D037A00487CA8 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -559,8 +590,7 @@
 		F4B624E6223FAE120098238C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F434E3A52253936E0005BD3B /* en */,
-				F434E3A7225393BE0005BD3B /* nl */,
+				F40F1F61225D037A00487CA8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

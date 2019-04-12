@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class RoundedImageView: UIImageView {
+class RoundedTableViewImageView: UIImageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,8 +23,9 @@ class RoundedImageView: UIImageView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        bounds = CGRect(x: bounds.minX, y: bounds.minY, width: bounds.height, height: bounds.height)
-        //assert(bounds.height == bounds.width, "The aspect ratio isn't 1/1. You can never round this image view!")
+        layer.borderColor = UIColor.gray.cgColor
+        layer.borderWidth = 0.5
+        bounds = CGRect(x: bounds.minX, y: bounds.minY, width: 43, height: 43)
         layer.cornerRadius = bounds.height / 2
     }
 }

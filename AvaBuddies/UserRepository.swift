@@ -43,12 +43,13 @@ class UserRepository {
         let parameters = [
             "image": user?.image ?? "",
         ]
-
+        print("Image length: \(user?.image?.count ?? 0)")
         serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileImageRoute, with: .post, completion: {
             (result) -> () in
             print("Image Change: \(result)")
         }, fail: {
             (result) -> () in
+            print("Image Change Failed: \(result)")
             self.userDelegate?.failed()
         })
         
@@ -98,5 +99,9 @@ class UserRepository {
             (result) -> () in
             self.userListDelegate?.failed()
         })
+    }
+    
+    func getUserBy(id: String) -> User? {
+        return users?.first(where: {$0._id == id})
     }
 }

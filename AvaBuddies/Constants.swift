@@ -32,10 +32,17 @@ struct Constants {
         static let ConnectionListRoute = "/friend/allconnections"
         static let RequestConnectionRoute = "/friend/request"
         static let CancelRequestConnectionRoute = "/friend/cancelrequest"
+        static let DenyRequestConnectionRoute = "/friend/denyrequest"
+        static let AcceptRequestConnectionRoute = "/friend/acceptrequest"
+        static let ValidateRequestConnectionRoute = "/friend/validaterequest"
+        static let ConnectionRequestsRoute = "/friend/requests"
         static let Secret = "SamplePassword"
     }
     
     static let logoOnly = ResourceFile(filename: "avanade-logo-only", filetype: "svg")
+    
+    static let QrValidSeconds = 3
+
 }
 
 
