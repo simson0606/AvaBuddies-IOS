@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController, RegisterDelegate, UserDelegate {
+class RegisterViewController: UIViewController, RegisterDelegate {
    
     var msalClient: MSALClient?
     var userRepository: UserRepository?
@@ -19,8 +19,6 @@ class RegisterViewController: UIViewController, RegisterDelegate, UserDelegate {
     @IBOutlet weak var locationSwitch: UISwitch!
     
     override func viewDidLoad() {
-        userRepository?.userDelegate = self
-        userRepository?.getUser()
         authenticationRepository?.registerDelegate = self
     }
     
@@ -55,13 +53,6 @@ class RegisterViewController: UIViewController, RegisterDelegate, UserDelegate {
             self.msalClient?.signOut()
         }))
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    func userReceived(user: User) {
-        //
-    }
-    
-    func userDeleted() {
     }
     
     func failed() {

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1D239E0485DB001D3F349F51 /* Pods_AvaBuddies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D62F073C75BB01D93C6DA3 /* Pods_AvaBuddies.framework */; };
 		BDD28B10225F637300CCC8C9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD28B0F225F637300CCC8C9 /* RegisterViewController.swift */; };
-		BDD28B11225F637300CCC8C9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD28B0F225F637300CCC8C9 /* RegisterViewController.swift */; };
 		F406EEDC2243998B00E5068A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406EEDB2243998B00E5068A /* TabBarViewController.swift */; };
 		F40B5EA122413925008E88BE /* avanade-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = F40B5E9F22413925008E88BE /* avanade-logo.svg */; };
 		F40B5EA222413925008E88BE /* avanade-logo-only.svg in Resources */ = {isa = PBXBuildFile; fileRef = F40B5EA022413925008E88BE /* avanade-logo-only.svg */; };
@@ -499,7 +498,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F434E39F225156A00005BD3B /* UserTest.swift in Sources */,
-				BDD28B11225F637300CCC8C9 /* RegisterViewController.swift in Sources */,
 				F434E384224C19630005BD3B /* AuthenticationTest.swift in Sources */,
 				F434E382224C18E50005BD3B /* MockServerConnection.swift in Sources */,
 			);
