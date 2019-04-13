@@ -28,8 +28,7 @@ class AuthenticationRepository {
                 self.registerDelegate?.register()
         }, fail: {
             (result) -> () in
-            print("Tester: \(String(data: result, encoding: .utf8) ?? "no result")")
-            self.registerDelegate?.registerFailed()
+                self.registerDelegate?.registerFailed()
         })
     }
     
