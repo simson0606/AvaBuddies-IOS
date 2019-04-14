@@ -24,7 +24,7 @@ class ProfileViewController: UITableViewController, UserDelegate {
     
     override func viewDidLoad() {
         userRepository?.userDelegate = self
-        userRepository?.getUser(refresh: true)
+        userRepository?.getUser()
 
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
