@@ -111,7 +111,7 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
     }
     
     func userListReceived(users: [User]) {
-        userRepository?.getUser()
+        userRepository?.getUser(refresh: true)
     }
     
     func userReceived(user: User) {

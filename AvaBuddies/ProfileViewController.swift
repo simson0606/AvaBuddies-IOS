@@ -24,7 +24,7 @@ class ProfileViewController: UITableViewController, UserDelegate {
     
     override func viewDidLoad() {
         userRepository?.userDelegate = self
-        userRepository?.getUser()
+        userRepository?.getUser(refresh: true)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
@@ -55,8 +55,10 @@ class ProfileViewController: UITableViewController, UserDelegate {
     }
     @IBAction func changeProfileImageTapped(_ sender: Any) {
         ImagePickerManager().pickImage(self){ image in
-            self.profileImage.image = image
-            self.userRepository?.user?.setImage(image: image)
+            let croppedImage = image.resizeCropImage(targetSize: CGSize(width: 300, height: 300))
+            
+            self.profileImage.image = croppedImage
+            self.userRepository?.user?.setImage(image: croppedImage)
             self.userRepository?.updateProfileImage()
         }
     }
