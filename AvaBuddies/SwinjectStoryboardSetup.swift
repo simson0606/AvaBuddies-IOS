@@ -18,10 +18,12 @@ extension SwinjectStoryboard {
         let serverConnection = ServerConnection(accessTokenAdapter: accessTokenAdapter)
         let authenticationRepository = AuthenticationRepository()
         let userRepository = UserRepository()
+        let connectionRepository = ConnectionRepository()
         
         authenticationRepository.serverConnection = serverConnection
         authenticationRepository.accessTokenAdapter = accessTokenAdapter
         userRepository.serverConnection = serverConnection
+        connectionRepository.serverConnection = serverConnection
         
         defaultContainer.storyboardInitCompleted(LoginViewController.self) { r, c in
             c.msalClient = r.resolve(MSALClient.self)
@@ -34,6 +36,21 @@ extension SwinjectStoryboard {
         defaultContainer.storyboardInitCompleted(SearchPeopleViewController.self) { r, c in
             c.userRepository = r.resolve(UserRepository.self)
         }
+        defaultContainer.storyboardInitCompleted(PublicProfileViewController.self) { r, c in
+            c.connectionRepository = r.resolve(ConnectionRepository.self)
+            c.userRepository = r.resolve(UserRepository.self)
+        }
+        defaultContainer.storyboardInitCompleted(NearbyViewController.self) { r, c in
+            c.connectionRepository = r.resolve(ConnectionRepository.self)
+            c.userRepository = r.resolve(UserRepository.self)
+        }
+        defaultContainer.storyboardInitCompleted(QRFriendRequestViewController.self) { r, c in
+            c.connectionRepository = r.resolve(ConnectionRepository.self)
+            c.userRepository = r.resolve(UserRepository.self)
+        }
+        defaultContainer.storyboardInitCompleted(QRScannerViewController.self) { r, c in
+            c.connectionRepository = r.resolve(ConnectionRepository.self)
+        }
         
         defaultContainer.storyboardInitCompleted(RegisterViewController.self) { r, c in
             c.msalClient = r.resolve(MSALClient.self)
@@ -43,5 +60,6 @@ extension SwinjectStoryboard {
         defaultContainer.register(MSALClient.self) { _ in msalClient }
         defaultContainer.register(AuthenticationRepository.self) {_ in authenticationRepository}
         defaultContainer.register(UserRepository.self) {_ in userRepository}
+        defaultContainer.register(ConnectionRepository.self) {_ in connectionRepository}
     }
 }

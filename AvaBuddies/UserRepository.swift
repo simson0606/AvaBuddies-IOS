@@ -15,9 +15,14 @@ class UserRepository {
     var userDelegate: UserDelegate?
     var userListDelegate: UserListDelegate?
     var user: User?
-    
+    var users: [User]?
 
-    func getUser(){
+    func getUser(refresh: Bool = false){
+        if user != nil && !refresh {
+            self.userDelegate?.userReceived(user: self.user!)
+            return
+        }
+        
         serverConnection?.request(parameters: nil, to: Constants.ServerConnection.UserProfileRoute, with: .get, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
@@ -38,12 +43,13 @@ class UserRepository {
         let parameters = [
             "image": user?.image ?? "",
         ]
-
+        print("Image length: \(user?.image?.count ?? 0)")
         serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileImageRoute, with: .post, completion: {
             (result) -> () in
             print("Image Change: \(result)")
         }, fail: {
             (result) -> () in
+            print("Image Change Failed: \(result)")
             self.userDelegate?.failed()
         })
         
@@ -74,13 +80,18 @@ class UserRepository {
         })
     }
     
-    func getUserList() {
+    func getUserList(refresh: Bool = false) {
+        if users != nil && !refresh {
+            self.userListDelegate?.userListReceived(users: self.users!)
+            return
+        }
         serverConnection?.request(parameters: nil, to: Constants.ServerConnection.UserListRoute, with: .get, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
             do {
                 let usersResponse = try decoder.decode(UsersResponse.self, from: result)
-                self.userListDelegate?.userListReceived(users: usersResponse.users)
+                self.users = usersResponse.users
+                self.userListDelegate?.userListReceived(users: self.users!)
             } catch {
                 self.userListDelegate?.failed()
             }
@@ -88,5 +99,9 @@ class UserRepository {
             (result) -> () in
             self.userListDelegate?.failed()
         })
+    }
+    
+    func getUserBy(id: String) -> User? {
+        return users?.first(where: {$0._id == id})
     }
 }
