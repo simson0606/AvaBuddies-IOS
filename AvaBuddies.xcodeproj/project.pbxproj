@@ -16,6 +16,7 @@
 		F40B5EAB22413E73008E88BE /* SvgFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B5EAA22413E73008E88BE /* SvgFileLoader.swift */; };
 		F40B5EAD22413FB6008E88BE /* ResourceFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B5EAC22413FB6008E88BE /* ResourceFile.swift */; };
 		F40F1F64225D189700487CA8 /* QRCodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F1F63225D189700487CA8 /* QRCodeValidator.swift */; };
+		F40F1F6622610CD000487CA8 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F1F6522610CD000487CA8 /* ImageExtension.swift */; };
 		F434E377224A44B80005BD3B /* ServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E375224A44B80005BD3B /* ServerConnection.swift */; };
 		F434E378224A44B80005BD3B /* ServerConnectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E376224A44B80005BD3B /* ServerConnectionProtocol.swift */; };
 		F434E37C224A44C90005BD3B /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E37A224A44C90005BD3B /* AuthenticationRepository.swift */; };
@@ -81,6 +82,7 @@
 		F40F1F60225D037A00487CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F40F1F61225D037A00487CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F40F1F63225D189700487CA8 /* QRCodeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeValidator.swift; sourceTree = "<group>"; };
+		F40F1F6522610CD000487CA8 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		F434E375224A44B80005BD3B /* ServerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConnection.swift; sourceTree = "<group>"; };
 		F434E376224A44B80005BD3B /* ServerConnectionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConnectionProtocol.swift; sourceTree = "<group>"; };
 		F434E37A224A44C90005BD3B /* AuthenticationRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
@@ -182,6 +184,14 @@
 			name = QR;
 			sourceTree = "<group>";
 		};
+		F40F1F6722610DD300487CA8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F40F1F6522610CD000487CA8 /* ImageExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		F434E374224A44990005BD3B /* ServerConnection */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +284,7 @@
 		F4B624DC223FAE110098238C /* AvaBuddies */ = {
 			isa = PBXGroup;
 			children = (
+				F40F1F6722610DD300487CA8 /* Extensions */,
 				F40B5EA322413BED008E88BE /* Svg-images */,
 				F4C3B9A4223FAFF900291D26 /* Misc */,
 				F4C3B9A3223FAFF200291D26 /* Models */,
@@ -517,6 +528,7 @@
 			files = (
 				F40F1F64225D189700487CA8 /* QRCodeValidator.swift in Sources */,
 				F434E378224A44B80005BD3B /* ServerConnectionProtocol.swift in Sources */,
+				F40F1F6622610CD000487CA8 /* ImageExtension.swift in Sources */,
 				F434E394224E69170005BD3B /* UserDelegate.swift in Sources */,
 				F434E3C0225CDE470005BD3B /* QRCodeGenerator.swift in Sources */,
 				F48789EE224114B9000760BB /* MSALClientDelegate.swift in Sources */,
