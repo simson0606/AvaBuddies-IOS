@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController, RegisterDelegate {
+class RegisterViewController: UIViewController, RegisterDelegate, LoginDelegate {
    
     var msalClient: MSALClient?
     var userRepository: UserRepository?
@@ -22,6 +22,10 @@ class RegisterViewController: UIViewController, RegisterDelegate {
         authenticationRepository?.registerDelegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        authenticationRepository?.loginDelegate = self
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         if (!goingForwards) {
             msalClient?.signOut()
@@ -31,7 +35,7 @@ class RegisterViewController: UIViewController, RegisterDelegate {
     @IBAction func continueButtonTapped(_ sender: Any) {
         if (agreementSwitch.isOn) {
             if let mail = msalClient?.userInfo?.userPrincipalName, let givenName = msalClient?.userInfo?.givenName , let surName =  msalClient?.userInfo?.surname {
-                authenticationRepository?.register(with: mail, with: givenName + " " + surName, location: locationSwitch.isOn)
+                authenticationRepository?.register(with: mail, with: "\(givenName) \(surName)", location: locationSwitch.isOn)
             }
         } else {
             let alert = UIAlertController(title: "Cannot register".localized(), message: "You need to accept the terms and conditions, before you can continue".localized(), preferredStyle: .alert)
@@ -42,8 +46,8 @@ class RegisterViewController: UIViewController, RegisterDelegate {
     
     func register() {
         goingForwards = true
-        DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "RegisterCompletedSegue", sender: self)
+        if let mail = msalClient?.userInfo?.userPrincipalName {
+            authenticationRepository?.login(with: mail)
         }
     }
     
@@ -55,12 +59,18 @@ class RegisterViewController: UIViewController, RegisterDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func failed() {
-        let alert = UIAlertController(title: "Failed".localized(), message: "Request failed".localized(), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK".localized(), style: .default))
-        self.present(alert, animated: true, completion: nil)
+    func loggedIn() {
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "RegisterCompletedSegue", sender: self)
+        }
     }
     
-
+    func loginFailed(message: FailedLoginResponse) {
+        let alert = UIAlertController(title: "Cannot login".localized(), message: "Cannot login at this moment, please try again later".localized(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: { action in
+            self.msalClient?.signOut()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
 
 }

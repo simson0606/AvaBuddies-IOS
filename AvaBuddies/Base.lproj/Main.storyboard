@@ -392,7 +392,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiS-y5-fqA">
-                                                    <rect key="frame" x="241" y="5.5" width="118" height="33"/>
+                                                    <rect key="frame" x="128.5" y="5.5" width="118" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="Delete Account">
                                                         <color key="titleColor" red="0.99617189169999998" green="0.0" blue="0.02797058606" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -416,7 +416,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al0-dT-yvK">
-                                                    <rect key="frame" x="273" y="5.5" width="54" height="33"/>
+                                                    <rect key="frame" x="160.5" y="5.5" width="54" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="Logout">
                                                         <color key="titleColor" red="1" green="0.32156862745098042" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -873,7 +873,8 @@
         <image name="icon_Person_Greys_30d" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ecq-1B-Xo7"/>
+        <segue reference="dTN-RU-Rc6"/>
+        <segue reference="J4F-md-liJ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.32156862749999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

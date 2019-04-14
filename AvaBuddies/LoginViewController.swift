@@ -19,13 +19,13 @@ class LoginViewController: UIViewController, MSALClientDelegate, LoginDelegate {
     
     override func viewDidLoad() {
         msalClient?.authenticationDelegate = self
-        authenticationRepository?.loginDelegate = self
         
         logoImage.image = SvgFileLoader.getUIImageFrom(resource: Constants.logoOnly, size: logoImage.bounds.size)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        authenticationRepository?.loginDelegate = self
         if firstStart {
             firstStart = false
             msalClient?.signIn()
