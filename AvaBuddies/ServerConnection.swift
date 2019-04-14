@@ -23,7 +23,7 @@ class ServerConnection : ServerConnectionProtocol {
             switch response.result {
             case .success:
                 completion(response.data!)
-            case .failure(let error):
+            case .failure():
                 fail?(response.data ?? Data())
             }
         }
