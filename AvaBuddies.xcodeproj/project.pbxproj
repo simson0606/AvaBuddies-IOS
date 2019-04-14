@@ -82,12 +82,7 @@
 		F434E395224E69270005BD3B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F434E397224E7CB10005BD3B /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
 		F434E39E225156A00005BD3B /* UserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
-		F434E3A42253936E0005BD3B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F434E3A52253936E0005BD3B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F434E3A6225393BD0005BD3B /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = nl; path = nl.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F434E3A7225393BE0005BD3B /* nl */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = nl; path = nl.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F434E3A9225393C90005BD3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F434E3AB225393CC0005BD3B /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F434E3AE2257BA670005BD3B /* SearchPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPeopleViewController.swift; sourceTree = "<group>"; };
 		F43C05DE22438D730079513D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectStoryboardSetup.swift; sourceTree = "<group>"; };
@@ -102,6 +97,8 @@
 		F4B624EE223FAE120098238C /* AvaBuddiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvaBuddiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B624F4223FAE120098238C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4D29C5D223FAECF00EE40CD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F4DAD093226359100083FC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4DAD094226359100083FC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,7 +369,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				nl,
+				Base,
 			);
 			mainGroup = F4B624D1223FAE110098238C;
 			productRefGroup = F4B624DB223FAE110098238C /* Products */;
@@ -518,7 +515,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				F434E3A9225393C90005BD3B /* en */,
-				F434E3AB225393CC0005BD3B /* nl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -526,8 +522,7 @@
 		F4B624E1223FAE110098238C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F434E3A42253936E0005BD3B /* en */,
-				F434E3A6225393BD0005BD3B /* nl */,
+				F4DAD093226359100083FC1E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -535,8 +530,7 @@
 		F4B624E6223FAE120098238C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F434E3A52253936E0005BD3B /* en */,
-				F434E3A7225393BE0005BD3B /* nl */,
+				F4DAD094226359100083FC1E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
