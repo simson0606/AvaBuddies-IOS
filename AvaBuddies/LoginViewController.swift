@@ -9,7 +9,7 @@
 import UIKit
 
 class LoginViewController: UIViewController, MSALClientDelegate, LoginDelegate {
-   
+  
     
     @IBOutlet weak var logoImage: UIImageView!
     
@@ -19,13 +19,13 @@ class LoginViewController: UIViewController, MSALClientDelegate, LoginDelegate {
     
     override func viewDidLoad() {
         msalClient?.authenticationDelegate = self
-        authenticationRepository?.loginDelegate = self
         
         logoImage.image = SvgFileLoader.getUIImageFrom(resource: Constants.logoOnly, size: logoImage.bounds.size)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        authenticationRepository?.loginDelegate = self
         if firstStart {
             firstStart = false
             msalClient?.signIn()
@@ -50,12 +50,18 @@ class LoginViewController: UIViewController, MSALClientDelegate, LoginDelegate {
         }
     }
     
-    func loginFailed() {
-        let alert = UIAlertController(title: "Cannot login".localized(), message: "Cannot login at this moment, please try again later".localized(), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: { action in
-            self.msalClient?.signOut()
-        }))
-        self.present(alert, animated: true, completion: nil)
+    func loginFailed(message: FailedLoginResponse) {
+        if message.message == "Wrong email or password" {
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "NeedRegisterSegue", sender: self)
+            }
+        } else {
+            let alert = UIAlertController(title: "Cannot login".localized(), message: "Cannot login at this moment, please try again later".localized(), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: { action in
+                self.msalClient?.signOut()
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func signedOut() {

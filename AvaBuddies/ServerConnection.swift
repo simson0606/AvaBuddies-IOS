@@ -23,8 +23,8 @@ class ServerConnection : ServerConnectionProtocol {
             switch response.result {
             case .success:
                 completion(response.data!)
-            case .failure(let error):
-                fail?(error.localizedDescription.data(using: .utf8) ?? Data())
+            case .failure:
+                fail?(response.data ?? Data())
             }
         }
     }

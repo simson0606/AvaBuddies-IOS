@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D239E0485DB001D3F349F51 /* Pods_AvaBuddies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D62F073C75BB01D93C6DA3 /* Pods_AvaBuddies.framework */; };
+		BDD28B10225F637300CCC8C9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD28B0F225F637300CCC8C9 /* RegisterViewController.swift */; };
 		F406EEDC2243998B00E5068A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406EEDB2243998B00E5068A /* TabBarViewController.swift */; };
 		F40B5EA122413925008E88BE /* avanade-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = F40B5E9F22413925008E88BE /* avanade-logo.svg */; };
 		F40B5EA222413925008E88BE /* avanade-logo-only.svg in Resources */ = {isa = PBXBuildFile; fileRef = F40B5EA022413925008E88BE /* avanade-logo-only.svg */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		0CD620B56E03C2948D7B6BBF /* Pods-AvaBuddies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvaBuddies.release.xcconfig"; path = "Pods/Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies.release.xcconfig"; sourceTree = "<group>"; };
 		20D62F073C75BB01D93C6DA3 /* Pods_AvaBuddies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvaBuddies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDD28B0F225F637300CCC8C9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C596E86C33A3472EB45C3DB7 /* Pods-AvaBuddies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvaBuddies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies.debug.xcconfig"; sourceTree = "<group>"; };
 		F406EEDB2243998B00E5068A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F40B5E9F22413925008E88BE /* avanade-logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "avanade-logo.svg"; sourceTree = "<group>"; };
@@ -77,8 +79,6 @@
 		F40B5EA822413DCF008E88BE /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
 		F40B5EAA22413E73008E88BE /* SvgFileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvgFileLoader.swift; sourceTree = "<group>"; };
 		F40B5EAC22413FB6008E88BE /* ResourceFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceFile.swift; sourceTree = "<group>"; };
-		F40F1F60225D037A00487CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F40F1F61225D037A00487CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F40F1F63225D189700487CA8 /* QRCodeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeValidator.swift; sourceTree = "<group>"; };
 		F40F1F6522610CD000487CA8 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		F434E375224A44B80005BD3B /* ServerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConnection.swift; sourceTree = "<group>"; };
@@ -123,6 +123,8 @@
 		F4B624F2223FAE120098238C /* ConnectionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionsTest.swift; sourceTree = "<group>"; };
 		F4B624F4223FAE120098238C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4D29C5D223FAECF00EE40CD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F4DAD093226359100083FC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4DAD094226359100083FC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +311,7 @@
 				F43C05DE22438D730079513D /* ProfileViewController.swift */,
 				F406EEDB2243998B00E5068A /* TabBarViewController.swift */,
 				F434E3AE2257BA670005BD3B /* SearchPeopleViewController.swift */,
+				BDD28B0F225F637300CCC8C9 /* RegisterViewController.swift */,
 				F434E3B0225B4BEE0005BD3B /* PublicProfileViewController.swift */,
 				F434E3BB225C9A220005BD3B /* NearbyViewController.swift */,
 				F434E3BD225CCA8D0005BD3B /* QRFriendRequestViewController.swift */,
@@ -552,6 +555,7 @@
 				F434E3AF2257BA670005BD3B /* SearchPeopleViewController.swift in Sources */,
 				F40B5EAB22413E73008E88BE /* SvgFileLoader.swift in Sources */,
 				F48789E82241135C000760BB /* Constants.swift in Sources */,
+				BDD28B10225F637300CCC8C9 /* RegisterViewController.swift in Sources */,
 				F48789EA224113BC000760BB /* GraphUser.swift in Sources */,
 				F434E398224E7CB10005BD3B /* ImagePickerManager.swift in Sources */,
 				F434E3B6225B6A450005BD3B /* ConnectionDelegate.swift in Sources */,
@@ -594,7 +598,7 @@
 		F4B624E1223FAE110098238C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F40F1F60225D037A00487CA8 /* Base */,
+				F4DAD093226359100083FC1E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -602,7 +606,7 @@
 		F4B624E6223FAE120098238C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F40F1F61225D037A00487CA8 /* Base */,
+				F4DAD094226359100083FC1E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

@@ -15,6 +15,7 @@ class MSALClient: NSObject, URLSessionDelegate {
     private var applicationContext : MSALPublicClientApplication?
     
     var authenticationDelegate : MSALClientDelegate?
+    var userInfo: GraphUser?
     
     public func signIn() {
         let contextResult = createContext()
@@ -214,6 +215,7 @@ class MSALClient: NSObject, URLSessionDelegate {
             let decoder = JSONDecoder()
             let poso = try! decoder.decode(GraphUser.self, from: data!)
             
+            self.userInfo = poso
             self.authenticationDelegate?.receivedUserInfo(userinfo: poso)
             
             }.resume()
