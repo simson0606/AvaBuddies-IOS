@@ -1,18 +1,45 @@
 PODS:
+  - Alamofire (4.8.1)
+  - CocoaLumberjack (3.5.2):
+    - CocoaLumberjack/Core (= 3.5.2)
+  - CocoaLumberjack/Core (3.5.2)
+  - Localize-Swift (2.0.0)
   - MSAL (0.2.3):
     - MSAL/app-lib (= 0.2.3)
   - MSAL/app-lib (0.2.3)
+  - SVGKit (2.1.0):
+    - CocoaLumberjack (~> 3.0)
+  - Swinject (2.6.0)
+  - SwinjectStoryboard (2.1.0):
+    - Swinject (~> 2.5)
 
 DEPENDENCIES:
-  - MSAL (~> 0.2)
+  - Alamofire
+  - Localize-Swift
+  - MSAL
+  - SVGKit
+  - Swinject
+  - SwinjectStoryboard
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - CocoaLumberjack
+    - Localize-Swift
     - MSAL
+    - SVGKit
+    - Swinject
+    - SwinjectStoryboard
 
 SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  CocoaLumberjack: 118bf4a820efc641f79fa487b75ed928dccfae23
+  Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
   MSAL: 2592b744b9215d9b7463f02fb9afd4e432c75c62
+  SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
+  Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
+  SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
 
-PODFILE CHECKSUM: 3bdcbc18a9082784ed75535d8bcfacc8a4a58fe7
+PODFILE CHECKSUM: 9348707f3cd2f3c02ce91430bc81da334fa17ac1
 
 COCOAPODS: 1.5.2
