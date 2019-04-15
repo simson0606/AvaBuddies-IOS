@@ -41,7 +41,7 @@ struct Constants {
     
     static let logoOnly = ResourceFile(filename: "avanade-logo-only", filetype: "svg")
     
-    static let QrValidSeconds = 3
+    static let QrValidSeconds = 10
 
 }
 

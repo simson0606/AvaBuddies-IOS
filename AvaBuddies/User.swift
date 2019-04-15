@@ -29,7 +29,7 @@ struct User: Codable {
     
     func getUIImage() -> UIImage? {
         if image != nil && !image!.isEmpty {
-            let imageData = Data(base64Encoded: self.image!)
+            let imageData = Data(base64Encoded: self.image!, options: .ignoreUnknownCharacters)
             if imageData != nil {
                 return UIImage(data: imageData!)
             }
