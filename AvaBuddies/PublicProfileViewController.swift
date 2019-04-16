@@ -39,8 +39,8 @@ class PublicProfileViewController: UITableViewController, UserDelegate, Connecti
             let connectionIsReceived = connectionRepository!.connectionIsReceived(with: userRepository!.user!, and: friend!)
             let connectionIsSent = connectionRepository!.connectionIsSent(with: userRepository!.user!, and: friend!)
             let connectionIsConfirmed = connectionRepository!.connectionConfirmed(with: userRepository!.user!, and: friend!)
-            
-            
+            let hideItems = friend?.isPrivate ?? false && !connectionIsConfirmed
+
             if indexPath.row == 1 {
                 return !connectionExists && !connectionIsConfirmed ? 44 : 0
             }
@@ -50,14 +50,18 @@ class PublicProfileViewController: UITableViewController, UserDelegate, Connecti
             if indexPath.row == 3 {
                 return connectionIsReceived && !connectionIsConfirmed ? 44 : 0
             }
+            if (indexPath.row == 6) {
+                return hideItems ? 0 : 148
+            }
+            if (indexPath.row == 7) {
+                return hideItems ?  44 : 0
+            }
         }
         if indexPath.row == 0 {
             return 276
         }
-        if (indexPath.row == 6) {
-            return 148
-        }
-        if indexPath.row == 3 || indexPath.row == 2 || indexPath.row == 1 {
+    
+        if indexPath.row == 3 || indexPath.row == 2 || indexPath.row == 1 || indexPath.row == 6 || indexPath.row == 7{
             return 0
         }
         return 44

@@ -17,6 +17,7 @@ class ProfileViewController: UITableViewController, UserDelegate {
     @IBOutlet weak var mailLabel: UILabel!
     @IBOutlet weak var aboutMeText: UITextView!
     @IBOutlet weak var shareLocationToggle: UISwitch!
+    @IBOutlet weak var makeProfilePrivate: UISwitch!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var msalClient: MSALClient?
@@ -51,7 +52,7 @@ class ProfileViewController: UITableViewController, UserDelegate {
         self.mailLabel.text = user.email
         self.aboutMeText.text = user.aboutme
         self.shareLocationToggle.isOn = user.sharelocation
-
+        self.makeProfilePrivate.isOn = user.isPrivate ?? false
     }
     @IBAction func changeProfileImageTapped(_ sender: Any) {
         ImagePickerManager().pickImage(self){ image in
@@ -73,6 +74,10 @@ class ProfileViewController: UITableViewController, UserDelegate {
         userRepository?.updateProfile()
     }
     
+    @IBAction func makeProfilePrivateToggled(_ sender: UISwitch) {
+        userRepository?.user?.isPrivate = sender.isOn
+        userRepository?.updateProfile()
+    }
     @IBAction func deleteTapped(_ sender: Any) {
         let alert = UIAlertController(title: "Are you sure?".localized(), message: "Are you sure you want to permanantly delete your account? \nThis cannot be reversed!".localized(), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Delete".localized(), style: .destructive, handler: { action in
