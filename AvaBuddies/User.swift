@@ -26,6 +26,7 @@ struct User: Codable {
     var image: String?
     var sharelocation: Bool
     var isPrivate: Bool?
+    var tags: [Tag]?
     
     func getUIImage() -> UIImage? {
         if image != nil && !image!.isEmpty {

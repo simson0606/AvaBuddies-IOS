@@ -56,6 +56,13 @@
 		F4B624E8223FAE120098238C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B624E6223FAE120098238C /* LaunchScreen.storyboard */; };
 		F4B624F3223FAE120098238C /* ConnectionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B624F2223FAE120098238C /* ConnectionsTest.swift */; };
 		F4D29C5E223FAECF00EE40CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D29C5D223FAECF00EE40CD /* LoginViewController.swift */; };
+		F4DAD0962265E57F0083FC1E /* SelectTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAD0952265E57F0083FC1E /* SelectTagsViewController.swift */; };
+		F4DAD0982265E71C0083FC1E /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAD0972265E71C0083FC1E /* Tag.swift */; };
+		F4DAD09B2265F2DF0083FC1E /* TagRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAD09A2265F2DF0083FC1E /* TagRepository.swift */; };
+		F4DAD09D2265F3200083FC1E /* TagDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAD09C2265F3200083FC1E /* TagDelegate.swift */; };
+		F4DAD0A22266014D0083FC1E /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAD0A02266014D0083FC1E /* TagCollectionViewCell.swift */; };
+		F4DAD0A32266014D0083FC1E /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DAD0A12266014D0083FC1E /* TagCollectionViewCell.xib */; };
+		F4DAD0A52268804F0083FC1E /* TagsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAD0A42268804F0083FC1E /* TagsTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +132,13 @@
 		F4D29C5D223FAECF00EE40CD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F4DAD093226359100083FC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4DAD094226359100083FC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F4DAD0952265E57F0083FC1E /* SelectTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTagsViewController.swift; sourceTree = "<group>"; };
+		F4DAD0972265E71C0083FC1E /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		F4DAD09A2265F2DF0083FC1E /* TagRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRepository.swift; sourceTree = "<group>"; };
+		F4DAD09C2265F3200083FC1E /* TagDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDelegate.swift; sourceTree = "<group>"; };
+		F4DAD0A02266014D0083FC1E /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4DAD0A12266014D0083FC1E /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
+		F4DAD0A42268804F0083FC1E /* TagsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +239,8 @@
 				F434E38C224E5AA10005BD3B /* RoundedImageView.swift */,
 				F434E397224E7CB10005BD3B /* ImagePickerManager.swift */,
 				F434E3B9225C98E90005BD3B /* RoundedTableViewImageView.swift */,
+				F4DAD0A02266014D0083FC1E /* TagCollectionViewCell.swift */,
+				F4DAD0A12266014D0083FC1E /* TagCollectionViewCell.xib */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -300,6 +316,7 @@
 				F434E383224C19630005BD3B /* AuthenticationTest.swift */,
 				F4B624F4223FAE120098238C /* Info.plist */,
 				F434E39E225156A00005BD3B /* UserTest.swift */,
+				F4DAD0A42268804F0083FC1E /* TagsTest.swift */,
 			);
 			path = AvaBuddiesTests;
 			sourceTree = "<group>";
@@ -316,6 +333,7 @@
 				F434E3BB225C9A220005BD3B /* NearbyViewController.swift */,
 				F434E3BD225CCA8D0005BD3B /* QRFriendRequestViewController.swift */,
 				F434E3C3225CF8190005BD3B /* QRScannerViewController.swift */,
+				F4DAD0952265E57F0083FC1E /* SelectTagsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -333,6 +351,7 @@
 		F4C3B9A3223FAFF200291D26 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F4DAD0992265F2C20083FC1E /* Tag */,
 				F40F1F62225D188500487CA8 /* QR */,
 				F434E3B4225B695B0005BD3B /* Connection */,
 				F434E390224E68EC0005BD3B /* User */,
@@ -358,6 +377,16 @@
 				F434E3AA225393C90005BD3B /* Localizable.strings */,
 			);
 			name = Misc;
+			sourceTree = "<group>";
+		};
+		F4DAD0992265F2C20083FC1E /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				F4DAD0972265E71C0083FC1E /* Tag.swift */,
+				F4DAD09A2265F2DF0083FC1E /* TagRepository.swift */,
+				F4DAD09C2265F3200083FC1E /* TagDelegate.swift */,
+			);
+			name = Tag;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F40B5EA222413925008E88BE /* avanade-logo-only.svg in Resources */,
+				F4DAD0A32266014D0083FC1E /* TagCollectionViewCell.xib in Resources */,
 				F434E3A8225393C90005BD3B /* Localizable.strings in Resources */,
 				F40B5EA122413925008E88BE /* avanade-logo.svg in Resources */,
 				F4B624E8223FAE120098238C /* LaunchScreen.storyboard in Resources */,
@@ -528,6 +558,7 @@
 				F434E378224A44B80005BD3B /* ServerConnectionProtocol.swift in Sources */,
 				F40F1F6622610CD000487CA8 /* ImageExtension.swift in Sources */,
 				F434E394224E69170005BD3B /* UserDelegate.swift in Sources */,
+				F4DAD09B2265F2DF0083FC1E /* TagRepository.swift in Sources */,
 				F434E3C0225CDE470005BD3B /* QRCodeGenerator.swift in Sources */,
 				F48789EE224114B9000760BB /* MSALClientDelegate.swift in Sources */,
 				F48789EC2241149C000760BB /* MSALClient.swift in Sources */,
@@ -551,17 +582,21 @@
 				F43C05DF22438D730079513D /* ProfileViewController.swift in Sources */,
 				F434E388224E0FBC0005BD3B /* AuthenticationDelegate.swift in Sources */,
 				F434E38D224E5AA10005BD3B /* RoundedImageView.swift in Sources */,
+				F4DAD0962265E57F0083FC1E /* SelectTagsViewController.swift in Sources */,
 				F434E392224E690C0005BD3B /* UserRepository.swift in Sources */,
 				F434E3AF2257BA670005BD3B /* SearchPeopleViewController.swift in Sources */,
 				F40B5EAB22413E73008E88BE /* SvgFileLoader.swift in Sources */,
 				F48789E82241135C000760BB /* Constants.swift in Sources */,
+				F4DAD0982265E71C0083FC1E /* Tag.swift in Sources */,
 				BDD28B10225F637300CCC8C9 /* RegisterViewController.swift in Sources */,
 				F48789EA224113BC000760BB /* GraphUser.swift in Sources */,
 				F434E398224E7CB10005BD3B /* ImagePickerManager.swift in Sources */,
 				F434E3B6225B6A450005BD3B /* ConnectionDelegate.swift in Sources */,
+				F4DAD0A22266014D0083FC1E /* TagCollectionViewCell.swift in Sources */,
 				F434E3B8225B6CA60005BD3B /* Connection.swift in Sources */,
 				F434E3B3225B69550005BD3B /* ConnectionRepository.swift in Sources */,
 				F434E3BC225C9A220005BD3B /* NearbyViewController.swift in Sources */,
+				F4DAD09D2265F3200083FC1E /* TagDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +608,7 @@
 				F434E384224C19630005BD3B /* AuthenticationTest.swift in Sources */,
 				F434E382224C18E50005BD3B /* MockServerConnection.swift in Sources */,
 				F4B624F3223FAE120098238C /* ConnectionsTest.swift in Sources */,
+				F4DAD0A52268804F0083FC1E /* TagsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

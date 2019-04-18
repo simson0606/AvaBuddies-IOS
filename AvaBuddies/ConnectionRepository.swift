@@ -10,7 +10,7 @@ import Foundation
 
 class ConnectionRepository {
     
-    var serverConnection: ServerConnectionProtocol?
+    var serverConnection: ServerConnectionProtocol!
     
     var connectionDelegate: ConnectionDelegate?
     
@@ -56,7 +56,7 @@ class ConnectionRepository {
             self.connectionDelegate?.connectionsReceived(connections: self.connections!)
             return
         }
-        serverConnection?.request(parameters: nil, to: Constants.ServerConnection.ConnectionListRoute, with: .get, completion: {
+        serverConnection.request(parameters: nil, to: Constants.ServerConnection.ConnectionListRoute, with: .get, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
             do {
@@ -77,7 +77,7 @@ class ConnectionRepository {
             self.connectionDelegate?.connectionsReceived(connections: self.receivedConnections!)
             return
         }
-        serverConnection?.request(parameters: nil, to: Constants.ServerConnection.ConnectionRequestsRoute, with: .get, completion: {
+        serverConnection.request(parameters: nil, to: Constants.ServerConnection.ConnectionRequestsRoute, with: .get, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
             do {
@@ -97,7 +97,7 @@ class ConnectionRepository {
     func requestConnection(with user: User) {
         let parameters = ["friend": user._id]
         
-        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.RequestConnectionRoute, with: .post, completion: {
+        serverConnection.request(parameters: parameters, to: Constants.ServerConnection.RequestConnectionRoute, with: .post, completion: {
             (result) -> () in
             self.connectionDelegate?.requestUpdated()
 
@@ -111,7 +111,7 @@ class ConnectionRepository {
     func cancelConnection(with user: User) {
         let parameters = ["friend": user._id]
         
-        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.CancelRequestConnectionRoute, with: .post, completion: {
+        serverConnection.request(parameters: parameters, to: Constants.ServerConnection.CancelRequestConnectionRoute, with: .post, completion: {
             (result) -> () in
             self.connectionDelegate?.requestUpdated()
             
@@ -124,7 +124,7 @@ class ConnectionRepository {
     func denyConnection(with user: User) {
         let parameters = ["friend": user._id]
         
-        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.DenyRequestConnectionRoute, with: .post, completion: {
+        serverConnection.request(parameters: parameters, to: Constants.ServerConnection.DenyRequestConnectionRoute, with: .post, completion: {
             (result) -> () in
             self.connectionDelegate?.requestUpdated()
             
@@ -137,7 +137,7 @@ class ConnectionRepository {
     func acceptConnection(with user: User) {
         let parameters = ["friend": user._id]
         
-        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.AcceptRequestConnectionRoute, with: .post, completion: {
+        serverConnection.request(parameters: parameters, to: Constants.ServerConnection.AcceptRequestConnectionRoute, with: .post, completion: {
             (result) -> () in
             self.connectionDelegate?.requestUpdated()
             
@@ -150,7 +150,7 @@ class ConnectionRepository {
     func validateConnection(with id: String) {
         let parameters = ["friend": id]
         
-        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.ValidateRequestConnectionRoute, with: .post, completion: {
+        serverConnection.request(parameters: parameters, to: Constants.ServerConnection.ValidateRequestConnectionRoute, with: .post, completion: {
             (result) -> () in
             self.connectionDelegate?.requestUpdated()
             

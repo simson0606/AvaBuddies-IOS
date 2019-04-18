@@ -11,7 +11,7 @@ class AuthenticationRepository {
     
     var registerDelegate: RegisterDelegate?
     var loginDelegate: LoginDelegate?
-    var serverConnection: ServerConnectionProtocol?
+    var serverConnection: ServerConnectionProtocol!
     var accessTokenAdapter: AccessTokenAdapter?
     
     
@@ -23,7 +23,7 @@ class AuthenticationRepository {
             "sharelocation": sharelocation
             ] as [String : Any]
         
-        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.RegisterRoute, with: .post, completion: {
+        serverConnection.request(parameters: parameters, to: Constants.ServerConnection.RegisterRoute, with: .post, completion: {
             (result) -> () in
                 self.registerDelegate?.register()
         }, fail: {
@@ -38,7 +38,7 @@ class AuthenticationRepository {
             "password": Constants.ServerConnection.Secret
         ]
         
-        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.LoginRoute, with: .post, completion: {
+        serverConnection.request(parameters: parameters, to: Constants.ServerConnection.LoginRoute, with: .post, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
             do {
