@@ -8,17 +8,28 @@
 
 import UIKit
 
-class PublicProfileViewController: UITableViewController, UserDelegate, ConnectionDelegate {
+class PublicProfileViewController: UITableViewController, UserDelegate, ConnectionDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var profileImage: RoundedImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var mailLabel: UILabel!
     @IBOutlet weak var aboutmelabel: UITextView!
-    
+    @IBOutlet weak var tagsCollection: UICollectionView!
+    @IBOutlet weak var tagsCollectionFlowLayout: UICollectionViewFlowLayout! {
+        didSet {
+            tagsCollectionFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
+    }
     var userRepository: UserRepository?
     var connectionRepository: ConnectionRepository?
     
     var friend: User?
+    
+    override func viewDidLoad() {
+        tagsCollection.dataSource = self
+        tagsCollection.register(UINib.init(nibName: "TagCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "tagView")
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         profileImage.image = friend?.getUIImage() ?? UIImage(named: "default_profile")
@@ -56,12 +67,15 @@ class PublicProfileViewController: UITableViewController, UserDelegate, Connecti
             if (indexPath.row == 7) {
                 return hideItems ?  44 : 0
             }
+            if (indexPath.row == 8) {
+                return hideItems ? 0 : 136
+            }
         }
         if indexPath.row == 0 {
             return 276
         }
     
-        if indexPath.row == 3 || indexPath.row == 2 || indexPath.row == 1 || indexPath.row == 6 || indexPath.row == 7{
+        if indexPath.row == 3 || indexPath.row == 2 || indexPath.row == 1 || indexPath.row == 6 || indexPath.row == 7 || indexPath.row == 8{
             return 0
         }
         return 44
@@ -82,6 +96,8 @@ class PublicProfileViewController: UITableViewController, UserDelegate, Connecti
     
     func connectionsReceived(connections: [Connection]) {
         tableView.reloadData()
+        tagsCollection.reloadData()
+        tagsCollection.invalidateIntrinsicContentSize()
     }
     
     func requestUpdated() {
@@ -109,4 +125,14 @@ class PublicProfileViewController: UITableViewController, UserDelegate, Connecti
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return friend?.tags?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagView", for: indexPath as IndexPath) as! TagCollectionViewCell
+        
+        cell.nameLabel.text = friend?.tags![indexPath.row].name
+        return cell
+    }
 }

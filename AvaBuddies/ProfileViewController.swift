@@ -60,6 +60,7 @@ class ProfileViewController: UITableViewController, UserDelegate, UICollectionVi
         self.shareLocationToggle.isOn = user.sharelocation
         self.makeProfilePrivate.isOn = user.isPrivate ?? false
         tagsCollection.reloadData()
+        tagsCollection.invalidateIntrinsicContentSize()
     }
     
     @IBAction func changeProfileImageTapped(_ sender: Any) {
