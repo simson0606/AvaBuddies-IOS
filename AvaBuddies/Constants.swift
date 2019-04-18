@@ -36,6 +36,7 @@ struct Constants {
         static let AcceptRequestConnectionRoute = "/friend/acceptrequest"
         static let ValidateRequestConnectionRoute = "/friend/validaterequest"
         static let ConnectionRequestsRoute = "/friend/requests"
+        static let TagListRoute = "/tag/list"
         static let Secret = "SamplePassword"
     }
     
