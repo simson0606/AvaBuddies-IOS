@@ -63,6 +63,8 @@
 		F4DAD0A22266014D0083FC1E /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAD0A02266014D0083FC1E /* TagCollectionViewCell.swift */; };
 		F4DAD0A32266014D0083FC1E /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DAD0A12266014D0083FC1E /* TagCollectionViewCell.xib */; };
 		F4DAD0A52268804F0083FC1E /* TagsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAD0A42268804F0083FC1E /* TagsTest.swift */; };
+		F4EC001C226F1A7400685B24 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC001B226F1A7400685B24 /* ChatListViewController.swift */; };
+		F4EC001E226F1AA100685B24 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC001D226F1AA100685B24 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +141,8 @@
 		F4DAD0A02266014D0083FC1E /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4DAD0A12266014D0083FC1E /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		F4DAD0A42268804F0083FC1E /* TagsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTest.swift; sourceTree = "<group>"; };
+		F4EC001B226F1A7400685B24 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		F4EC001D226F1AA100685B24 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +338,8 @@
 				F434E3BD225CCA8D0005BD3B /* QRFriendRequestViewController.swift */,
 				F434E3C3225CF8190005BD3B /* QRScannerViewController.swift */,
 				F4DAD0952265E57F0083FC1E /* SelectTagsViewController.swift */,
+				F4EC001B226F1A7400685B24 /* ChatListViewController.swift */,
+				F4EC001D226F1AA100685B24 /* ChatViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -580,6 +586,7 @@
 				F434E3C4225CF8190005BD3B /* QRScannerViewController.swift in Sources */,
 				F4B624DE223FAE110098238C /* AppDelegate.swift in Sources */,
 				F43C05DF22438D730079513D /* ProfileViewController.swift in Sources */,
+				F4EC001C226F1A7400685B24 /* ChatListViewController.swift in Sources */,
 				F434E388224E0FBC0005BD3B /* AuthenticationDelegate.swift in Sources */,
 				F434E38D224E5AA10005BD3B /* RoundedImageView.swift in Sources */,
 				F4DAD0962265E57F0083FC1E /* SelectTagsViewController.swift in Sources */,
@@ -596,6 +603,7 @@
 				F434E3B8225B6CA60005BD3B /* Connection.swift in Sources */,
 				F434E3B3225B69550005BD3B /* ConnectionRepository.swift in Sources */,
 				F434E3BC225C9A220005BD3B /* NearbyViewController.swift in Sources */,
+				F4EC001E226F1AA100685B24 /* ChatViewController.swift in Sources */,
 				F4DAD09D2265F3200083FC1E /* TagDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
