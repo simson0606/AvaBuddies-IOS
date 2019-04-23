@@ -31,8 +31,8 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
 
     func testConnectionsReceived() {
         
-        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, tags: [Tag]())
-        let friend = User(_id: "id-testUser2", name: "testUser2", email: "testUser2", aboutme: "testUser2", image: "", sharelocation: true, tags: [Tag]())
+        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, isPrivate: false, tags: [Tag]())
+        let friend = User(_id: "id-testUser2", name: "testUser2", email: "testUser2", aboutme: "testUser2", image: "", sharelocation: true, isPrivate: false, tags: [Tag]())
         serverConnection.setMockResponse(response: "{\"connections\":[{\"confirmed\":false,\"validated\":false,\"_id\":\"5cab3876675cf6363382115a\",\"friend1\":\"\(user._id)\",\"friend2\":\"\(friend._id)\"},{\"confirmed\":false,\"validated\":false,\"_id\":\"5cab3888675cf6363382115b\",\"friend1\":\"5ca72bdad120192a4a4de201\",\"friend2\":\"5ca72bdad120192a4a4de201\"}]}", success: true)
         
         connectionRepository.getConnectionList()
@@ -71,7 +71,7 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
     
     func testRequestConnection() {
         serverConnection.setMockResponse(response: "{}", success: true)
-        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, tags: [Tag]())
+        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, isPrivate: false, tags: [Tag]())
         connectionRepository.requestConnection(with: user)
         
         XCTAssertTrue(serverConnection.route == "/friend/request")
@@ -83,7 +83,7 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
     
     func testCancelConnection() {
         serverConnection.setMockResponse(response: "{}", success: true)
-        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, tags: [Tag]())
+        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, isPrivate: false, tags: [Tag]())
         connectionRepository.cancelConnection(with: user)
         
         XCTAssertTrue(serverConnection.route == "/friend/cancelrequest")
@@ -95,7 +95,7 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
 
     func testValidateConnection() {
         serverConnection.setMockResponse(response: "{}", success: true)
-        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, tags: [Tag]())
+        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, isPrivate: false, tags: [Tag]())
         connectionRepository.validateConnection(with: user._id)
         
         XCTAssertTrue(serverConnection.route == "/friend/validaterequest")
@@ -107,7 +107,7 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
     
     func testAcceptConnection() {
         serverConnection.setMockResponse(response: "{}", success: true)
-        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, tags: [Tag]())
+        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, isPrivate: false, tags: [Tag]())
         connectionRepository.acceptConnection(with: user)
         
         XCTAssertTrue(serverConnection.route == "/friend/acceptrequest")
@@ -119,7 +119,7 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
     
     func testDenyConnection() {
         serverConnection.setMockResponse(response: "{}", success: true)
-        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, tags: [Tag]())
+        let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, isPrivate: false, tags: [Tag]())
         connectionRepository.denyConnection(with: user)
         
         XCTAssertTrue(serverConnection.route == "/friend/denyrequest")
