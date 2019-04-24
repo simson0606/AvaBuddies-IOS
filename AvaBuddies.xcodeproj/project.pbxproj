@@ -15,6 +15,13 @@
 		F40B5EA922413DCF008E88BE /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B5EA822413DCF008E88BE /* FileLoader.swift */; };
 		F40B5EAB22413E73008E88BE /* SvgFileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B5EAA22413E73008E88BE /* SvgFileLoader.swift */; };
 		F40B5EAD22413FB6008E88BE /* ResourceFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B5EAC22413FB6008E88BE /* ResourceFile.swift */; };
+		F40C2DA322704CA800982E62 /* ChatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C2DA222704CA800982E62 /* ChatRepository.swift */; };
+		F40C2DA522704CC600982E62 /* ChatDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C2DA422704CC600982E62 /* ChatDelegate.swift */; };
+		F40C2DA722704F2200982E62 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C2DA622704F2200982E62 /* Chat.swift */; };
+		F40C2DA922704FD600982E62 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C2DA822704FD600982E62 /* ChatMessage.swift */; };
+		F40C2DAB2270501A00982E62 /* ChatMessageReposiitory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C2DAA2270501A00982E62 /* ChatMessageReposiitory.swift */; };
+		F40C2DAD2270502700982E62 /* ChatMessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C2DAC2270502700982E62 /* ChatMessageDelegate.swift */; };
+		F40C2DAF22705B3900982E62 /* AddChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C2DAE22705B3900982E62 /* AddChatViewController.swift */; };
 		F40F1F64225D189700487CA8 /* QRCodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F1F63225D189700487CA8 /* QRCodeValidator.swift */; };
 		F40F1F6622610CD000487CA8 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F1F6522610CD000487CA8 /* ImageExtension.swift */; };
 		F434E377224A44B80005BD3B /* ServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E375224A44B80005BD3B /* ServerConnection.swift */; };
@@ -88,6 +95,13 @@
 		F40B5EA822413DCF008E88BE /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
 		F40B5EAA22413E73008E88BE /* SvgFileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvgFileLoader.swift; sourceTree = "<group>"; };
 		F40B5EAC22413FB6008E88BE /* ResourceFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceFile.swift; sourceTree = "<group>"; };
+		F40C2DA222704CA800982E62 /* ChatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRepository.swift; sourceTree = "<group>"; };
+		F40C2DA422704CC600982E62 /* ChatDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDelegate.swift; sourceTree = "<group>"; };
+		F40C2DA622704F2200982E62 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		F40C2DA822704FD600982E62 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		F40C2DAA2270501A00982E62 /* ChatMessageReposiitory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageReposiitory.swift; sourceTree = "<group>"; };
+		F40C2DAC2270502700982E62 /* ChatMessageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageDelegate.swift; sourceTree = "<group>"; };
+		F40C2DAE22705B3900982E62 /* AddChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChatViewController.swift; sourceTree = "<group>"; };
 		F40F1F63225D189700487CA8 /* QRCodeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeValidator.swift; sourceTree = "<group>"; };
 		F40F1F6522610CD000487CA8 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		F434E375224A44B80005BD3B /* ServerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConnection.swift; sourceTree = "<group>"; };
@@ -188,6 +202,19 @@
 				F40B5E9F22413925008E88BE /* avanade-logo.svg */,
 			);
 			name = "Svg-images";
+			sourceTree = "<group>";
+		};
+		F40C2DA122704C9100982E62 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				F40C2DA222704CA800982E62 /* ChatRepository.swift */,
+				F40C2DAC2270502700982E62 /* ChatMessageDelegate.swift */,
+				F40C2DA422704CC600982E62 /* ChatDelegate.swift */,
+				F40C2DA622704F2200982E62 /* Chat.swift */,
+				F40C2DAA2270501A00982E62 /* ChatMessageReposiitory.swift */,
+				F40C2DA822704FD600982E62 /* ChatMessage.swift */,
+			);
+			name = Chat;
 			sourceTree = "<group>";
 		};
 		F40F1F62225D188500487CA8 /* QR */ = {
@@ -340,6 +367,7 @@
 				F4DAD0952265E57F0083FC1E /* SelectTagsViewController.swift */,
 				F4EC001B226F1A7400685B24 /* ChatListViewController.swift */,
 				F4EC001D226F1AA100685B24 /* ChatViewController.swift */,
+				F40C2DAE22705B3900982E62 /* AddChatViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -357,6 +385,7 @@
 		F4C3B9A3223FAFF200291D26 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F40C2DA122704C9100982E62 /* Chat */,
 				F4DAD0992265F2C20083FC1E /* Tag */,
 				F40F1F62225D188500487CA8 /* QR */,
 				F434E3B4225B695B0005BD3B /* Connection */,
@@ -564,8 +593,10 @@
 				F434E378224A44B80005BD3B /* ServerConnectionProtocol.swift in Sources */,
 				F40F1F6622610CD000487CA8 /* ImageExtension.swift in Sources */,
 				F434E394224E69170005BD3B /* UserDelegate.swift in Sources */,
+				F40C2DA522704CC600982E62 /* ChatDelegate.swift in Sources */,
 				F4DAD09B2265F2DF0083FC1E /* TagRepository.swift in Sources */,
 				F434E3C0225CDE470005BD3B /* QRCodeGenerator.swift in Sources */,
+				F40C2DA922704FD600982E62 /* ChatMessage.swift in Sources */,
 				F48789EE224114B9000760BB /* MSALClientDelegate.swift in Sources */,
 				F48789EC2241149C000760BB /* MSALClient.swift in Sources */,
 				F434E396224E69270005BD3B /* User.swift in Sources */,
@@ -576,6 +607,7 @@
 				F434E3BE225CCA8D0005BD3B /* QRFriendRequestViewController.swift in Sources */,
 				F434E38A224E219D0005BD3B /* LoginResponse.swift in Sources */,
 				F406EEDC2243998B00E5068A /* TabBarViewController.swift in Sources */,
+				F40C2DAF22705B3900982E62 /* AddChatViewController.swift in Sources */,
 				F43C05E1224393BA0079513D /* SwinjectStoryboardSetup.swift in Sources */,
 				F4D29C5E223FAECF00EE40CD /* LoginViewController.swift in Sources */,
 				F434E377224A44B80005BD3B /* ServerConnection.swift in Sources */,
@@ -585,6 +617,7 @@
 				F434E37D224A44C90005BD3B /* AuthUser.swift in Sources */,
 				F434E3C4225CF8190005BD3B /* QRScannerViewController.swift in Sources */,
 				F4B624DE223FAE110098238C /* AppDelegate.swift in Sources */,
+				F40C2DAB2270501A00982E62 /* ChatMessageReposiitory.swift in Sources */,
 				F43C05DF22438D730079513D /* ProfileViewController.swift in Sources */,
 				F4EC001C226F1A7400685B24 /* ChatListViewController.swift in Sources */,
 				F434E388224E0FBC0005BD3B /* AuthenticationDelegate.swift in Sources */,
@@ -593,14 +626,17 @@
 				F434E392224E690C0005BD3B /* UserRepository.swift in Sources */,
 				F434E3AF2257BA670005BD3B /* SearchPeopleViewController.swift in Sources */,
 				F40B5EAB22413E73008E88BE /* SvgFileLoader.swift in Sources */,
+				F40C2DAD2270502700982E62 /* ChatMessageDelegate.swift in Sources */,
 				F48789E82241135C000760BB /* Constants.swift in Sources */,
 				F4DAD0982265E71C0083FC1E /* Tag.swift in Sources */,
 				BDD28B10225F637300CCC8C9 /* RegisterViewController.swift in Sources */,
+				F40C2DA722704F2200982E62 /* Chat.swift in Sources */,
 				F48789EA224113BC000760BB /* GraphUser.swift in Sources */,
 				F434E398224E7CB10005BD3B /* ImagePickerManager.swift in Sources */,
 				F434E3B6225B6A450005BD3B /* ConnectionDelegate.swift in Sources */,
 				F4DAD0A22266014D0083FC1E /* TagCollectionViewCell.swift in Sources */,
 				F434E3B8225B6CA60005BD3B /* Connection.swift in Sources */,
+				F40C2DA322704CA800982E62 /* ChatRepository.swift in Sources */,
 				F434E3B3225B69550005BD3B /* ConnectionRepository.swift in Sources */,
 				F434E3BC225C9A220005BD3B /* NearbyViewController.swift in Sources */,
 				F4EC001E226F1AA100685B24 /* ChatViewController.swift in Sources */,

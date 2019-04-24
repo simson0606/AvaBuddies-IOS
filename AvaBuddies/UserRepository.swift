@@ -59,6 +59,7 @@ class UserRepository {
         let parameters = [
             "aboutme": user?.aboutme ?? "",
             "sharelocation": user?.sharelocation ?? false,
+            "isPrivate": user?.isPrivate ?? false,
             "tags": user?.tags?.map{tag in tag._id} ?? [String]()
             ] as [String : Any]
 

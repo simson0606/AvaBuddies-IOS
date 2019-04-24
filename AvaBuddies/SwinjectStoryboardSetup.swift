@@ -20,12 +20,15 @@ extension SwinjectStoryboard {
         let userRepository = UserRepository()
         let connectionRepository = ConnectionRepository()
         let tagRepository = TagRepository()
+        let chatRepository = ChatRepository()
         
         authenticationRepository.serverConnection = serverConnection
         authenticationRepository.accessTokenAdapter = accessTokenAdapter
         userRepository.serverConnection = serverConnection
         connectionRepository.serverConnection = serverConnection
         tagRepository.serverConnection = serverConnection
+        chatRepository.serverConnection = serverConnection
+        chatRepository.userRepository = userRepository
         
         defaultContainer.storyboardInitCompleted(LoginViewController.self) { r, c in
             c.msalClient = r.resolve(MSALClient.self)
@@ -61,12 +64,20 @@ extension SwinjectStoryboard {
             c.userRepository = r.resolve(UserRepository.self)
             c.tagRepository = r.resolve(TagRepository.self)
         }
-        
+        defaultContainer.storyboardInitCompleted(ChatListViewController.self) { r, c in
+            c.userRepository = r.resolve(UserRepository.self)
+            c.chatRepository = r.resolve(ChatRepository.self)
+        }
+        defaultContainer.storyboardInitCompleted(AddChatViewController.self) { r, c in
+            c.userRepository = r.resolve(UserRepository.self)
+            c.chatRepository = r.resolve(ChatRepository.self)
+        }
         defaultContainer.register(MSALClient.self) { _ in msalClient }
         defaultContainer.register(AuthenticationRepository.self) {_ in authenticationRepository}
         defaultContainer.register(UserRepository.self) {_ in userRepository}
         defaultContainer.register(ConnectionRepository.self) {_ in connectionRepository}
         defaultContainer.register(TagRepository.self) {_ in tagRepository}
+        defaultContainer.register(ChatRepository.self) {_ in chatRepository}
 
     }
 }
