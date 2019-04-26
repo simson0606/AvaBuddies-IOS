@@ -9,10 +9,11 @@
 import Foundation
 import Swinject
 import SwinjectStoryboard
+import CoreData
 
 extension SwinjectStoryboard {
     
-     @objc class func setup() {
+   class func setup() {
         let msalClient = MSALClient()
         let accessTokenAdapter = AccessTokenAdapter()
         let serverConnection = ServerConnection(accessTokenAdapter: accessTokenAdapter)
@@ -21,7 +22,18 @@ extension SwinjectStoryboard {
         let connectionRepository = ConnectionRepository()
         let tagRepository = TagRepository()
         let chatRepository = ChatRepository()
-        
+        let chatMessageRepository = ChatMessageRepository()
+    
+        let chatMessagePersistentContainer: NSPersistentContainer = {
+            let container = NSPersistentContainer(name: "ChatMessageModel")
+            container.loadPersistentStores { description, error in
+                if let error = error {
+                    fatalError("Unable to load persistent stores: \(error)")
+                }
+            }
+            return container
+        }()
+
         authenticationRepository.serverConnection = serverConnection
         authenticationRepository.accessTokenAdapter = accessTokenAdapter
         userRepository.serverConnection = serverConnection
@@ -29,7 +41,8 @@ extension SwinjectStoryboard {
         tagRepository.serverConnection = serverConnection
         chatRepository.serverConnection = serverConnection
         chatRepository.userRepository = userRepository
-        
+        chatMessageRepository.persistentContainer = chatMessagePersistentContainer
+    
         defaultContainer.storyboardInitCompleted(LoginViewController.self) { r, c in
             c.msalClient = r.resolve(MSALClient.self)
             c.authenticationRepository = r.resolve(AuthenticationRepository.self)
@@ -72,12 +85,18 @@ extension SwinjectStoryboard {
             c.userRepository = r.resolve(UserRepository.self)
             c.chatRepository = r.resolve(ChatRepository.self)
         }
+        defaultContainer.storyboardInitCompleted(ChatViewController.self) { r, c in
+            c.userRepository = r.resolve(UserRepository.self)
+            c.chatMessageRepository = r.resolve(ChatMessageRepository.self)
+        }
+    
         defaultContainer.register(MSALClient.self) { _ in msalClient }
         defaultContainer.register(AuthenticationRepository.self) {_ in authenticationRepository}
         defaultContainer.register(UserRepository.self) {_ in userRepository}
         defaultContainer.register(ConnectionRepository.self) {_ in connectionRepository}
         defaultContainer.register(TagRepository.self) {_ in tagRepository}
         defaultContainer.register(ChatRepository.self) {_ in chatRepository}
+        defaultContainer.register(ChatMessageRepository.self) {_ in chatMessageRepository}
 
     }
 }

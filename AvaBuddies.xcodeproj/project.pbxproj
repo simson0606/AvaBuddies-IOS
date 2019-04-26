@@ -19,7 +19,7 @@
 		F40C2DA522704CC600982E62 /* ChatDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C2DA422704CC600982E62 /* ChatDelegate.swift */; };
 		F40C2DA722704F2200982E62 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C2DA622704F2200982E62 /* Chat.swift */; };
 		F40C2DA922704FD600982E62 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C2DA822704FD600982E62 /* ChatMessage.swift */; };
-		F40C2DAB2270501A00982E62 /* ChatMessageReposiitory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C2DAA2270501A00982E62 /* ChatMessageReposiitory.swift */; };
+		F40C2DAB2270501A00982E62 /* ChatMessageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C2DAA2270501A00982E62 /* ChatMessageRepository.swift */; };
 		F40C2DAD2270502700982E62 /* ChatMessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C2DAC2270502700982E62 /* ChatMessageDelegate.swift */; };
 		F40C2DAF22705B3900982E62 /* AddChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C2DAE22705B3900982E62 /* AddChatViewController.swift */; };
 		F40F1F64225D189700487CA8 /* QRCodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40F1F63225D189700487CA8 /* QRCodeValidator.swift */; };
@@ -62,6 +62,7 @@
 		F4B624E3223FAE110098238C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B624E1223FAE110098238C /* Main.storyboard */; };
 		F4B624E8223FAE120098238C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B624E6223FAE120098238C /* LaunchScreen.storyboard */; };
 		F4B624F3223FAE120098238C /* ConnectionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B624F2223FAE120098238C /* ConnectionsTest.swift */; };
+		F4BEE1FC2271ACDC00414E41 /* ChatMessageModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4BEE1FA2271ACDC00414E41 /* ChatMessageModel.xcdatamodeld */; };
 		F4D29C5E223FAECF00EE40CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D29C5D223FAECF00EE40CD /* LoginViewController.swift */; };
 		F4DAD0962265E57F0083FC1E /* SelectTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAD0952265E57F0083FC1E /* SelectTagsViewController.swift */; };
 		F4DAD0982265E71C0083FC1E /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAD0972265E71C0083FC1E /* Tag.swift */; };
@@ -99,7 +100,7 @@
 		F40C2DA422704CC600982E62 /* ChatDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDelegate.swift; sourceTree = "<group>"; };
 		F40C2DA622704F2200982E62 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		F40C2DA822704FD600982E62 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
-		F40C2DAA2270501A00982E62 /* ChatMessageReposiitory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageReposiitory.swift; sourceTree = "<group>"; };
+		F40C2DAA2270501A00982E62 /* ChatMessageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageRepository.swift; sourceTree = "<group>"; };
 		F40C2DAC2270502700982E62 /* ChatMessageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageDelegate.swift; sourceTree = "<group>"; };
 		F40C2DAE22705B3900982E62 /* AddChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChatViewController.swift; sourceTree = "<group>"; };
 		F40F1F63225D189700487CA8 /* QRCodeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeValidator.swift; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 		F4B624EE223FAE120098238C /* AvaBuddiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvaBuddiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B624F2223FAE120098238C /* ConnectionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionsTest.swift; sourceTree = "<group>"; };
 		F4B624F4223FAE120098238C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4BEE1FB2271ACDC00414E41 /* ChatMessageModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatMessageModel.xcdatamodel; sourceTree = "<group>"; };
 		F4D29C5D223FAECF00EE40CD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F4DAD093226359100083FC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4DAD094226359100083FC1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -211,7 +213,7 @@
 				F40C2DAC2270502700982E62 /* ChatMessageDelegate.swift */,
 				F40C2DA422704CC600982E62 /* ChatDelegate.swift */,
 				F40C2DA622704F2200982E62 /* Chat.swift */,
-				F40C2DAA2270501A00982E62 /* ChatMessageReposiitory.swift */,
+				F40C2DAA2270501A00982E62 /* ChatMessageRepository.swift */,
 				F40C2DA822704FD600982E62 /* ChatMessage.swift */,
 			);
 			name = Chat;
@@ -329,6 +331,7 @@
 		F4B624DC223FAE110098238C /* AvaBuddies */ = {
 			isa = PBXGroup;
 			children = (
+				F4BEE1F92271ACAA00414E41 /* Data */,
 				F40F1F6722610DD300487CA8 /* Extensions */,
 				F40B5EA322413BED008E88BE /* Svg-images */,
 				F4C3B9A4223FAFF900291D26 /* Misc */,
@@ -350,6 +353,14 @@
 				F4DAD0A42268804F0083FC1E /* TagsTest.swift */,
 			);
 			path = AvaBuddiesTests;
+			sourceTree = "<group>";
+		};
+		F4BEE1F92271ACAA00414E41 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F4BEE1FA2271ACDC00414E41 /* ChatMessageModel.xcdatamodeld */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 		F4C3B9A1223FAFDC00291D26 /* ViewControllers */ = {
@@ -545,6 +556,8 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/MSAL/MSAL.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
@@ -555,6 +568,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSAL.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
@@ -617,7 +632,8 @@
 				F434E37D224A44C90005BD3B /* AuthUser.swift in Sources */,
 				F434E3C4225CF8190005BD3B /* QRScannerViewController.swift in Sources */,
 				F4B624DE223FAE110098238C /* AppDelegate.swift in Sources */,
-				F40C2DAB2270501A00982E62 /* ChatMessageReposiitory.swift in Sources */,
+				F4BEE1FC2271ACDC00414E41 /* ChatMessageModel.xcdatamodeld in Sources */,
+				F40C2DAB2270501A00982E62 /* ChatMessageRepository.swift in Sources */,
 				F43C05DF22438D730079513D /* ProfileViewController.swift in Sources */,
 				F4EC001C226F1A7400685B24 /* ChatListViewController.swift in Sources */,
 				F434E388224E0FBC0005BD3B /* AuthenticationDelegate.swift in Sources */,
@@ -931,6 +947,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F4BEE1FA2271ACDC00414E41 /* ChatMessageModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F4BEE1FB2271ACDC00414E41 /* ChatMessageModel.xcdatamodel */,
+			);
+			currentVersion = F4BEE1FB2271ACDC00414E41 /* ChatMessageModel.xcdatamodel */;
+			path = ChatMessageModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F4B624D2223FAE110098238C /* Project object */;
 }

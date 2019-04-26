@@ -8,16 +8,38 @@
 //
 
 import UIKit
+import MessageKit
 
-class ChatViewController: UIViewController {
+class ChatViewController: MessagesViewController, UserDelegate, ChatMessageDelegate {
 
+    var userRepository: UserRepository!
+    var chatMessageRepository: ChatMessageRepository!
+    var chat: Chat?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        chatMessageRepository.test()
+        
         // Do any additional setup after loading the view.
     }
     
-
+    func messageReceived(message: ChatMessage) {
+        
+    }
+    
+    func userReceived(user: User) {
+        
+    }
+    
+    func userDeleted() {
+        
+    }
+    
+    func failed() {
+        
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -11,10 +11,11 @@ import UIKit
 class ChatListViewController: UITableViewController, ChatDelegate, UserDelegate {
 
     @IBOutlet weak var addChatButton: UIBarButtonItem!
-    
 
     var userRepository: UserRepository!
     var chatRepository: ChatRepository!
+    
+    var selectedChat: Chat?
     
     override func viewDidAppear(_ animated: Bool) {
         parent?.title = "Chat".localized()
@@ -56,9 +57,16 @@ class ChatListViewController: UITableViewController, ChatDelegate, UserDelegate 
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        selectedChat = chatRepository.chats![indexPath.row]
+        performSegue(withIdentifier: "viewChat", sender: self)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let chatViewController = segue.destination as? ChatViewController  {
+            chatViewController.chat = selectedChat
+        }
+    }
     
     
     func chatsReceived(chats: [Chat]) {
