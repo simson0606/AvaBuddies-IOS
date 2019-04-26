@@ -19,11 +19,13 @@ extension SwinjectStoryboard {
         let authenticationRepository = AuthenticationRepository()
         let userRepository = UserRepository()
         let connectionRepository = ConnectionRepository()
+        let tagRepository = TagRepository()
         
         authenticationRepository.serverConnection = serverConnection
         authenticationRepository.accessTokenAdapter = accessTokenAdapter
         userRepository.serverConnection = serverConnection
         connectionRepository.serverConnection = serverConnection
+        tagRepository.serverConnection = serverConnection
         
         defaultContainer.storyboardInitCompleted(LoginViewController.self) { r, c in
             c.msalClient = r.resolve(MSALClient.self)
@@ -51,15 +53,20 @@ extension SwinjectStoryboard {
         defaultContainer.storyboardInitCompleted(QRScannerViewController.self) { r, c in
             c.connectionRepository = r.resolve(ConnectionRepository.self)
         }
-        
         defaultContainer.storyboardInitCompleted(RegisterViewController.self) { r, c in
             c.msalClient = r.resolve(MSALClient.self)
             c.authenticationRepository = r.resolve(AuthenticationRepository.self)
+        }
+        defaultContainer.storyboardInitCompleted(SelectTagsViewController.self) { r, c in
+            c.userRepository = r.resolve(UserRepository.self)
+            c.tagRepository = r.resolve(TagRepository.self)
         }
         
         defaultContainer.register(MSALClient.self) { _ in msalClient }
         defaultContainer.register(AuthenticationRepository.self) {_ in authenticationRepository}
         defaultContainer.register(UserRepository.self) {_ in userRepository}
         defaultContainer.register(ConnectionRepository.self) {_ in connectionRepository}
+        defaultContainer.register(TagRepository.self) {_ in tagRepository}
+
     }
 }
