@@ -86,13 +86,43 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
     func updateSearchResults(for searchController: UISearchController) {
         filteredPeople.removeAll(keepingCapacity: false)
         
-        filteredPeople = people.filter { result in
-            return result.name.contains(searchController.searchBar.text!)
-        }
+        filteredPeople = filterUsersByString(filterString: searchController.searchBar.text!)
 
         self.tableView.reloadData()
     }
     
+    public func filterUsersByString(filterString: String) -> [User] {
+        let keyWords = filterString.trimmingCharacters(in: .whitespacesAndNewlines).lowercased().components(separatedBy: " ")
+        return people.filter { result in
+            for keyWord in keyWords {
+                if keyWord.isEmpty {
+                    continue
+                }
+                if result.name.lowercased().contains(keyWord) {
+                    continue
+                }
+                if result.email.lowercased().contains(keyWord) {
+                    continue
+                }
+                if result.isPrivate == false, hasTag(user: result, tagFilter: keyWord) {
+                    continue
+                }
+                return false
+            }
+            return true
+        }
+    }
+    
+    private func hasTag(user: User, tagFilter: String) -> Bool {
+        if let tags = user.tags {
+            for tag in tags {
+                if tag.name.lowercased().contains(tagFilter) {
+                    return true
+                }
+            }
+        }
+        return false
+    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if  (resultSearchController.isActive) {

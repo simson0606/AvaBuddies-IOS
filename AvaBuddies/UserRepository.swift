@@ -10,7 +10,7 @@ import Foundation
 
 class UserRepository {
     
-    var serverConnection: ServerConnectionProtocol?
+    var serverConnection: ServerConnectionProtocol!
     
     var userDelegate: UserDelegate?
     var userListDelegate: UserListDelegate?
@@ -23,7 +23,7 @@ class UserRepository {
             return
         }
         
-        serverConnection?.request(parameters: nil, to: Constants.ServerConnection.UserProfileRoute, with: .get, completion: {
+        serverConnection.request(parameters: nil, to: Constants.ServerConnection.UserProfileRoute, with: .get, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
             do {
@@ -44,7 +44,7 @@ class UserRepository {
             "image": user?.image ?? "",
         ]
         print("Image length: \(user?.image?.count ?? 0)")
-        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileImageRoute, with: .post, completion: {
+        serverConnection.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileImageRoute, with: .post, completion: {
             (result) -> () in
             print("Image Change: \(result)")
         }, fail: {
@@ -58,10 +58,12 @@ class UserRepository {
     func updateProfile(){
         let parameters = [
             "aboutme": user?.aboutme ?? "",
-            "sharelocation": user?.sharelocation ?? false
+            "sharelocation": user?.sharelocation ?? false,
+            "tags": user?.tags?.map{tag in tag._id} ?? [String](),
+            "isPrivate": user?.isPrivate ?? true
             ] as [String : Any]
 
-        serverConnection?.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileRoute, with: .post, completion: {
+        serverConnection.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileRoute, with: .post, completion: {
             (result) -> () in
             print("Profile Change: \(result)")
         }, fail: {
@@ -71,7 +73,7 @@ class UserRepository {
     }
     
     func deleteProfile() {
-        serverConnection?.request(parameters: nil, to: Constants.ServerConnection.DeleteProfileRoute + (user?._id ?? ""), with: .delete, completion: {
+        serverConnection.request(parameters: nil, to: Constants.ServerConnection.DeleteProfileRoute + (user?._id ?? ""), with: .delete, completion: {
             (result) -> () in
             self.userDelegate?.userDeleted()
         }, fail: {
@@ -85,7 +87,7 @@ class UserRepository {
             self.userListDelegate?.userListReceived(users: self.users!)
             return
         }
-        serverConnection?.request(parameters: nil, to: Constants.ServerConnection.UserListRoute, with: .get, completion: {
+        serverConnection.request(parameters: nil, to: Constants.ServerConnection.UserListRoute, with: .get, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
             do {
