@@ -26,6 +26,11 @@ class ChatViewController: MessagesViewController, UserDelegate, ChatMessageDeleg
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messageInputBar.delegate = self
+        messageInputBar.tintColor = self.view.tintColor
+        messageInputBar.sendButton.setTitleColor(self.view.tintColor, for: .normal)
+        messageInputBar.sendButton.setTitleColor(self.view.tintColor, for: .selected)
+        messageInputBar.sendButton.setTitleColor(self.view.tintColor, for: .highlighted)
+        messageInputBar.sendButton.setTitleColor(self.view.tintColor, for: .focused)
         messagesCollectionView.messagesDisplayDelegate = self
     }
     
@@ -36,13 +41,13 @@ class ChatViewController: MessagesViewController, UserDelegate, ChatMessageDeleg
     }
     
     func messageReceived(message: ChatMessage) {
-        
+        section = 1
+        messages = chatMessageRepository.getMessages(for: chat!, section: 0)
+        messagesCollectionView.reloadData()
+        messagesCollectionView.scrollToBottom(animated: true)
     }
     
     func userReceived(user: User) {
-        chatMessageRepository.messageReceived(message: ChatMessage(_id: UUID().uuidString, chat: chat!, senderId: userRepository.user!._id, message: "testme \(Date())"))
-        chatMessageRepository.messageReceived(message: ChatMessage(_id: UUID().uuidString, chat: chat!, senderId: (chat?.getOtherUser(me: userRepository.user!)._id)!, message: "testother \(Date())"))
-        
         messages = chatMessageRepository.getMessages(for: chat!, section: 0)
         messagesCollectionView.reloadData()
         messagesCollectionView.scrollToBottom(animated: true)
@@ -50,6 +55,7 @@ class ChatViewController: MessagesViewController, UserDelegate, ChatMessageDeleg
             self.allowLoad = true
         }
     }
+    
     
     func userDeleted() {
         //nothing
