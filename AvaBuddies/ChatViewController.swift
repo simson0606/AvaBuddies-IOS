@@ -117,6 +117,14 @@ class ChatViewController: MessagesViewController, UserDelegate, ChatMessageDeleg
         return messages[indexPath.section]
     }
     
+    func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+        if message.sender.id == userRepository.user!._id {
+            return self.view.tintColor.lighter(by: 30)!
+        } else {
+            return UIColor.init(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
+        }
+    }
+    
     func heightForLocation(message: MessageType,
                            at indexPath: IndexPath,
                            with maxWidth: CGFloat,

@@ -58,6 +58,7 @@
 		F48789EA224113BC000760BB /* GraphUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789E9224113BC000760BB /* GraphUser.swift */; };
 		F48789EC2241149C000760BB /* MSALClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789EB2241149C000760BB /* MSALClient.swift */; };
 		F48789EE224114B9000760BB /* MSALClientDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789ED224114B9000760BB /* MSALClientDelegate.swift */; };
+		F4A2E1C22281A71B00D6DCBA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A2E1C12281A71B00D6DCBA /* UIColorExtension.swift */; };
 		F4B624DE223FAE110098238C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B624DD223FAE110098238C /* AppDelegate.swift */; };
 		F4B624E3223FAE110098238C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B624E1223FAE110098238C /* Main.storyboard */; };
 		F4B624E8223FAE120098238C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B624E6223FAE120098238C /* LaunchScreen.storyboard */; };
@@ -140,6 +141,7 @@
 		F48789E9224113BC000760BB /* GraphUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphUser.swift; sourceTree = "<group>"; };
 		F48789EB2241149C000760BB /* MSALClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSALClient.swift; sourceTree = "<group>"; };
 		F48789ED224114B9000760BB /* MSALClientDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSALClientDelegate.swift; sourceTree = "<group>"; };
+		F4A2E1C12281A71B00D6DCBA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F4B624DA223FAE110098238C /* AvaBuddies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvaBuddies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B624DD223FAE110098238C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B624E9223FAE120098238C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				F40F1F6522610CD000487CA8 /* ImageExtension.swift */,
+				F4A2E1C12281A71B00D6DCBA /* UIColorExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				F40C2DAD2270502700982E62 /* ChatMessageDelegate.swift in Sources */,
 				F48789E82241135C000760BB /* Constants.swift in Sources */,
 				F4DAD0982265E71C0083FC1E /* Tag.swift in Sources */,
+				F4A2E1C22281A71B00D6DCBA /* UIColorExtension.swift in Sources */,
 				BDD28B10225F637300CCC8C9 /* RegisterViewController.swift in Sources */,
 				F40C2DA722704F2200982E62 /* Chat.swift in Sources */,
 				F48789EA224113BC000760BB /* GraphUser.swift in Sources */,
