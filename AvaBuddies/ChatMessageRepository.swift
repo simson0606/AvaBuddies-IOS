@@ -19,14 +19,20 @@ class ChatMessageRepository {
         return persistentContainer.viewContext
     }
     
-    func test(){
-        
-        
+    
+    func getMessages(for chat: Chat, section: Int) -> [ChatMessage] { 
         let fetchRequest: NSFetchRequest<ChatMessageModel> = ChatMessageModel.fetchRequest()
-        let results = try! viewContext.fetch(fetchRequest)
-        
-        print(results)
+        fetchRequest.predicate = NSPredicate(format: "chat == %@", chat._id)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateTime", ascending: false)]
+        fetchRequest.fetchOffset = Constants.LocalStoragePageSize * section
+        fetchRequest.fetchLimit = Constants.LocalStoragePageSize
+        var results = try! viewContext.fetch(fetchRequest)
+        results.reverse()
+        return results.map{ result in
+            return ChatMessage(model: result, chat: chat)
+        }
     }
+
     
     var chatMessageDelegate: ChatMessageDelegate?
     
@@ -47,11 +53,18 @@ class ChatMessageRepository {
     func messageReceived(message: ChatMessage) {
         _ = message.toChatMessageModel(context: viewContext)
         try! viewContext.save()
-        
     }
     
-    func sendMessage(messageText: String) {
-        
+    func sendMessage(message: ChatMessage) {
+        _ = message.toChatMessageModel(context: viewContext)
+        try! viewContext.save()
+    }
+    
+    func clear(){
+        let fetchRequest: NSFetchRequest = ChatMessageModel.fetchRequest()
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+        try! viewContext.execute(deleteRequest)
+
     }
     
 }

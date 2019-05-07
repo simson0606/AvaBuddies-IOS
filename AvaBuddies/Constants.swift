@@ -40,6 +40,8 @@ struct Constants {
         static let Secret = "SamplePassword"
     }
     
+    static let LocalStoragePageSize = 15
+    
     static let logoOnly = ResourceFile(filename: "avanade-logo-only", filetype: "svg")
     
     static let QrValidSeconds = 10
