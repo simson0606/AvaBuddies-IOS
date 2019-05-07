@@ -19,6 +19,7 @@ class ChatViewController: MessagesViewController, UserDelegate, ChatMessageDeleg
     var chat: Chat?
     var messages: [ChatMessage] = []
     var section = 1
+    var allowLoad = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +29,10 @@ class ChatViewController: MessagesViewController, UserDelegate, ChatMessageDeleg
         messagesCollectionView.messagesDisplayDelegate = self
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        chatMessageRepository.messageReceived(message: ChatMessage(_id: UUID().uuidString, chat: chat!, senderId: userRepository.user!._id, message: "testme \(Date())"))
-        chatMessageRepository.messageReceived(message: ChatMessage(_id: UUID().uuidString, chat: chat!, senderId: (chat?.getOtherUser(me: userRepository.user!)._id)!, message: "testother \(Date())"))
-        
-        messages = chatMessageRepository.getMessages(for: chat!, section: 0)
-        messagesCollectionView.reloadData()
-        messagesCollectionView.scrollToBottom(animated: true)
+    override func viewWillAppear(_ animated: Bool) {
+        userRepository.userDelegate = self
+        chatMessageRepository.chatMessageDelegate = self
+        userRepository.getUser()
     }
     
     func messageReceived(message: ChatMessage) {
@@ -43,19 +40,27 @@ class ChatViewController: MessagesViewController, UserDelegate, ChatMessageDeleg
     }
     
     func userReceived(user: User) {
+        chatMessageRepository.messageReceived(message: ChatMessage(_id: UUID().uuidString, chat: chat!, senderId: userRepository.user!._id, message: "testme \(Date())"))
+        chatMessageRepository.messageReceived(message: ChatMessage(_id: UUID().uuidString, chat: chat!, senderId: (chat?.getOtherUser(me: userRepository.user!)._id)!, message: "testother \(Date())"))
         
+        messages = chatMessageRepository.getMessages(for: chat!, section: 0)
+        messagesCollectionView.reloadData()
+        messagesCollectionView.scrollToBottom(animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            self.allowLoad = true
+        }
     }
     
     func userDeleted() {
-        
+        //nothing
     }
     
     func failed() {
-        
+        //nothing
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < 10 {
+        if scrollView.contentOffset.y < 10 && allowLoad {
             let newMessages = chatMessageRepository.getMessages(for: chat!, section: section)
             if newMessages.count > 0 {
                 section += 1
