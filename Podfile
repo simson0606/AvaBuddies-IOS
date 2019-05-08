@@ -10,4 +10,5 @@ target 'AvaBuddies' do
   pod 'Alamofire'
   pod 'Localize-Swift'
   pod 'MessageKit'
+  pod 'Socket.IO-Client-Swift'
 end

@@ -59,6 +59,8 @@
 		F48789EC2241149C000760BB /* MSALClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789EB2241149C000760BB /* MSALClient.swift */; };
 		F48789EE224114B9000760BB /* MSALClientDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789ED224114B9000760BB /* MSALClientDelegate.swift */; };
 		F4A2E1C22281A71B00D6DCBA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A2E1C12281A71B00D6DCBA /* UIColorExtension.swift */; };
+		F4A2E1C42282DBDF00D6DCBA /* ServerSocketConnectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A2E1C32282DBDF00D6DCBA /* ServerSocketConnectionProtocol.swift */; };
+		F4A2E1C62282DBEF00D6DCBA /* ServerSocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A2E1C52282DBEF00D6DCBA /* ServerSocketConnection.swift */; };
 		F4B624DE223FAE110098238C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B624DD223FAE110098238C /* AppDelegate.swift */; };
 		F4B624E3223FAE110098238C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B624E1223FAE110098238C /* Main.storyboard */; };
 		F4B624E8223FAE120098238C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4B624E6223FAE120098238C /* LaunchScreen.storyboard */; };
@@ -142,6 +144,8 @@
 		F48789EB2241149C000760BB /* MSALClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSALClient.swift; sourceTree = "<group>"; };
 		F48789ED224114B9000760BB /* MSALClientDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSALClientDelegate.swift; sourceTree = "<group>"; };
 		F4A2E1C12281A71B00D6DCBA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		F4A2E1C32282DBDF00D6DCBA /* ServerSocketConnectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSocketConnectionProtocol.swift; sourceTree = "<group>"; };
+		F4A2E1C52282DBEF00D6DCBA /* ServerSocketConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSocketConnection.swift; sourceTree = "<group>"; };
 		F4B624DA223FAE110098238C /* AvaBuddies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvaBuddies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B624DD223FAE110098238C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B624E9223FAE120098238C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -246,6 +250,8 @@
 				F434E375224A44B80005BD3B /* ServerConnection.swift */,
 				F434E376224A44B80005BD3B /* ServerConnectionProtocol.swift */,
 				F434E385224D16CD0005BD3B /* AccessTokenAdapter.swift */,
+				F4A2E1C32282DBDF00D6DCBA /* ServerSocketConnectionProtocol.swift */,
+				F4A2E1C52282DBEF00D6DCBA /* ServerSocketConnection.swift */,
 			);
 			name = ServerConnection;
 			sourceTree = "<group>";
@@ -562,6 +568,8 @@
 				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
 				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 			);
@@ -574,6 +582,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 			);
@@ -617,6 +627,7 @@
 				F40C2DA922704FD600982E62 /* ChatMessage.swift in Sources */,
 				F48789EE224114B9000760BB /* MSALClientDelegate.swift in Sources */,
 				F48789EC2241149C000760BB /* MSALClient.swift in Sources */,
+				F4A2E1C42282DBDF00D6DCBA /* ServerSocketConnectionProtocol.swift in Sources */,
 				F434E396224E69270005BD3B /* User.swift in Sources */,
 				F434E37C224A44C90005BD3B /* AuthenticationRepository.swift in Sources */,
 				F434E3BA225C98E90005BD3B /* RoundedTableViewImageView.swift in Sources */,
@@ -653,6 +664,7 @@
 				F40C2DA722704F2200982E62 /* Chat.swift in Sources */,
 				F48789EA224113BC000760BB /* GraphUser.swift in Sources */,
 				F434E398224E7CB10005BD3B /* ImagePickerManager.swift in Sources */,
+				F4A2E1C62282DBEF00D6DCBA /* ServerSocketConnection.swift in Sources */,
 				F434E3B6225B6A450005BD3B /* ConnectionDelegate.swift in Sources */,
 				F4DAD0A22266014D0083FC1E /* TagCollectionViewCell.swift in Sources */,
 				F434E3B8225B6CA60005BD3B /* Connection.swift in Sources */,

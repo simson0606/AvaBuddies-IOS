@@ -10,6 +10,9 @@ PODS:
   - MSAL (0.2.3):
     - MSAL/app-lib (= 0.2.3)
   - MSAL/app-lib (0.2.3)
+  - Socket.IO-Client-Swift (15.0.0):
+    - Starscream (~> 3.1)
+  - Starscream (3.1.0)
   - SVGKit (2.1.0):
     - CocoaLumberjack (~> 3.0)
   - Swinject (2.6.0)
@@ -21,6 +24,7 @@ DEPENDENCIES:
   - Localize-Swift
   - MessageKit
   - MSAL
+  - Socket.IO-Client-Swift
   - SVGKit
   - Swinject
   - SwinjectStoryboard
@@ -33,6 +37,8 @@ SPEC REPOS:
     - MessageInputBar
     - MessageKit
     - MSAL
+    - Socket.IO-Client-Swift
+    - Starscream
     - SVGKit
     - Swinject
     - SwinjectStoryboard
@@ -44,10 +50,12 @@ SPEC CHECKSUMS:
   MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
   MessageKit: 29c1c87e5a396d2ca7a3f712e5171dc9aba42a1e
   MSAL: 2592b744b9215d9b7463f02fb9afd4e432c75c62
+  Socket.IO-Client-Swift: c039a808195d22a7192962841b8c035cb61ea49e
+  Starscream: 08172b481e145289c4930cb567230fb55897cfa4
   SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
 
-PODFILE CHECKSUM: bd3f1ff6949016d90fedc80214e841236d787f0e
+PODFILE CHECKSUM: 3e9df1c1fbf0b675dfed0d43b9354dc8d8184ab0
 
 COCOAPODS: 1.5.2

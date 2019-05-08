@@ -60,8 +60,9 @@ class ChatMessageRepository {
         try! viewContext.save()
     }
     
-    func clear(){
+    func clear(for chat: Chat){
         let fetchRequest: NSFetchRequest = ChatMessageModel.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "chat == %@", chat._id)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
         try! viewContext.execute(deleteRequest)
 
