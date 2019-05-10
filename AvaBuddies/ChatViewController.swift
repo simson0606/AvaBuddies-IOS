@@ -66,7 +66,8 @@ class ChatViewController: MessagesViewController, UserDelegate, ChatMessageDeleg
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < 10 && allowLoad {
+        if scrollView.contentOffset.y < 0 && allowLoad {
+            scrollView.isScrollEnabled = false
             let newMessages = chatMessageRepository.getMessages(for: chat!, section: section)
             if newMessages.count > 0 {
                 section += 1
@@ -75,6 +76,7 @@ class ChatViewController: MessagesViewController, UserDelegate, ChatMessageDeleg
                 messagesCollectionView.reloadDataAndKeepOffset()
             }
         }
+        scrollView.isScrollEnabled = true
     }
     
     func configureAvatarView(
