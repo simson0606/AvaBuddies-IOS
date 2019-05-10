@@ -64,14 +64,22 @@ class ChatViewController: MessagesViewController, UserDelegate, ChatMessageDeleg
     func failed() {
         //nothing
     }
+    
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < 0 && allowLoad {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        var visibleRect = CGRect()
+        
+        visibleRect.origin = self.messagesCollectionView.contentOffset
+        visibleRect.size = self.messagesCollectionView.bounds.size
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        
+        guard let indexPath = self.messagesCollectionView.indexPathForItem(at: visiblePoint) else { return }
+        if indexPath.section <= 5 && allowLoad {
             scrollView.isScrollEnabled = false
             let newMessages = chatMessageRepository.getMessages(for: chat!, section: section)
             if newMessages.count > 0 {
                 section += 1
-
+                
                 messages.insert(contentsOf: newMessages, at: 0)
                 messagesCollectionView.reloadDataAndKeepOffset()
             }
