@@ -59,10 +59,6 @@ class SelectTagsViewController: UITableViewController, UISearchResultsUpdating, 
 
         if (tagSearchController.isActive) {
             cell.textLabel?.text = filteredTags[indexPath.row].name
-            let selected = selectedTags.contains { tag in
-                tag._id == tagRepository.tags![indexPath.row]._id
-            }
-            cell.accessoryType = selected ? .checkmark : .none
             return cell
         }
         cell.textLabel?.text = tagRepository.tags![indexPath.row].name
