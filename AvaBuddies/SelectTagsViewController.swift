@@ -59,9 +59,11 @@ class SelectTagsViewController: UITableViewController, UISearchResultsUpdating, 
 
         if (tagSearchController.isActive) {
             cell.textLabel?.text = filteredTags[indexPath.row].name
+            cell.detailTextLabel?.text = filteredTags[indexPath.row].isPrivate ? "Private tag".localized() : "Public tag".localized()
             return cell
         }
         cell.textLabel?.text = tagRepository.tags![indexPath.row].name
+        cell.detailTextLabel?.text = tagRepository.tags![indexPath.row].isPrivate ? "Private tag".localized() : "Public tag".localized()
         let selected = selectedTags.contains { tag in
             tag._id == tagRepository.tags![indexPath.row]._id
         }
