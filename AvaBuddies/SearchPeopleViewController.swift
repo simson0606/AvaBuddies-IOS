@@ -116,7 +116,7 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
     private func hasTag(user: User, tagFilter: String) -> Bool {
         if let tags = user.tags {
             for tag in tags {
-                if tag.name.lowercased().contains(tagFilter) {
+                if tag.isPrivate == false && tag.name.lowercased().contains(tagFilter) {
                     return true
                 }
             }
