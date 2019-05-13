@@ -15,7 +15,6 @@ class RegisterViewController: UIViewController, RegisterDelegate, LoginDelegate 
     var authenticationRepository: AuthenticationRepository?
     var goingForwards = false
     
-    @IBOutlet weak var agreementSwitch: UISwitch!
     @IBOutlet weak var locationSwitch: UISwitch!
     
     override func viewDidLoad() {
@@ -33,14 +32,8 @@ class RegisterViewController: UIViewController, RegisterDelegate, LoginDelegate 
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {
-        if (agreementSwitch.isOn) {
-            if let mail = msalClient?.userInfo?.userPrincipalName, let givenName = msalClient?.userInfo?.givenName , let surName =  msalClient?.userInfo?.surname {
-                authenticationRepository?.register(with: mail, with: "\(givenName) \(surName)", location: locationSwitch.isOn)
-            }
-        } else {
-            let alert = UIAlertController(title: "Cannot register".localized(), message: "You need to accept the terms and conditions, before you can continue".localized(), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+        if let mail = msalClient?.userInfo?.userPrincipalName, let givenName = msalClient?.userInfo?.givenName , let surName =  msalClient?.userInfo?.surname {
+            authenticationRepository?.register(with: mail, with: "\(givenName) \(surName)", location: locationSwitch.isOn)
         }
     }
     
