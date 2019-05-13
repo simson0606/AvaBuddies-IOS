@@ -60,7 +60,7 @@ class SelectTagsViewController: UITableViewController, UISearchResultsUpdating, 
         if (tagSearchController.isActive) {
             cell.textLabel?.text = filteredTags[indexPath.row].name
             let selected = selectedTags.contains { tag in
-                tag._id == tagRepository.tags![indexPath.row]._id
+                tag._id == filteredTags[indexPath.row]._id
             }
             cell.accessoryType = selected ? .checkmark : .none
             return cell
@@ -75,10 +75,18 @@ class SelectTagsViewController: UITableViewController, UISearchResultsUpdating, 
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let index = selectedTags.firstIndex(of: tagRepository.tags![indexPath.row]) {
-            selectedTags.remove(at: index)
+        if (tagSearchController.isActive) {
+            if let index = selectedTags.firstIndex(of: filteredTags[indexPath.row]) {
+                selectedTags.remove(at: index)
+            } else {
+                selectedTags.append(filteredTags[indexPath.row])
+            }
         } else {
-            selectedTags.append(tagRepository.tags![indexPath.row])
+            if let index = selectedTags.firstIndex(of: tagRepository.tags![indexPath.row]) {
+                selectedTags.remove(at: index)
+            } else {
+                selectedTags.append(tagRepository.tags![indexPath.row])
+            }
         }
         tableView.reloadData()
     }
