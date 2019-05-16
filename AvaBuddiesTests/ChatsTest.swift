@@ -37,7 +37,7 @@ class ChatsTest: XCTestCase, ChatDelegate, ChatListDelegate {
         
         chatRepository.getChatList()
         
-        XCTAssertTrue(serverConnection.route == "/chat")
+        XCTAssertTrue(serverConnection.route == "/chats")
         XCTAssertTrue(serverConnection.method == "get")
 
         XCTAssertTrue(chatRepository.chats?.first?._id == "5cdd689e395c7f252ec4ac30")
