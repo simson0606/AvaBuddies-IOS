@@ -9,7 +9,7 @@
 import UIKit
 import Localize_Swift
 
-class AddChatViewController: UITableViewController, UserListDelegate, UserDelegate, ChatDelegate {
+class AddChatViewController: UITableViewController, UserListDelegate, UserDelegate, ChatListDelegate {
     
     var people: [User]?
     var userRepository: UserRepository!
@@ -18,7 +18,7 @@ class AddChatViewController: UITableViewController, UserListDelegate, UserDelega
         
         userRepository.userListDelegate = self
         userRepository.userDelegate = self
-        chatRepository.chatDelegate = self
+        chatRepository.chatListDelegate = self
         chatRepository.getChatList()
     }
     
@@ -62,7 +62,7 @@ class AddChatViewController: UITableViewController, UserListDelegate, UserDelega
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        chatRepository.addChat(with: userRepository.user!, and: people![indexPath.row])
+        chatRepository.addChat(with: people![indexPath.row])
         navigationController?.popViewController(animated: true)
     }
     

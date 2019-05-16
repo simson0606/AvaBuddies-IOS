@@ -17,6 +17,10 @@ extension SwinjectStoryboard {
         let msalClient = MSALClient()
         let accessTokenAdapter = AccessTokenAdapter()
         let serverConnection = ServerConnection(accessTokenAdapter: accessTokenAdapter)
+    
+        let serverSocketConnection = ServerSocketConnection()
+        serverSocketConnection.connect()
+    
         let authenticationRepository = AuthenticationRepository()
         let userRepository = UserRepository()
         let connectionRepository = ConnectionRepository()
@@ -40,8 +44,11 @@ extension SwinjectStoryboard {
         connectionRepository.serverConnection = serverConnection
         tagRepository.serverConnection = serverConnection
         chatRepository.serverConnection = serverConnection
-        chatRepository.userRepository = userRepository
+        chatRepository.serverSocketConnection = serverSocketConnection
+        chatRepository.intitializeDelegate()
         chatMessageRepository.persistentContainer = chatMessagePersistentContainer
+        chatMessageRepository.serverSocketConnection = serverSocketConnection
+        chatMessageRepository.intitializeDelegate()
     
         defaultContainer.storyboardInitCompleted(LoginViewController.self) { r, c in
             c.msalClient = r.resolve(MSALClient.self)

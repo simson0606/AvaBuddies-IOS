@@ -9,11 +9,16 @@
 import Foundation
 import CoreData
 
-class ChatMessageRepository {
+class ChatMessageRepository: ServerSocketMessageDelegate {
     
     var persistentContainer: NSPersistentContainer!
     var userRepository: UserRepository!
+    var serverSocketConnection: ServerSocketConnectionProtocol!
+    var chatMessageDelegate: ChatMessageDelegate?
 
+    func intitializeDelegate() {
+        serverSocketConnection.setMessageDelegate(delegate: self)
+    }
     
     var viewContext: NSManagedObjectContext {
         return persistentContainer.viewContext
@@ -32,32 +37,19 @@ class ChatMessageRepository {
             return ChatMessage(model: result, chat: chat)
         }
     }
-
-    
-    var chatMessageDelegate: ChatMessageDelegate?
-    
-    private var chats = [Chat]()
-    
-    func startListening(to chats: [Chat]){
-        self.chats.append(contentsOf: chats)
-    }
-    
-    func startListening(to chat: Chat){
-        self.chats.append(chat)
-    }
-    
-    func stopListening(){
-        
-    }
     
     func messageReceived(message: ChatMessage) {
         _ = message.toChatMessageModel(context: viewContext)
         try! viewContext.save()
     }
     
-    func sendMessage(message: ChatMessage) {
+    func sendMessage(chat: Chat, message: ChatMessage) {
         _ = message.toChatMessageModel(context: viewContext)
         try! viewContext.save()
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .formatted(DateFormatter.iso8601Full)
+        let messageJson = try! encoder.encode(message)
+        serverSocketConnection.send(to: chat._id, with: String(data: messageJson, encoding: .utf8)!)
     }
     
     func clear(for chat: Chat){
@@ -66,6 +58,17 @@ class ChatMessageRepository {
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
         try! viewContext.execute(deleteRequest)
 
+    }
+    
+    func receivedMessage(message: String) {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
+
+        let decoded = try! decoder.decode(ChatMessage.self, from: message.data(using: .utf8)!)
+        _ = decoded.toChatMessageModel(context: viewContext)
+        try! viewContext.save()
+        chatMessageDelegate?.messageReceived(message: decoded)
+        serverSocketConnection.send(to: Constants.ServerConnection.ChatAck, with: decoded.id)
     }
     
 }

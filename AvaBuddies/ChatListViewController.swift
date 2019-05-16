@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ChatListViewController: UITableViewController, ChatDelegate, UserDelegate {
+class ChatListViewController: UITableViewController, ChatDelegate, ChatListDelegate, UserDelegate {
+    
 
     @IBOutlet weak var addChatButton: UIBarButtonItem!
 
@@ -22,6 +23,8 @@ class ChatListViewController: UITableViewController, ChatDelegate, UserDelegate 
         parent?.navigationItem.setRightBarButton(addChatButton, animated: false)
         userRepository.userDelegate = self
         chatRepository.chatDelegate = self
+        chatRepository.chatListDelegate = self
+        chatRepository.getChatList()
         userRepository.getUser(refresh: true)
     }
     
@@ -52,7 +55,6 @@ class ChatListViewController: UITableViewController, ChatDelegate, UserDelegate 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             chatRepository.removeChat(chat: chatRepository.chats![indexPath.row])
-            chatRepository.getChatList()
         }
     }
     
@@ -74,7 +76,13 @@ class ChatListViewController: UITableViewController, ChatDelegate, UserDelegate 
     }
     
     func userReceived(user: User) {
-        chatRepository.getChatList()
+        chatRepository.setUserOnline(user: user)
+    }
+    
+    func loginRequested() {
+        if let user = userRepository.user {
+            chatRepository.setUserOnline(user: user)
+        }
     }
     
     func userDeleted() {

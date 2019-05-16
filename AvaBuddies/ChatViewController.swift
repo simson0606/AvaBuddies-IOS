@@ -104,7 +104,7 @@ class ChatViewController: MessagesViewController, UserDelegate, ChatMessageDeleg
         didPressSendButtonWith text: String) {
         
         let message = ChatMessage(_id: UUID().uuidString, chat: chat!, senderId: userRepository.user!._id, message: inputBar.inputTextView.text)
-        chatMessageRepository.sendMessage(message: message)
+        chatMessageRepository.sendMessage(chat: chat!, message: message)
         inputBar.inputTextView.text = ""
         section = 1
         messages = chatMessageRepository.getMessages(for: chat!, section: 0)

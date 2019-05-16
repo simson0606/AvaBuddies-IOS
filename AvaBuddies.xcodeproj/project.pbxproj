@@ -54,6 +54,8 @@
 		F434E3C4225CF8190005BD3B /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3C3225CF8190005BD3B /* QRScannerViewController.swift */; };
 		F43C05DF22438D730079513D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05DE22438D730079513D /* ProfileViewController.swift */; };
 		F43C05E1224393BA0079513D /* SwinjectStoryboardSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */; };
+		F483481F228C4A0F00BC26FA /* ServerSocketConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F483481E228C4A0F00BC26FA /* ServerSocketConnectionDelegate.swift */; };
+		F4834821228CADCC00BC26FA /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4834820228CADCC00BC26FA /* DateFormatterExtension.swift */; };
 		F48789E82241135C000760BB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789E72241135C000760BB /* Constants.swift */; };
 		F48789EA224113BC000760BB /* GraphUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789E9224113BC000760BB /* GraphUser.swift */; };
 		F48789EC2241149C000760BB /* MSALClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48789EB2241149C000760BB /* MSALClient.swift */; };
@@ -138,6 +140,8 @@
 		F434E3C3225CF8190005BD3B /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		F43C05DE22438D730079513D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectStoryboardSetup.swift; sourceTree = "<group>"; };
+		F483481E228C4A0F00BC26FA /* ServerSocketConnectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSocketConnectionDelegate.swift; sourceTree = "<group>"; };
+		F4834820228CADCC00BC26FA /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		F48789E52241128B000760BB /* AvaBuddies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AvaBuddies.entitlements; sourceTree = "<group>"; };
 		F48789E72241135C000760BB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F48789E9224113BC000760BB /* GraphUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphUser.swift; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 			children = (
 				F40F1F6522610CD000487CA8 /* ImageExtension.swift */,
 				F4A2E1C12281A71B00D6DCBA /* UIColorExtension.swift */,
+				F4834820228CADCC00BC26FA /* DateFormatterExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				F434E385224D16CD0005BD3B /* AccessTokenAdapter.swift */,
 				F4A2E1C32282DBDF00D6DCBA /* ServerSocketConnectionProtocol.swift */,
 				F4A2E1C52282DBEF00D6DCBA /* ServerSocketConnection.swift */,
+				F483481E228C4A0F00BC26FA /* ServerSocketConnectionDelegate.swift */,
 			);
 			name = ServerConnection;
 			sourceTree = "<group>";
@@ -632,6 +638,7 @@
 				F434E37C224A44C90005BD3B /* AuthenticationRepository.swift in Sources */,
 				F434E3BA225C98E90005BD3B /* RoundedTableViewImageView.swift in Sources */,
 				F40B5EAD22413FB6008E88BE /* ResourceFile.swift in Sources */,
+				F4834821228CADCC00BC26FA /* DateFormatterExtension.swift in Sources */,
 				F40B5EA922413DCF008E88BE /* FileLoader.swift in Sources */,
 				F434E3BE225CCA8D0005BD3B /* QRFriendRequestViewController.swift in Sources */,
 				F434E38A224E219D0005BD3B /* LoginResponse.swift in Sources */,
@@ -660,6 +667,7 @@
 				F48789E82241135C000760BB /* Constants.swift in Sources */,
 				F4DAD0982265E71C0083FC1E /* Tag.swift in Sources */,
 				F4A2E1C22281A71B00D6DCBA /* UIColorExtension.swift in Sources */,
+				F483481F228C4A0F00BC26FA /* ServerSocketConnectionDelegate.swift in Sources */,
 				BDD28B10225F637300CCC8C9 /* RegisterViewController.swift in Sources */,
 				F40C2DA722704F2200982E62 /* Chat.swift in Sources */,
 				F48789EA224113BC000760BB /* GraphUser.swift in Sources */,

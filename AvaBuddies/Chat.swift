@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct ChatListResponse : Codable {
+    var chats : [Chat]
+}
+
+
 struct Chat : Codable, Equatable{
     static func == (lhs: Chat, rhs: Chat) -> Bool {
         return lhs._id == rhs._id

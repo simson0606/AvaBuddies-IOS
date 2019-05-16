@@ -9,7 +9,10 @@
 import Foundation
 
 protocol ChatDelegate {
-    
+    func loginRequested()
+}
+
+protocol ChatListDelegate {
     func chatsReceived(chats: [Chat])
     
     func failed()

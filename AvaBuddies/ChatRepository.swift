@@ -8,14 +8,19 @@
 
 import Foundation
 
-class ChatRepository {
+class ChatRepository: ServerSocketConnectionDelegate {
     
     var serverConnection: ServerConnectionProtocol!
-    var userRepository: UserRepository!
-    
+    var serverSocketConnection: ServerSocketConnectionProtocol!
+
     var chatDelegate: ChatDelegate?
-    
+    var chatListDelegate: ChatListDelegate?
+
     var chats: [Chat]?
+    
+    func intitializeDelegate() {
+        serverSocketConnection.setConnectionDelegate(delegate: self)
+    }
     
     func userIsInChat(user: User) -> Bool{
         return chats?.filter{ chat in
@@ -23,22 +28,56 @@ class ChatRepository {
             }.count ?? 0 > 0
     }
     
-    func getChatList() {
-        if chats == nil {
-            chats = [Chat]()
-            chats?.append(Chat(_id: "1", user1: userRepository.user!, user2: userRepository.users![0]))
-        }
-        chatDelegate?.chatsReceived(chats: self.chats!)
+    func setUserOnline(user: User) {
+        serverSocketConnection.setUserOnline(id: user._id)
     }
     
-    func addChat(with: User, and: User) {
-        chats?.append(Chat(_id: "\(with._id)-\(and._id)", user1: with, user2: and))
+    func connectionEstablished() {
+        chatDelegate?.loginRequested()
+    }
+    
+    func getChatList() {
+        if chats?.count ?? 0 > 0{
+            return
+        }
+        
+        serverConnection.request(parameters: nil, to: Constants.ServerConnection.ChatRoute, with: .get, completion: {
+            (result) -> () in
+            let decoder = JSONDecoder()
+            do {
+                let response = try decoder.decode(ChatListResponse.self, from: result)
+                self.chats = response.chats
+                self.chatListDelegate?.chatsReceived(chats: self.chats!)
+                self.chats?.forEach(){chat in
+                    self.serverSocketConnection.listen(to: chat._id)
+                }
+            } catch {
+                self.chatListDelegate?.failed()
+            }
+        }, fail: {
+            (result) -> () in
+            self.chatListDelegate?.failed()
+        })
+    }
+    
+    func addChat(with user: User) {
+        serverConnection.request(parameters: nil, to: "\(Constants.ServerConnection.ChatRoute)/\(user._id)", with: .post, completion: {
+            (result) -> () in
+                self.getChatList()
+        }, fail: {
+            (result) -> () in
+            self.chatListDelegate?.failed()
+        })
     }
     
     func removeChat(chat: Chat){
-        if let index = chats?.firstIndex(of: chat) {
-            chats?.remove(at: index)
-        }
+        serverConnection.request(parameters: nil, to: "\(Constants.ServerConnection.ChatRoute)/\(chat._id)", with: .delete, completion: {
+            (result) -> () in
+                self.getChatList()
+        }, fail: {
+            (result) -> () in
+            self.chatListDelegate?.failed()
+        })
     }
     
 }

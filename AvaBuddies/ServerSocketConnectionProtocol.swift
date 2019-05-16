@@ -7,25 +7,14 @@
 //
 
 import Foundation
-import SocketIO
 
-class ServerSocketConnection {
+protocol ServerSocketConnectionProtocol {
+    func connect()
+    func setUserOnline(id: String)
+    func send(to event: String, with message: String)
+    func listen(to event: String)
     
-    private var manager: SocketManager!
-    private var socket: SocketIOClient?
+    func setConnectionDelegate(delegate: ServerSocketConnectionDelegate)
+    func setMessageDelegate(delegate: ServerSocketMessageDelegate)
     
-    private func startListening(){
-        manager = SocketManager(socketURL: URL(string: Constants.ServerConnection.BaseURL)!, config: [.log(true), .compress])
-    }
-    
-    private func on() {
-        socket?.on(clientEvent: .connect) {data, ack in
-            print("socket connected")
-        }
-    }
-    
-    private func off(){
-        socket?.off(clientEvent: .connect)
-
-    }
 }

@@ -11,16 +11,16 @@ import CoreData
 import MessageKit
 
 struct ChatMessage : Codable{
-    var _id: String
-    var chat: Chat
+    var id: String
+    var chatId: String
     var senderId: String
     var message: String
     var dateTime: Date?
     
     func toChatMessageModel(context: NSManagedObjectContext) -> ChatMessageModel {
         let model = ChatMessageModel(context: context)
-        model.chat = chat._id
-        model.id = _id
+        model.chat = chatId
+        model.id = id
         model.message = message
         model.sender = senderId
         model.dateTime = Date()
@@ -28,16 +28,16 @@ struct ChatMessage : Codable{
     }
     
     init(model: ChatMessageModel, chat: Chat) {
-        _id = model.id!
-        self.chat = chat
+        id = model.id!
+        self.chatId = chat._id
         message = model.message!
         senderId = model.sender!
         dateTime = model.dateTime!
     }
     
     init(_id: String, chat: Chat, senderId: String, message: String) {
-        self._id = _id
-        self.chat = chat
+        self.id = _id
+        self.chatId = chat._id
         self.senderId = senderId
         self.message = message
         dateTime = Date()
@@ -46,7 +46,7 @@ struct ChatMessage : Codable{
 
 extension ChatMessage: MessageType {
     var messageId: String {
-        return _id
+        return id
     }
     
     var sender: Sender {
