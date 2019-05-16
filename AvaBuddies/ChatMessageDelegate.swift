@@ -12,4 +12,6 @@ protocol ChatMessageDelegate {
     
     func messageReceived(message: ChatMessage)
 
+    func failed()
+    
 }

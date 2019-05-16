@@ -87,6 +87,7 @@ extension SwinjectStoryboard {
         defaultContainer.storyboardInitCompleted(ChatListViewController.self) { r, c in
             c.userRepository = r.resolve(UserRepository.self)
             c.chatRepository = r.resolve(ChatRepository.self)
+            c.chatMessageRepository = r.resolve(ChatMessageRepository.self)
         }
         defaultContainer.storyboardInitCompleted(AddChatViewController.self) { r, c in
             c.userRepository = r.resolve(UserRepository.self)

@@ -17,6 +17,7 @@ class ChatRepository: ServerSocketConnectionDelegate {
     var chatListDelegate: ChatListDelegate?
 
     var chats: [Chat]?
+    var listeningChats = [Chat]()
     
     func intitializeDelegate() {
         serverSocketConnection.setConnectionDelegate(delegate: self)
@@ -33,14 +34,11 @@ class ChatRepository: ServerSocketConnectionDelegate {
     }
     
     func connectionEstablished() {
+        listeningChats = [Chat]()
         chatDelegate?.loginRequested()
     }
     
-    func getChatList() {
-        if chats?.count ?? 0 > 0{
-            return
-        }
-        
+    func getChatList() {        
         serverConnection.request(parameters: nil, to: Constants.ServerConnection.ChatRoute, with: .get, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
@@ -49,7 +47,10 @@ class ChatRepository: ServerSocketConnectionDelegate {
                 self.chats = response.chats
                 self.chatListDelegate?.chatsReceived(chats: self.chats!)
                 self.chats?.forEach(){chat in
-                    self.serverSocketConnection.listen(to: chat._id)
+                    if !self.listeningChats.contains(chat) {
+                        self.serverSocketConnection?.listen(to: chat._id)
+                        self.listeningChats.append(chat)
+                    }
                 }
             } catch {
                 self.chatListDelegate?.failed()

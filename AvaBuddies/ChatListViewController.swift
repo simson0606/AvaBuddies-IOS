@@ -15,8 +15,18 @@ class ChatListViewController: UITableViewController, ChatDelegate, ChatListDeleg
 
     var userRepository: UserRepository!
     var chatRepository: ChatRepository!
-    
+    var chatMessageRepository: ChatMessageRepository!
     var selectedChat: Chat?
+    
+    override func viewDidLoad() {
+        parent?.viewDidLoad()
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        chatRepository.getChatList()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         parent?.title = "Chat".localized()
@@ -54,6 +64,7 @@ class ChatListViewController: UITableViewController, ChatDelegate, ChatListDeleg
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            chatMessageRepository.clear(for: chatRepository.chats![indexPath.row])
             chatRepository.removeChat(chat: chatRepository.chats![indexPath.row])
         }
     }
@@ -72,6 +83,8 @@ class ChatListViewController: UITableViewController, ChatDelegate, ChatListDeleg
     
     
     func chatsReceived(chats: [Chat]) {
+        chatMessageRepository.purge(except: chats)
+        self.refreshControl!.endRefreshing()
         tableView.reloadData()
     }
     
