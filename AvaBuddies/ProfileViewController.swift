@@ -40,6 +40,8 @@ class ProfileViewController: UITableViewController, UserDelegate, UICollectionVi
         userRepository?.getUser(refresh: true)
         parent?.title = "Profile".localized()
         parent?.navigationItem.setRightBarButton(saveButton, animated: false)
+        tagsCollection.reloadData()
+        tagsCollection.invalidateIntrinsicContentSize()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
