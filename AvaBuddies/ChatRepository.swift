@@ -62,7 +62,9 @@ class ChatRepository: ServerSocketConnectionDelegate {
     }
     
     func addChat(with user: User) {
-        serverConnection.request(parameters: nil, to: "\(Constants.ServerConnection.ChatRoute)/\(user._id)", with: .post, completion: {
+        let parameters = ["id": user._id]
+
+        serverConnection.request(parameters: parameters, to: "\(Constants.ServerConnection.ChatRoute)/\(user._id)", with: .post, completion: {
             (result) -> () in
                 self.getChatList()
         }, fail: {
