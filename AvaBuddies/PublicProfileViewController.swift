@@ -126,13 +126,13 @@ class PublicProfileViewController: UITableViewController, UserDelegate, Connecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return friend?.tags?.count ?? 0
+        return friend?.tags?.filter {$0.isPrivate == false }.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagView", for: indexPath as IndexPath) as! TagCollectionViewCell
         
-        cell.nameLabel.text = friend?.tags![indexPath.row].name
+        cell.nameLabel.text = friend?.tags!.filter {$0.isPrivate == false }[indexPath.row].name
         return cell
     }
 }

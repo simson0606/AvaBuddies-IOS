@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D239E0485DB001D3F349F51 /* Pods_AvaBuddies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D62F073C75BB01D93C6DA3 /* Pods_AvaBuddies.framework */; };
+		BD8CDD8F2272414900A20F19 /* SearchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8CDD8E2272414900A20F19 /* SearchTest.swift */; };
 		BDD28B10225F637300CCC8C9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD28B0F225F637300CCC8C9 /* RegisterViewController.swift */; };
 		F406EEDC2243998B00E5068A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406EEDB2243998B00E5068A /* TabBarViewController.swift */; };
 		F40B5EA122413925008E88BE /* avanade-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = F40B5E9F22413925008E88BE /* avanade-logo.svg */; };
@@ -94,6 +95,7 @@
 /* Begin PBXFileReference section */
 		0CD620B56E03C2948D7B6BBF /* Pods-AvaBuddies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvaBuddies.release.xcconfig"; path = "Pods/Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies.release.xcconfig"; sourceTree = "<group>"; };
 		20D62F073C75BB01D93C6DA3 /* Pods_AvaBuddies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvaBuddies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD8CDD8E2272414900A20F19 /* SearchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTest.swift; sourceTree = "<group>"; };
 		BDD28B0F225F637300CCC8C9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C596E86C33A3472EB45C3DB7 /* Pods-AvaBuddies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvaBuddies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies.debug.xcconfig"; sourceTree = "<group>"; };
 		F406EEDB2243998B00E5068A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				F434E39E225156A00005BD3B /* UserTest.swift */,
 				F4DAD0A42268804F0083FC1E /* TagsTest.swift */,
 				F4834822228D975F00BC26FA /* ChatsTest.swift */,
+				BD8CDD8E2272414900A20F19 /* SearchTest.swift */,
 			);
 			path = AvaBuddiesTests;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				F434E382224C18E50005BD3B /* MockServerConnection.swift in Sources */,
 				F4B624F3223FAE120098238C /* ConnectionsTest.swift in Sources */,
 				F4DAD0A52268804F0083FC1E /* TagsTest.swift in Sources */,
+				BD8CDD8F2272414900A20F19 /* SearchTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -59,8 +59,8 @@ class UserRepository {
         let parameters = [
             "aboutme": user?.aboutme ?? "",
             "sharelocation": user?.sharelocation ?? false,
-            "isPrivate": user?.isPrivate ?? false,
-            "tags": user?.tags?.map{tag in tag._id} ?? [String]()
+            "tags": user?.tags?.map{tag in tag._id} ?? [String](),
+            "isPrivate": user?.isPrivate ?? true
             ] as [String : Any]
 
         serverConnection.request(parameters: parameters, to: Constants.ServerConnection.UpdateProfileRoute, with: .post, completion: {
