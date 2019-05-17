@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F46BDB7CD79E2118D88752EBEA304610"
+               BlueprintIdentifier = "83E9AD03924E9A7D824ACD65BECFB3E9"
                BuildableName = "SVGKit.framework"
                BlueprintName = "SVGKit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F46BDB7CD79E2118D88752EBEA304610"
+            BlueprintIdentifier = "83E9AD03924E9A7D824ACD65BECFB3E9"
             BuildableName = "SVGKit.framework"
             BlueprintName = "SVGKit"
             ReferencedContainer = "container:Pods.xcodeproj">

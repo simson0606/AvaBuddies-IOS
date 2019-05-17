@@ -4,9 +4,15 @@ PODS:
     - CocoaLumberjack/Core (= 3.5.2)
   - CocoaLumberjack/Core (3.5.2)
   - Localize-Swift (2.0.0)
+  - MessageInputBar/Core (0.4.1)
+  - MessageKit (2.0.0):
+    - MessageInputBar/Core
   - MSAL (0.2.3):
     - MSAL/app-lib (= 0.2.3)
   - MSAL/app-lib (0.2.3)
+  - Socket.IO-Client-Swift (15.0.0):
+    - Starscream (~> 3.1)
+  - Starscream (3.1.0)
   - SVGKit (2.1.0):
     - CocoaLumberjack (~> 3.0)
   - Swinject (2.6.0)
@@ -16,7 +22,9 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Localize-Swift
+  - MessageKit
   - MSAL
+  - Socket.IO-Client-Swift
   - SVGKit
   - Swinject
   - SwinjectStoryboard
@@ -26,7 +34,11 @@ SPEC REPOS:
     - Alamofire
     - CocoaLumberjack
     - Localize-Swift
+    - MessageInputBar
+    - MessageKit
     - MSAL
+    - Socket.IO-Client-Swift
+    - Starscream
     - SVGKit
     - Swinject
     - SwinjectStoryboard
@@ -35,11 +47,15 @@ SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   CocoaLumberjack: 118bf4a820efc641f79fa487b75ed928dccfae23
   Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
+  MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
+  MessageKit: 29c1c87e5a396d2ca7a3f712e5171dc9aba42a1e
   MSAL: 2592b744b9215d9b7463f02fb9afd4e432c75c62
+  Socket.IO-Client-Swift: c039a808195d22a7192962841b8c035cb61ea49e
+  Starscream: 08172b481e145289c4930cb567230fb55897cfa4
   SVGKit: 8a2fc74258bdb2abb54d3b65f3dd68b0277a9c4d
   Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
 
-PODFILE CHECKSUM: 9348707f3cd2f3c02ce91430bc81da334fa17ac1
+PODFILE CHECKSUM: 3e9df1c1fbf0b675dfed0d43b9354dc8d8184ab0
 
 COCOAPODS: 1.5.2

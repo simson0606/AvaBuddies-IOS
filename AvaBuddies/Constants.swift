@@ -37,8 +37,12 @@ struct Constants {
         static let ValidateRequestConnectionRoute = "/friend/validaterequest"
         static let ConnectionRequestsRoute = "/friend/requests"
         static let TagListRoute = "/tag/list"
+        static let ChatRoute = "/chats"
+        static let ChatAck = "messageAcked";
         static let Secret = "SamplePassword"
     }
+    
+    static let LocalStoragePageSize = 15
     
     static let logoOnly = ResourceFile(filename: "avanade-logo-only", filetype: "svg")
     

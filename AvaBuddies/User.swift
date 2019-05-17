@@ -18,7 +18,7 @@ struct UsersResponse: Codable {
 }
 
 
-struct User: Codable {
+struct User: Codable, Equatable {
     var _id: String
     var name: String
     var email: String
@@ -41,6 +41,10 @@ struct User: Codable {
     mutating func setImage(image: UIImage) {
         let imageData = image.pngData()!
         self.image = imageData.base64EncodedString()
+    }
+    
+    static func == (lhs: User, rhs: User) -> Bool {
+        return lhs._id == rhs._id
     }
 }
 

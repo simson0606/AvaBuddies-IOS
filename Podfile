@@ -9,4 +9,6 @@ target 'AvaBuddies' do
   pod 'SwinjectStoryboard'
   pod 'Alamofire'
   pod 'Localize-Swift'
+  pod 'MessageKit'
+  pod 'Socket.IO-Client-Swift'
 end
