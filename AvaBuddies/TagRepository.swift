@@ -17,11 +17,7 @@ class TagRepository {
     var tagDelegate: TagDelegate?
     
     func getTagList(refresh: Bool = false){
-//        if tags != nil && !refresh {
-//            self.tagDelegate?.tagListReceived(tags: self.tags!)
-//            return
-//        }
-        serverConnection.request(parameters: nil, to: Constants.ServerConnection.TagListRoute, with: .get, completion: {
+        serverConnection.request(parameters: nil, to: Constants.ServerConnection.TagsRoute, with: .get, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
             do {

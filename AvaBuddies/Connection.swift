@@ -9,7 +9,7 @@
 import Foundation
 
 struct ConnectionsResponse: Codable {
-    var connections: [Connection]
+    var friends: [Connection]
 }
 
 struct RequestsResponse: Codable {
@@ -21,6 +21,6 @@ struct Connection: Codable {
     var confirmed: Bool
     var validated: Bool
     var _id: String
-    var friend1: String
-    var friend2: String
+    var user: String
+    var friend: String
 }
