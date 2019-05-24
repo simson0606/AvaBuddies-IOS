@@ -60,6 +60,7 @@ extension SwinjectStoryboard {
         }
         defaultContainer.storyboardInitCompleted(SearchPeopleViewController.self) { r, c in
             c.userRepository = r.resolve(UserRepository.self)
+            c.connectionRepository = r.resolve(ConnectionRepository.self)
         }
         defaultContainer.storyboardInitCompleted(PublicProfileViewController.self) { r, c in
             c.connectionRepository = r.resolve(ConnectionRepository.self)

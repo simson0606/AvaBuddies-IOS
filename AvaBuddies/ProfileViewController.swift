@@ -29,8 +29,6 @@ class ProfileViewController: UITableViewController, UserDelegate, UICollectionVi
     var userRepository: UserRepository!
 
     override func viewDidLoad() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
-        self.view.addGestureRecognizer(tapGesture)
         tagsCollection.dataSource = self
         tagsCollection.register(UINib.init(nibName: "TagCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "tagView")
     }
@@ -46,10 +44,6 @@ class ProfileViewController: UITableViewController, UserDelegate, UICollectionVi
     
     override func viewDidDisappear(_ animated: Bool) {
         parent?.navigationItem.setRightBarButton(nil, animated: false)
-    }
-    
-    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
-        aboutMeText.resignFirstResponder()
     }
 
     func userReceived(user: User) {
@@ -122,5 +116,12 @@ class ProfileViewController: UITableViewController, UserDelegate, UICollectionVi
     
     @IBAction func logoutTapped(_ sender: Any) {
         msalClient.signOut()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is SearchPeopleViewController {
+            let destination = segue.destination as! SearchPeopleViewController
+            destination.friendsOnly = true
+        }
     }
 }
