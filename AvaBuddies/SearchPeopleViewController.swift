@@ -151,7 +151,7 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
     }
     
     func userReceived(user: User) {
-        connectionRepository?.getConnectionList(refresh: true)
+        connectionRepository.getConnectionList(refresh: true)
     }
     
     func connectionsReceived(connections: [Connection]) {
