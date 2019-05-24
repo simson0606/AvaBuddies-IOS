@@ -8,15 +8,17 @@
 
 import UIKit
 
-class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating, UserListDelegate, UserDelegate {
+class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating, UserListDelegate, UserDelegate, ConnectionDelegate {
     
 
     var people = [User]()
     var filteredPeople = [User]()
     var resultSearchController = UISearchController()
     var selectedPerson: User?
-    var userRepository: UserRepository?
-
+    var userRepository: UserRepository!
+    var connectionRepository: ConnectionRepository!
+    var friendsOnly = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,18 +40,22 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
     }
     
     @objc private func refreshData(_ sender: Any) {
-        userRepository?.getUserList(refresh: true)
+        userRepository.getUserList(refresh: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         parent?.title = "Search people".localized()
 
-        userRepository?.userListDelegate = self
-        userRepository?.userDelegate = self
-        userRepository?.getUserList()
+        userRepository.userListDelegate = self
+        userRepository.userDelegate = self
+        connectionRepository.connectionDelegate = self
+        userRepository.getUserList()
     }
 
-
+    override func viewWillDisappear(_ animated: Bool) {
+        friendsOnly = false
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -141,20 +147,34 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
     }
     
     func userListReceived(users: [User]) {
-        userRepository?.getUser(refresh: true)
+        userRepository.getUser(refresh: true)
     }
     
     func userReceived(user: User) {
+        connectionRepository?.getConnectionList(refresh: true)
+    }
+    
+    func connectionsReceived(connections: [Connection]) {
         self.refreshControl!.endRefreshing()
-
-        if userRepository?.users != nil && userRepository?.user != nil {
-            people = (userRepository?.users!.filter {user in
-                return user._id != userRepository?.user?._id
-                })!
+        
+        if userRepository.users != nil && userRepository.user != nil && connectionRepository.connections != nil {
+            if friendsOnly {
+                people = (userRepository.users!.filter {user in
+                    return user._id != userRepository.user?._id && connectionRepository.connectionConfirmed(with: userRepository.user!, and: user)
+                })
+            } else {
+                people = (userRepository.users!.filter {user in
+                    return user._id != userRepository.user?._id
+                })
+            }
+            
             self.tableView.reloadData()
         }
     }
     
+    func requestUpdated() {
+        //nothing
+    }
     
     func userDeleted() {
         //nothing
