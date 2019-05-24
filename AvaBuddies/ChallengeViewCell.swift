@@ -12,7 +12,7 @@ class ChallengeViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var challengeImageView: UIImageView!
+    @IBOutlet weak var challengeImageView: RoundedTableViewImageView!
     
     
 }

@@ -713,7 +713,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FlQ-ah-ZBh">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FlQ-ah-ZBh" customClass="RoundedTableViewImageView" customModule="AvaBuddies" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="64.5" height="64.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="FlQ-ah-ZBh" secondAttribute="height" multiplier="1:1" id="SM4-kI-mKs"/>
@@ -740,7 +740,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="challengeImageView" destination="FlQ-ah-ZBh" id="XEy-J7-fqg"/>
+                                    <outlet property="challengeImageView" destination="FlQ-ah-ZBh" id="hVy-jf-VIg"/>
                                     <outlet property="subtitleLabel" destination="kxO-r7-yWE" id="Esw-Xd-qMy"/>
                                     <outlet property="titleLabel" destination="PdX-kq-Mlo" id="rQ5-UT-05n"/>
                                 </connections>
