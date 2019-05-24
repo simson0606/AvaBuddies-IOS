@@ -21,22 +21,13 @@ struct Constants {
     }
     
     struct ServerConnection {
-        static let BaseURL = "https://dev.avabuddies.nl"
+        static let BaseURL = "https://test.avabuddies.nl"
         static let RegisterRoute = "/auth/signup"
         static let LoginRoute = "/auth/login"
-        static let UserProfileRoute = "/user/profile"
-        static let UpdateProfileImageRoute = "/user/updateprofilepicture"
-        static let UpdateProfileRoute = "/user/updateprofile"
-        static let DeleteProfileRoute = "/user/destroy/"
-        static let UserListRoute = "/user/list"
-        static let ConnectionListRoute = "/friend/allconnections"
-        static let RequestConnectionRoute = "/friend/request"
-        static let CancelRequestConnectionRoute = "/friend/cancelrequest"
-        static let DenyRequestConnectionRoute = "/friend/denyrequest"
-        static let AcceptRequestConnectionRoute = "/friend/acceptrequest"
-        static let ValidateRequestConnectionRoute = "/friend/validaterequest"
-        static let ConnectionRequestsRoute = "/friend/requests"
-        static let TagListRoute = "/tag/list"
+        static let UsersRoute = "/users"
+        static let ProfileSuffix = "/profile"
+        static let FriendsRoute = "/friends"
+        static let TagsRoute = "/tags"
         static let ChatRoute = "/chats"
         static let ChatAck = "messageAcked";
         static let Secret = "SamplePassword"

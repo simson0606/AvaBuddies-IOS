@@ -17,10 +17,11 @@ class ServerSocketConnection: ServerSocketConnectionProtocol {
     private var connectionDelegate: ServerSocketConnectionDelegate?
     private var messageDelegate: ServerSocketMessageDelegate?
 
+    private var onList = [String]()
+    
     private func startListening(){
-        manager = SocketManager(socketURL: URL(string: Constants.ServerConnection.BaseURL)!, config: [.log(true), .compress])
-        manager.reconnects = true
-        manager.reconnectWait = 5
+        manager = SocketManager(socketURL: URL(string: Constants.ServerConnection.BaseURL)!, config: [.log(false), .compress])
+        manager.reconnects = false
         
         socket = manager.defaultSocket
     }
@@ -30,10 +31,18 @@ class ServerSocketConnection: ServerSocketConnectionProtocol {
             print("socket connected")
             self.connectionDelegate?.connectionEstablished()
         }
+        socket?.on(clientEvent: .disconnect) {data, ack in
+            print("socket disconnected")
+            self.off()
+            self.connect()
+        }
     }
     
     private func off(){
-        socket?.off(clientEvent: .connect)
+        onList.forEach() {item in
+            socket?.off(item)
+        }
+        onList = [String]()
     }
     
     func connect(){
@@ -55,6 +64,7 @@ class ServerSocketConnection: ServerSocketConnectionProtocol {
             guard let cur = data[0] as? String else {
                 return
             }
+            print("Received message \(cur) from \(event)")
             self.messageDelegate?.receivedMessage(message: cur)
         }
     }
@@ -64,6 +74,7 @@ class ServerSocketConnection: ServerSocketConnectionProtocol {
     }
     
     func send(to event: String, with message: String){
+        print("Sent message \(message) to \(event)")
         socket?.emit(event, message)
     }
 }

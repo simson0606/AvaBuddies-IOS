@@ -31,6 +31,16 @@ class ChatRepository: ServerSocketConnectionDelegate {
     
     func setUserOnline(user: User) {
         serverSocketConnection.setUserOnline(id: user._id)
+        listen()
+    }
+    
+    private func listen(){
+        self.chats?.forEach(){chat in
+            if !self.listeningChats.contains(chat) {
+                self.serverSocketConnection?.listen(to: chat._id)
+                self.listeningChats.append(chat)
+            }
+        }
     }
     
     func connectionEstablished() {
@@ -46,12 +56,7 @@ class ChatRepository: ServerSocketConnectionDelegate {
                 let response = try decoder.decode(ChatListResponse.self, from: result)
                 self.chats = response.chats
                 self.chatListDelegate?.chatsReceived(chats: self.chats!)
-                self.chats?.forEach(){chat in
-                    if !self.listeningChats.contains(chat) {
-                        self.serverSocketConnection?.listen(to: chat._id)
-                        self.listeningChats.append(chat)
-                    }
-                }
+                self.listen()
             } catch {
                 self.chatListDelegate?.failed()
             }

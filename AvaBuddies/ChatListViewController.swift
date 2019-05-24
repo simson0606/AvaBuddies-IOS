@@ -94,6 +94,7 @@ class ChatListViewController: UITableViewController, ChatDelegate, ChatListDeleg
     
     func loginRequested() {
         if let user = userRepository.user {
+            print("login requested")
             chatRepository.setUserOnline(user: user)
         }
     }
