@@ -29,8 +29,6 @@ class ProfileViewController: UITableViewController, UserDelegate, UICollectionVi
     var userRepository: UserRepository!
 
     override func viewDidLoad() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
-        self.view.addGestureRecognizer(tapGesture)
         tagsCollection.dataSource = self
         tagsCollection.register(UINib.init(nibName: "TagCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "tagView")
     }

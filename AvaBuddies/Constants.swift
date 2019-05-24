@@ -38,6 +38,7 @@ struct Constants {
         static let ConnectionRequestsRoute = "/friend/requests"
         static let TagListRoute = "/tag/list"
         static let ChatRoute = "/chats"
+        static let ChallengeListRoute = "/challenges"
         static let ChatAck = "messageAcked";
         static let Secret = "SamplePassword"
     }
