@@ -12,12 +12,13 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
     
 
     var people = [User]()
-    var filteredPeople = [User]()
+    var filteredPeople = [SearchUser]()
     var resultSearchController = UISearchController()
     var selectedPerson: User?
     var userRepository: UserRepository!
     var connectionRepository: ConnectionRepository!
     var friendsOnly = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,9 +74,9 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
         let cell = tableView.dequeueReusableCell(withIdentifier: "peopleCell", for: indexPath)
 
         if (resultSearchController.isActive) {
-            cell.textLabel?.text = filteredPeople[indexPath.row].name
-            cell.detailTextLabel?.text = filteredPeople[indexPath.row].email
-            cell.imageView?.image = filteredPeople[indexPath.row].getUIImage() ?? UIImage(named: "default_profile")
+            cell.textLabel?.text = filteredPeople[indexPath.row].user.name
+            cell.detailTextLabel?.text = filteredPeople[indexPath.row].searchMatch
+            cell.imageView?.image = filteredPeople[indexPath.row].user.getUIImage() ?? UIImage(named: "default_profile")
             
             return cell
         }
@@ -97,32 +98,41 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
         self.tableView.reloadData()
     }
     
-    public func filterUsersByString(filterString: String) -> [User] {
+    public func filterUsersByString(filterString: String) -> [SearchUser] {
         let keyWords = filterString.trimmingCharacters(in: .whitespacesAndNewlines).lowercased().components(separatedBy: " ")
-        return people.filter { result in
+        return people.map{user in
+            var searchUser = SearchUser(searchMatch: "Search matches: ".localized(), user: user, matches: false)
+            
             for keyWord in keyWords {
                 if keyWord.isEmpty {
                     continue
                 }
-                if result.name.lowercased().contains(keyWord) {
+                if user.name.lowercased().contains(keyWord) {
+                    searchUser.matches = true
+                    searchUser.searchMatch.append("Name ".localized())
                     continue
                 }
-                if result.email.lowercased().contains(keyWord) {
+                if user.email.lowercased().contains(keyWord) {
+                    searchUser.matches = true
+                    searchUser.searchMatch.append("Email ".localized())
                     continue
                 }
-                if result.isPrivate == false, hasTag(user: result, tagFilter: keyWord) {
+                if user.isPrivate == false, hasTag(user: &searchUser, tagFilter: keyWord) {
+                    searchUser.matches = true
                     continue
                 }
-                return false
             }
-            return true
+            return searchUser
+        }.filter{ result in
+            return result.matches
         }
     }
     
-    private func hasTag(user: User, tagFilter: String) -> Bool {
-        if let tags = user.tags {
+    private func hasTag(user: inout SearchUser, tagFilter: String) -> Bool {
+        if let tags = user.user.tags {
             for tag in tags {
-                if tag.isPrivate == false && tag.name.lowercased().contains(tagFilter) {
+                if !tag.isPrivate && tag.name.lowercased().contains(tagFilter) {
+                    user.searchMatch.append("\(tag.name) ")
                     return true
                 }
             }
@@ -132,7 +142,7 @@ class SearchPeopleViewController: UITableViewController, UISearchResultsUpdating
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if  (resultSearchController.isActive) {
-            selectedPerson = filteredPeople[indexPath.row]
+            selectedPerson = filteredPeople[indexPath.row].user
         } else {
             selectedPerson = people[indexPath.row]
         }
