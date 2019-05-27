@@ -55,6 +55,7 @@
 		F434E3C4225CF8190005BD3B /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F434E3C3225CF8190005BD3B /* QRScannerViewController.swift */; };
 		F43C05DF22438D730079513D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05DE22438D730079513D /* ProfileViewController.swift */; };
 		F43C05E1224393BA0079513D /* SwinjectStoryboardSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */; };
+		F4756D4C2299950F009768CC /* SearchUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4756D4B2299950F009768CC /* SearchUser.swift */; };
 		F483481F228C4A0F00BC26FA /* ServerSocketConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F483481E228C4A0F00BC26FA /* ServerSocketConnectionDelegate.swift */; };
 		F4834821228CADCC00BC26FA /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4834820228CADCC00BC26FA /* DateFormatterExtension.swift */; };
 		F4834823228D975F00BC26FA /* ChatsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4834822228D975F00BC26FA /* ChatsTest.swift */; };
@@ -143,6 +144,7 @@
 		F434E3C3225CF8190005BD3B /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		F43C05DE22438D730079513D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F43C05E0224393BA0079513D /* SwinjectStoryboardSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectStoryboardSetup.swift; sourceTree = "<group>"; };
+		F4756D4B2299950F009768CC /* SearchUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUser.swift; sourceTree = "<group>"; };
 		F483481E228C4A0F00BC26FA /* ServerSocketConnectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSocketConnectionDelegate.swift; sourceTree = "<group>"; };
 		F4834820228CADCC00BC26FA /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		F4834822228D975F00BC26FA /* ChatsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTest.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				F434E391224E690C0005BD3B /* UserRepository.swift */,
 				F434E393224E69170005BD3B /* UserDelegate.swift */,
 				F434E395224E69270005BD3B /* User.swift */,
+				F4756D4B2299950F009768CC /* SearchUser.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				F40C2DAB2270501A00982E62 /* ChatMessageRepository.swift in Sources */,
 				F43C05DF22438D730079513D /* ProfileViewController.swift in Sources */,
 				F4EC001C226F1A7400685B24 /* ChatListViewController.swift in Sources */,
+				F4756D4C2299950F009768CC /* SearchUser.swift in Sources */,
 				F434E388224E0FBC0005BD3B /* AuthenticationDelegate.swift in Sources */,
 				F434E38D224E5AA10005BD3B /* RoundedImageView.swift in Sources */,
 				F4DAD0962265E57F0083FC1E /* SelectTagsViewController.swift in Sources */,
