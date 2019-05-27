@@ -752,7 +752,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="puG-bM-MeG" kind="show" identifier="ShowChallengeDetails" id="fyI-Ot-ImD"/>
+                        <segue destination="puG-bM-MeG" kind="show" identifier="ShowChallengeDetailsSegue" id="fyI-Ot-ImD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTu-aM-snM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -762,7 +762,7 @@
         <!--Challenge Details-->
         <scene sceneID="OzS-Fk-wi2">
             <objects>
-                <viewController title="Challenge Details" id="puG-bM-MeG" sceneMemberID="viewController">
+                <viewController title="Challenge Details" id="puG-bM-MeG" customClass="ChallengeDetailsViewController" customModule="AvaBuddies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="njB-db-gp8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -779,7 +779,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9t-qB-z9X">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9t-qB-z9X">
                                 <rect key="frame" x="32" y="332" width="311" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="JpV-AP-Myd"/>
@@ -803,6 +803,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nma-f7-4wg"/>
                     </view>
+                    <connections>
+                        <outlet property="challengeDescription" destination="T9t-qB-z9X" id="fta-df-GqE"/>
+                        <outlet property="challengeTitle" destination="bij-Tt-nmt" id="ob8-6j-Uxa"/>
+                        <outlet property="imageView" destination="yXj-l0-ko0" id="EBj-Z5-gjp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mns-Rx-Q3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
