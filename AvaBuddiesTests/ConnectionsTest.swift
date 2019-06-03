@@ -33,11 +33,11 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
         
         let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, isPrivate: false, tags: [Tag]())
         let friend = User(_id: "id-testUser2", name: "testUser2", email: "testUser2", aboutme: "testUser2", image: "", sharelocation: true, isPrivate: false, tags: [Tag]())
-        serverConnection.setMockResponse(response: "{\"connections\":[{\"confirmed\":false,\"validated\":false,\"_id\":\"5cab3876675cf6363382115a\",\"friend1\":\"\(user._id)\",\"friend2\":\"\(friend._id)\"},{\"confirmed\":false,\"validated\":false,\"_id\":\"5cab3888675cf6363382115b\",\"friend1\":\"5ca72bdad120192a4a4de201\",\"friend2\":\"5ca72bdad120192a4a4de201\"}]}", success: true)
+        serverConnection.setMockResponse(response: "{\"friends\":[{\"confirmed\":false,\"validated\":false,\"_id\":\"5cab3876675cf6363382115a\",\"user\":\"\(user._id)\",\"friend\":\"\(friend._id)\"},{\"confirmed\":false,\"validated\":false,\"_id\":\"5cab3888675cf6363382115b\",\"user\":\"5ca72bdad120192a4a4de201\",\"friend\":\"5ca72bdad120192a4a4de201\"}]}", success: true)
         
         connectionRepository.getConnectionList()
         
-        XCTAssertTrue(serverConnection.route == "/friend/allconnections")
+        XCTAssertTrue(serverConnection.route == "/friends")
         
         let exists = connectionRepository.connectionExists(with: user , and: friend)
         
@@ -52,7 +52,8 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
         
         connectionRepository.getConnectionList()
         
-        XCTAssertTrue(serverConnection.route == "/friend/allconnections")
+        XCTAssertTrue(serverConnection.route == "/friends")
+        XCTAssertTrue(serverConnection.method == "get")
         
         XCTAssertTrue(isFailed)
         XCTAssertFalse(connectionsIsReceived)
@@ -63,7 +64,8 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
         
         connectionRepository.getConnectionList()
         
-        XCTAssertTrue(serverConnection.route == "/friend/allconnections")
+        XCTAssertTrue(serverConnection.route == "/friends")
+        XCTAssertTrue(serverConnection.method == "get")
         
         XCTAssertTrue(isFailed)
         XCTAssertFalse(connectionsIsReceived)
@@ -74,8 +76,8 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
         let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, isPrivate: false, tags: [Tag]())
         connectionRepository.requestConnection(with: user)
         
-        XCTAssertTrue(serverConnection.route == "/friend/request")
-        XCTAssertTrue(serverConnection.parameters!["friend"] as! String == user._id)
+        XCTAssertTrue(serverConnection.route == "/friends")
+        XCTAssertTrue(serverConnection.method == "post")
 
         XCTAssertTrue(requestIsUpdated)
         XCTAssertFalse(isFailed)
@@ -86,8 +88,8 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
         let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, isPrivate: false, tags: [Tag]())
         connectionRepository.cancelConnection(with: user)
         
-        XCTAssertTrue(serverConnection.route == "/friend/cancelrequest")
-        XCTAssertTrue(serverConnection.parameters!["friend"] as! String == user._id)
+        XCTAssertTrue(serverConnection.route == "/friends/\(user._id)")
+        XCTAssertTrue(serverConnection.method == "delete")
         
         XCTAssertTrue(requestIsUpdated)
         XCTAssertFalse(isFailed)
@@ -98,9 +100,10 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
         let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, isPrivate: false, tags: [Tag]())
         connectionRepository.validateConnection(with: user._id)
         
-        XCTAssertTrue(serverConnection.route == "/friend/validaterequest")
-        XCTAssertTrue(serverConnection.parameters!["friend"] as! String == user._id)
-        
+        XCTAssertTrue(serverConnection.route == "/friends/\(user._id)")
+        XCTAssertTrue(serverConnection.method == "put")
+        XCTAssertTrue(serverConnection.parameters!["type"] as! String == "validate")
+
         XCTAssertTrue(requestIsUpdated)
         XCTAssertFalse(isFailed)
     }
@@ -110,8 +113,9 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
         let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, isPrivate: false, tags: [Tag]())
         connectionRepository.acceptConnection(with: user)
         
-        XCTAssertTrue(serverConnection.route == "/friend/acceptrequest")
-        XCTAssertTrue(serverConnection.parameters!["friend"] as! String == user._id)
+        XCTAssertTrue(serverConnection.route == "/friends/\(user._id)")
+        XCTAssertTrue(serverConnection.method == "put")
+        XCTAssertTrue(serverConnection.parameters!["type"] as! String == "accept")
         
         XCTAssertTrue(requestIsUpdated)
         XCTAssertFalse(isFailed)
@@ -122,8 +126,8 @@ class ConnectionsTest: XCTestCase, ConnectionDelegate {
         let user = User(_id: "id-testUser", name: "testUser", email: "testUser", aboutme: "testUser", image: "", sharelocation: true, isPrivate: false, tags: [Tag]())
         connectionRepository.denyConnection(with: user)
         
-        XCTAssertTrue(serverConnection.route == "/friend/denyrequest")
-        XCTAssertTrue(serverConnection.parameters!["friend"] as! String == user._id)
+        XCTAssertTrue(serverConnection.route == "/friends/\(user._id)")
+        XCTAssertTrue(serverConnection.method == "delete")
         
         XCTAssertTrue(requestIsUpdated)
         XCTAssertFalse(isFailed)

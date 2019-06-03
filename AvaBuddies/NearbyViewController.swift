@@ -12,7 +12,7 @@ import Localize_Swift
 class NearbyViewController: UITableViewController, UserListDelegate, ConnectionDelegate {
  
     var selectedPerson: User?
-    var userRepository: UserRepository?
+    var userRepository: UserRepository!
     var connectionRepository: ConnectionRepository?
     
     override func viewDidLoad() {
@@ -28,13 +28,13 @@ class NearbyViewController: UITableViewController, UserListDelegate, ConnectionD
         parent?.title = "Friend requests".localized()
 
         connectionRepository?.connectionDelegate = self
-        userRepository?.userListDelegate = self
+        userRepository.userListDelegate = self
         
-        userRepository?.getUserList()
+        userRepository.getUserList()
     }
     
     @objc private func refreshData(_ sender: Any) {
-        userRepository?.getUserList(refresh: true)
+        userRepository.getUserList(refresh: true)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -62,13 +62,13 @@ class NearbyViewController: UITableViewController, UserListDelegate, ConnectionD
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
 
         if indexPath.section == 0 {
-            let user = userRepository?.getUserBy(id: (connectionRepository?.receivedConnections?[indexPath.row].friend1)!)
+            let user = userRepository?.getUserBy(id: (connectionRepository?.receivedConnections?[indexPath.row].user)!)
             cell.textLabel?.text =  user?.name
             cell.detailTextLabel?.text = user?.email
             cell.imageView?.image = user?.getUIImage() ?? UIImage(named: "default_profile")
             
         } else {
-            let user = userRepository?.getUserBy(id: (connectionRepository?.sentConnections?[indexPath.row].friend2)!)
+            let user = userRepository?.getUserBy(id: (connectionRepository?.sentConnections?[indexPath.row].friend)!)
             cell.textLabel?.text =  user?.name
             cell.detailTextLabel?.text = user?.email
             cell.imageView?.image = user?.getUIImage() ?? UIImage(named: "default_profile")
@@ -78,7 +78,7 @@ class NearbyViewController: UITableViewController, UserListDelegate, ConnectionD
     }
     
     func userListReceived(users: [User]) {
-        connectionRepository?.getRecevedSentConnectionList(refresh: true)
+        connectionRepository?.getRecevedSentConnectionList(refresh: true, userId: userRepository.user!._id)
     }
 
     func connectionsReceived(connections: [Connection]) {
@@ -87,7 +87,7 @@ class NearbyViewController: UITableViewController, UserListDelegate, ConnectionD
     }
     
     func requestUpdated() {
-        userRepository?.getUserList(refresh: true)
+        userRepository.getUserList(refresh: true)
     }
     
     func failed() {
@@ -99,9 +99,9 @@ class NearbyViewController: UITableViewController, UserListDelegate, ConnectionD
       
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            selectedPerson = userRepository?.getUserBy(id: (connectionRepository?.receivedConnections?[indexPath.row].friend1)!)
+            selectedPerson = userRepository?.getUserBy(id: (connectionRepository?.receivedConnections?[indexPath.row].user)!)
         } else {
-            selectedPerson = userRepository?.getUserBy(id: (connectionRepository?.sentConnections?[indexPath.row].friend2)!)
+            selectedPerson = userRepository?.getUserBy(id: (connectionRepository?.sentConnections?[indexPath.row].friend)!)
         }
         performSegue(withIdentifier: "viewProfilesegue", sender: self)
     }

@@ -45,10 +45,6 @@ class ProfileViewController: UITableViewController, UserDelegate, UICollectionVi
     override func viewDidDisappear(_ animated: Bool) {
         parent?.navigationItem.setRightBarButton(nil, animated: false)
     }
-    
-    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
-        aboutMeText.resignFirstResponder()
-    }
 
     func userReceived(user: User) {
         if user.getUIImage() != nil {
@@ -120,5 +116,12 @@ class ProfileViewController: UITableViewController, UserDelegate, UICollectionVi
     
     @IBAction func logoutTapped(_ sender: Any) {
         msalClient.signOut()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is SearchPeopleViewController {
+            let destination = segue.destination as! SearchPeopleViewController
+            destination.friendsOnly = true
+        }
     }
 }

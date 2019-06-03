@@ -21,33 +21,33 @@ class ConnectionRepository {
     
     func connectionExists(with user: User, and friend: User) -> Bool{
         return connections?.filter{element in
-            return (element.friend1 == user._id && element.friend2 == friend._id) ||
-                    (element.friend1 == friend._id && element.friend2 == user._id)
+            return (element.user == user._id && element.friend == friend._id) ||
+                    (element.user == friend._id && element.friend == user._id)
             }.count ?? 0 > 0
     }
     
     func connectionIsReceived(with user: User, and friend: User) -> Bool{
         return connections?.filter{element in
-            return element.friend1 == friend._id && element.friend2 == user._id
+            return element.user == friend._id && element.friend == user._id
             }.count ?? 0 > 0
     }
     
     func connectionIsSent(with user: User, and friend: User) -> Bool{
         return connections?.filter{element in
-            return element.friend1 == user._id && element.friend2 == friend._id
+            return element.user == user._id && element.friend == friend._id
             }.count ?? 0 > 0
     }
     
     func connectionValidated(with user: User, and friend: User) -> Bool {
         return connections?.filter{element in
-            return element.friend1 == friend._id && element.friend2 == user._id && element.validated
+            return element.user == friend._id && element.friend == user._id && element.validated
             }.count ?? 0 > 0
     }
     
     func connectionConfirmed(with user: User, and friend: User) -> Bool {
         return connections?.filter{element in
-            return (element.friend1 == friend._id && element.friend2 == user._id && element.validated && element.confirmed) ||
-                    (element.friend1 == user._id && element.friend2 == friend._id && element.validated && element.confirmed)
+            return (element.user == friend._id && element.friend == user._id && element.validated && element.confirmed) ||
+                    (element.user == user._id && element.friend == friend._id && element.validated && element.confirmed)
             }.count ?? 0 > 0
     }
     
@@ -56,12 +56,12 @@ class ConnectionRepository {
             self.connectionDelegate?.connectionsReceived(connections: self.connections!)
             return
         }
-        serverConnection.request(parameters: nil, to: Constants.ServerConnection.ConnectionListRoute, with: .get, completion: {
+        serverConnection.request(parameters: nil, to: Constants.ServerConnection.FriendsRoute, with: .get, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
             do {
                 let connectionsResponse = try decoder.decode(ConnectionsResponse.self, from: result)
-                self.connections = connectionsResponse.connections
+                self.connections = connectionsResponse.friends
                 self.connectionDelegate?.connectionsReceived(connections: self.connections!)
             } catch {
                 self.connectionDelegate?.failed()
@@ -72,12 +72,12 @@ class ConnectionRepository {
         })
     }
     
-    func getRecevedSentConnectionList(refresh: Bool = false) {
+    func getRecevedSentConnectionList(refresh: Bool = false, userId: String) {
         if sentConnections != nil && !refresh {
             self.connectionDelegate?.connectionsReceived(connections: self.receivedConnections!)
             return
         }
-        serverConnection.request(parameters: nil, to: Constants.ServerConnection.ConnectionRequestsRoute, with: .get, completion: {
+        serverConnection.request(parameters: nil, to: "\(Constants.ServerConnection.FriendsRoute)/\(userId)", with: .get, completion: {
             (result) -> () in
             let decoder = JSONDecoder()
             do {
@@ -95,9 +95,9 @@ class ConnectionRepository {
     }
     
     func requestConnection(with user: User) {
-        let parameters = ["friend": user._id]
+        let parameters = ["id": user._id]
         
-        serverConnection.request(parameters: parameters, to: Constants.ServerConnection.RequestConnectionRoute, with: .post, completion: {
+        serverConnection.request(parameters: parameters, to: Constants.ServerConnection.FriendsRoute, with: .post, completion: {
             (result) -> () in
             self.connectionDelegate?.requestUpdated()
 
@@ -109,9 +109,7 @@ class ConnectionRepository {
     
     
     func cancelConnection(with user: User) {
-        let parameters = ["friend": user._id]
-        
-        serverConnection.request(parameters: parameters, to: Constants.ServerConnection.CancelRequestConnectionRoute, with: .post, completion: {
+        serverConnection.request(parameters: nil, to: "\(Constants.ServerConnection.FriendsRoute)/\(user._id)", with: .delete, completion: {
             (result) -> () in
             self.connectionDelegate?.requestUpdated()
             
@@ -122,22 +120,13 @@ class ConnectionRepository {
     }
     
     func denyConnection(with user: User) {
-        let parameters = ["friend": user._id]
-        
-        serverConnection.request(parameters: parameters, to: Constants.ServerConnection.DenyRequestConnectionRoute, with: .post, completion: {
-            (result) -> () in
-            self.connectionDelegate?.requestUpdated()
-            
-        }, fail: {
-            (result) -> () in
-            self.connectionDelegate?.failed()
-        })
+        cancelConnection(with: user)
     }
     
     func acceptConnection(with user: User) {
-        let parameters = ["friend": user._id]
-        
-        serverConnection.request(parameters: parameters, to: Constants.ServerConnection.AcceptRequestConnectionRoute, with: .post, completion: {
+        let parameters = ["type": "accept"]
+
+        serverConnection.request(parameters: parameters, to: "\(Constants.ServerConnection.FriendsRoute)/\(user._id)", with: .put, completion: {
             (result) -> () in
             self.connectionDelegate?.requestUpdated()
             
@@ -148,9 +137,9 @@ class ConnectionRepository {
     }
     
     func validateConnection(with id: String) {
-        let parameters = ["friend": id]
-        
-        serverConnection.request(parameters: parameters, to: Constants.ServerConnection.ValidateRequestConnectionRoute, with: .post, completion: {
+        let parameters = ["type": "validate"]
+
+        serverConnection.request(parameters: parameters, to: "\(Constants.ServerConnection.FriendsRoute)/\(id)", with: .put, completion: {
             (result) -> () in
             self.connectionDelegate?.requestUpdated()
             
