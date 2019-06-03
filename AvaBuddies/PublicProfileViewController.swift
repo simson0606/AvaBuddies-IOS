@@ -25,6 +25,7 @@ class PublicProfileViewController: UITableViewController, UserDelegate, Connecti
     
     var friend: User?
     
+    var connectionConfirmed = false;
     override func viewDidLoad() {
         tagsCollection.dataSource = self
         tagsCollection.register(UINib.init(nibName: "TagCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "tagView")
@@ -49,17 +50,17 @@ class PublicProfileViewController: UITableViewController, UserDelegate, Connecti
             let connectionExists = connectionRepository!.connectionExists(with: userRepository!.user!, and: friend!)
             let connectionIsReceived = connectionRepository!.connectionIsReceived(with: userRepository!.user!, and: friend!)
             let connectionIsSent = connectionRepository!.connectionIsSent(with: userRepository!.user!, and: friend!)
-            let connectionIsConfirmed = connectionRepository!.connectionConfirmed(with: userRepository!.user!, and: friend!)
-            let hideItems = friend?.isPrivate ?? false && !connectionIsConfirmed
+            connectionConfirmed = connectionRepository!.connectionConfirmed(with: userRepository!.user!, and: friend!)
+            let hideItems = friend?.isPrivate ?? false && !connectionConfirmed
 
             if indexPath.row == 1 {
-                return !connectionExists && !connectionIsConfirmed ? 44 : 0
+                return !connectionExists && !connectionConfirmed ? 44 : 0
             }
             if indexPath.row == 2 {
-                return connectionIsSent && !connectionIsConfirmed ? 44 : 0
+                return connectionIsSent && !connectionConfirmed ? 44 : 0
             }
             if indexPath.row == 3 {
-                return connectionIsReceived && !connectionIsConfirmed ? 44 : 0
+                return connectionIsReceived && !connectionConfirmed ? 44 : 0
             }
             if (indexPath.row == 6) {
                 return hideItems ? 0 : 148
@@ -126,13 +127,21 @@ class PublicProfileViewController: UITableViewController, UserDelegate, Connecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return friend?.tags?.filter {$0.isPrivate == false }.count ?? 0
+        if connectionConfirmed {
+             return friend?.tags?.count ?? 0
+        } else {
+            return friend?.tags?.filter {$0.isPrivate == false }.count ?? 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagView", for: indexPath as IndexPath) as! TagCollectionViewCell
         
-        cell.nameLabel.text = friend?.tags!.filter {$0.isPrivate == false }[indexPath.row].name
+        if connectionConfirmed {
+            cell.nameLabel.text = friend?.tags![indexPath.row].name
+        } else {
+            cell.nameLabel.text = friend?.tags!.filter {$0.isPrivate == false }[indexPath.row].name
+        }
         return cell
     }
 }

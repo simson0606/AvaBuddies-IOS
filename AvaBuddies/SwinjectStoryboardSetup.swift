@@ -27,6 +27,7 @@ extension SwinjectStoryboard {
         let tagRepository = TagRepository()
         let chatRepository = ChatRepository()
         let chatMessageRepository = ChatMessageRepository()
+        let challengeRepository = ChallengeRepository()
     
         let chatMessagePersistentContainer: NSPersistentContainer = {
             let container = NSPersistentContainer(name: "ChatMessageModel")
@@ -49,6 +50,7 @@ extension SwinjectStoryboard {
         chatMessageRepository.persistentContainer = chatMessagePersistentContainer
         chatMessageRepository.serverSocketConnection = serverSocketConnection
         chatMessageRepository.intitializeDelegate()
+        challengeRepository.serverConnection = serverConnection
     
         defaultContainer.storyboardInitCompleted(LoginViewController.self) { r, c in
             c.msalClient = r.resolve(MSALClient.self)
@@ -98,6 +100,9 @@ extension SwinjectStoryboard {
             c.userRepository = r.resolve(UserRepository.self)
             c.chatMessageRepository = r.resolve(ChatMessageRepository.self)
         }
+        defaultContainer.storyboardInitCompleted(ChallengeViewController.self) { r, c in
+            c.challengeRepository = r.resolve(ChallengeRepository.self)
+        }
     
         defaultContainer.register(MSALClient.self) { _ in msalClient }
         defaultContainer.register(AuthenticationRepository.self) {_ in authenticationRepository}
@@ -106,6 +111,7 @@ extension SwinjectStoryboard {
         defaultContainer.register(TagRepository.self) {_ in tagRepository}
         defaultContainer.register(ChatRepository.self) {_ in chatRepository}
         defaultContainer.register(ChatMessageRepository.self) {_ in chatMessageRepository}
+        defaultContainer.register(ChallengeRepository.self) {_ in challengeRepository }
 
     }
 }

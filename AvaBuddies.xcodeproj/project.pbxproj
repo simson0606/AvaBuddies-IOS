@@ -10,6 +10,12 @@
 		1D239E0485DB001D3F349F51 /* Pods_AvaBuddies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D62F073C75BB01D93C6DA3 /* Pods_AvaBuddies.framework */; };
 		BD8CDD8F2272414900A20F19 /* SearchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8CDD8E2272414900A20F19 /* SearchTest.swift */; };
 		BDD28B10225F637300CCC8C9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD28B0F225F637300CCC8C9 /* RegisterViewController.swift */; };
+		BDE594702297F824000E51DD /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE5946F2297F824000E51DD /* ChallengeViewController.swift */; };
+		BDE5947222980086000E51DD /* ChallengeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE5947122980086000E51DD /* ChallengeViewCell.swift */; };
+		BDE5947522982067000E51DD /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE5947422982067000E51DD /* Challenge.swift */; };
+		BDE594772298218F000E51DD /* ChallengeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE594762298218F000E51DD /* ChallengeRepository.swift */; };
+		BDE59479229821EB000E51DD /* ChallengeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE59478229821EB000E51DD /* ChallengeDelegate.swift */; };
+		BDE5947C229C25EF000E51DD /* ChallengeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE5947B229C25EF000E51DD /* ChallengeDetailsViewController.swift */; };
 		F406EEDC2243998B00E5068A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F406EEDB2243998B00E5068A /* TabBarViewController.swift */; };
 		F40B5EA122413925008E88BE /* avanade-logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = F40B5E9F22413925008E88BE /* avanade-logo.svg */; };
 		F40B5EA222413925008E88BE /* avanade-logo-only.svg in Resources */ = {isa = PBXBuildFile; fileRef = F40B5EA022413925008E88BE /* avanade-logo-only.svg */; };
@@ -98,6 +104,12 @@
 		20D62F073C75BB01D93C6DA3 /* Pods_AvaBuddies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvaBuddies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8CDD8E2272414900A20F19 /* SearchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTest.swift; sourceTree = "<group>"; };
 		BDD28B0F225F637300CCC8C9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		BDE5946F2297F824000E51DD /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
+		BDE5947122980086000E51DD /* ChallengeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewCell.swift; sourceTree = "<group>"; };
+		BDE5947422982067000E51DD /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		BDE594762298218F000E51DD /* ChallengeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeRepository.swift; sourceTree = "<group>"; };
+		BDE59478229821EB000E51DD /* ChallengeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDelegate.swift; sourceTree = "<group>"; };
+		BDE5947B229C25EF000E51DD /* ChallengeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailsViewController.swift; sourceTree = "<group>"; };
 		C596E86C33A3472EB45C3DB7 /* Pods-AvaBuddies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvaBuddies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvaBuddies/Pods-AvaBuddies.debug.xcconfig"; sourceTree = "<group>"; };
 		F406EEDB2243998B00E5068A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F40B5E9F22413925008E88BE /* avanade-logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "avanade-logo.svg"; sourceTree = "<group>"; };
@@ -213,6 +225,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BDE5947322982041000E51DD /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				BDE5947422982067000E51DD /* Challenge.swift */,
+				BDE594762298218F000E51DD /* ChallengeRepository.swift */,
+				BDE59478229821EB000E51DD /* ChallengeDelegate.swift */,
+			);
+			name = Challenge;
+			sourceTree = "<group>";
+		};
+		BDE5947A229C2540000E51DD /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				BDE5946F2297F824000E51DD /* ChallengeViewController.swift */,
+				BDE5947B229C25EF000E51DD /* ChallengeDetailsViewController.swift */,
+			);
+			name = Challenges;
+			sourceTree = "<group>";
+		};
 		F40B5EA322413BED008E88BE /* Svg-images */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +326,7 @@
 				F434E3B9225C98E90005BD3B /* RoundedTableViewImageView.swift */,
 				F4DAD0A02266014D0083FC1E /* TagCollectionViewCell.swift */,
 				F4DAD0A12266014D0083FC1E /* TagCollectionViewCell.xib */,
+				BDE5947122980086000E51DD /* ChallengeViewCell.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -390,6 +422,7 @@
 		F4C3B9A1223FAFDC00291D26 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BDE5947A229C2540000E51DD /* Challenges */,
 				F4D29C5D223FAECF00EE40CD /* LoginViewController.swift */,
 				F43C05DE22438D730079513D /* ProfileViewController.swift */,
 				F406EEDB2243998B00E5068A /* TabBarViewController.swift */,
@@ -420,6 +453,7 @@
 		F4C3B9A3223FAFF200291D26 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BDE5947322982041000E51DD /* Challenge */,
 				F40C2DA122704C9100982E62 /* Chat */,
 				F4DAD0992265F2C20083FC1E /* Tag */,
 				F40F1F62225D188500487CA8 /* QR */,
@@ -643,8 +677,11 @@
 				F48789EE224114B9000760BB /* MSALClientDelegate.swift in Sources */,
 				F48789EC2241149C000760BB /* MSALClient.swift in Sources */,
 				F4A2E1C42282DBDF00D6DCBA /* ServerSocketConnectionProtocol.swift in Sources */,
+				BDE5947522982067000E51DD /* Challenge.swift in Sources */,
 				F434E396224E69270005BD3B /* User.swift in Sources */,
+				BDE5947222980086000E51DD /* ChallengeViewCell.swift in Sources */,
 				F434E37C224A44C90005BD3B /* AuthenticationRepository.swift in Sources */,
+				BDE594772298218F000E51DD /* ChallengeRepository.swift in Sources */,
 				F434E3BA225C98E90005BD3B /* RoundedTableViewImageView.swift in Sources */,
 				F40B5EAD22413FB6008E88BE /* ResourceFile.swift in Sources */,
 				F4834821228CADCC00BC26FA /* DateFormatterExtension.swift in Sources */,
@@ -672,8 +709,10 @@
 				F4DAD0962265E57F0083FC1E /* SelectTagsViewController.swift in Sources */,
 				F434E392224E690C0005BD3B /* UserRepository.swift in Sources */,
 				F434E3AF2257BA670005BD3B /* SearchPeopleViewController.swift in Sources */,
+				BDE59479229821EB000E51DD /* ChallengeDelegate.swift in Sources */,
 				F40B5EAB22413E73008E88BE /* SvgFileLoader.swift in Sources */,
 				F40C2DAD2270502700982E62 /* ChatMessageDelegate.swift in Sources */,
+				BDE594702297F824000E51DD /* ChallengeViewController.swift in Sources */,
 				F48789E82241135C000760BB /* Constants.swift in Sources */,
 				F4DAD0982265E71C0083FC1E /* Tag.swift in Sources */,
 				F4A2E1C22281A71B00D6DCBA /* UIColorExtension.swift in Sources */,
@@ -683,6 +722,7 @@
 				F48789EA224113BC000760BB /* GraphUser.swift in Sources */,
 				F434E398224E7CB10005BD3B /* ImagePickerManager.swift in Sources */,
 				F4A2E1C62282DBEF00D6DCBA /* ServerSocketConnection.swift in Sources */,
+				BDE5947C229C25EF000E51DD /* ChallengeDetailsViewController.swift in Sources */,
 				F434E3B6225B6A450005BD3B /* ConnectionDelegate.swift in Sources */,
 				F4DAD0A22266014D0083FC1E /* TagCollectionViewCell.swift in Sources */,
 				F434E3B8225B6CA60005BD3B /* Connection.swift in Sources */,
