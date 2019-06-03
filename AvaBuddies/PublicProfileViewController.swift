@@ -127,7 +127,6 @@ class PublicProfileViewController: UITableViewController, UserDelegate, Connecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return friend?.tags?.filter {$0.isPrivate == false }.count ?? 0
         if connectionConfirmed {
              return friend?.tags?.count ?? 0
         } else {
