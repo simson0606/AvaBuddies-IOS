@@ -15,11 +15,25 @@ class ChallengeDetailsViewController: UIViewController {
     @IBOutlet weak var challengeTitle: UILabel!
     @IBOutlet weak var challengeDescription: UILabel!
     
+    var challenge: Challenge?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = UIImage(imageLiteralResourceName: "AppIcon")
-        challengeTitle.text = "Lange challenge titel jongen"
-        challengeDescription.text = "Deze challenge lorem ipsum. We vaganen abersotie in de kasafoncus do drago. Apa sita confiktus aba blanka ronsko itunskinini aber denski"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        challengeTitle.text = challenge?.title
+        challengeDescription.text = challenge?.description
+        if !challenge!.image.isEmpty {
+            if let imageData = Data(base64Encoded: challenge!.image, options: .ignoreUnknownCharacters) {
+               imageView.image = UIImage(data: imageData)
+            }
+            else {
+               imageView.image = UIImage(imageLiteralResourceName: "AppIcon")
+            }
+        }
+
     }
 
+    
 }
