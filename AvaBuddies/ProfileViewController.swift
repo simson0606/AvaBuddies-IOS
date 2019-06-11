@@ -47,6 +47,9 @@ class ProfileViewController: UITableViewController, UserDelegate, UICollectionVi
     }
 
     func userReceived(user: User) {
+        if (msalClient.userImage != nil) {
+            profileImage.image = msalClient.userImage
+        }
         if user.getUIImage() != nil {
             profileImage.image = user.getUIImage()
         }
