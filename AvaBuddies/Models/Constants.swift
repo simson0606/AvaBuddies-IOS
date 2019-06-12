@@ -12,7 +12,6 @@ struct Constants {
     
     struct MSAL {
         // Update the below to your client ID you received in the portal.
-//        static let ClientID = "cb6d5283-741e-4dc4-8cb2-e73d03629ced"
         static let ClientID = "1de0ccd6-b099-418b-adda-2248e0aeb325"
 
         // These settings you don't need to edit unless you wish to attempt deeper scenarios with the app.
