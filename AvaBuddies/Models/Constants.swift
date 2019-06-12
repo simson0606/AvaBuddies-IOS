@@ -37,7 +37,7 @@ struct Constants {
         static let ChatRoute = "/chats"
         static let ChallengeListRoute = "/challenges"
         static let ChatAck = "messageAcked";
-        static let Secret = "SamplePassword"
+        static let Secret = Bundle.main.object(forInfoDictionaryKey: "Secret") as! String
     }
     
     static let LocalStoragePageSize = 15
