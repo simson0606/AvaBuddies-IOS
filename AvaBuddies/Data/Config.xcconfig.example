@@ -1,5 +1,5 @@
 //
-//  Config.xcconfig.example.xcconfig
+//  Config.xcconfig
 //  AvaBuddies
 //
 //  Created by simon heij on 12/06/2019.
@@ -8,3 +8,5 @@
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
+
+SECRET = SamplePassword

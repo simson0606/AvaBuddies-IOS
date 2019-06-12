@@ -22,7 +22,12 @@ struct Constants {
     }
     
     struct ServerConnection {
+        #if DEBUGURL
+        static let BaseURL = "https://dev.avabuddies.nl"
+        #else
         static let BaseURL = "https://www.avabuddies.nl"
+        #endif
+        
         static let RegisterRoute = "/auth/signup"
         static let LoginRoute = "/auth/login"
         static let UsersRoute = "/users"

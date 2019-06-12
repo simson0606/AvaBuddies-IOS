@@ -185,6 +185,8 @@
 		F4DAD0A02266014D0083FC1E /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4DAD0A12266014D0083FC1E /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		F4DAD0A42268804F0083FC1E /* TagsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTest.swift; sourceTree = "<group>"; };
+		F4E7BCB022B12E9800951955 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		F4E7BCB122B12ECE00951955 /* Config.xcconfig.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig.example.xcconfig; sourceTree = "<group>"; };
 		F4EC001B226F1A7400685B24 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		F4EC001D226F1AA100685B24 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -486,6 +488,8 @@
 			children = (
 				F4E7BCAD22B12BDD00951955 /* SVG */,
 				F4BEE1FA2271ACDC00414E41 /* ChatMessageModel.xcdatamodeld */,
+				F4E7BCB022B12E9800951955 /* Config.xcconfig */,
+				F4E7BCB122B12ECE00951955 /* Config.xcconfig.example.xcconfig */,
 			);
 			path = Data;
 			sourceTree = "<group>";
