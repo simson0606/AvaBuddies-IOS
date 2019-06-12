@@ -16,12 +16,13 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
     var alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
     var viewController: UIViewController?
     var pickImageCallback : ((UIImage) -> ())?;
+    var manualImage: UIImage?
     
     override init(){
         super.init()
     }
     
-    func pickImage(_ viewController: UIViewController, _ callback: @escaping ((UIImage) -> ())) {
+    func pickImage(_ viewController: UIViewController, manualImage: UIImage?, _ callback: @escaping ((UIImage) -> ())) {
         pickImageCallback = callback;
         self.viewController = viewController;
         
@@ -33,6 +34,15 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
             UIAlertAction in
             self.openGallery()
         }
+        
+        var manualAction: UIAlertAction?
+        if manualImage != nil {
+            self.manualImage = manualImage
+            manualAction = UIAlertAction(title: "Microsoft account", style: .default){
+                UIAlertAction in
+                self.manual()
+            }
+        }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel){
             UIAlertAction in
         }
@@ -41,6 +51,9 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
         picker.delegate = self
         alert.addAction(cameraAction)
         alert.addAction(gallaryAction)
+        if let manual = manualAction {
+            alert.addAction(manual)
+        }
         alert.addAction(cancelAction)
         alert.popoverPresentationController?.sourceView = self.viewController!.view
         viewController.present(alert, animated: true, completion: nil)
@@ -58,6 +71,10 @@ class ImagePickerManager: NSObject, UIImagePickerControllerDelegate, UINavigatio
         self.viewController!.present(picker, animated: true, completion: nil)
     }
     
+    func manual() {
+        alert.dismiss(animated: true, completion: nil)
+        pickImageCallback?(manualImage!)
+    }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)

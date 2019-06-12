@@ -47,9 +47,6 @@ class ProfileViewController: UITableViewController, UserDelegate, UICollectionVi
     }
 
     func userReceived(user: User) {
-        if (msalClient.userImage != nil) {
-            profileImage.image = msalClient.userImage
-        }
         if user.getUIImage() != nil {
             profileImage.image = user.getUIImage()
         }
@@ -63,7 +60,7 @@ class ProfileViewController: UITableViewController, UserDelegate, UICollectionVi
     }
     
     @IBAction func changeProfileImageTapped(_ sender: Any) {
-        ImagePickerManager().pickImage(self){ image in
+        ImagePickerManager().pickImage(self, manualImage: msalClient.userImage){ image in
             let croppedImage = image.resizeCropImage(targetSize: CGSize(width: 300, height: 300))
             
             self.profileImage.image = croppedImage
