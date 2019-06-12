@@ -85,6 +85,8 @@
 		F4DAD0A22266014D0083FC1E /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAD0A02266014D0083FC1E /* TagCollectionViewCell.swift */; };
 		F4DAD0A32266014D0083FC1E /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4DAD0A12266014D0083FC1E /* TagCollectionViewCell.xib */; };
 		F4DAD0A52268804F0083FC1E /* TagsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DAD0A42268804F0083FC1E /* TagsTest.swift */; };
+		F4E7BCB422B1307C00951955 /* Config.xcconfig.example in Resources */ = {isa = PBXBuildFile; fileRef = F4E7BCB222B1307B00951955 /* Config.xcconfig.example */; };
+		F4E7BCB522B1307C00951955 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F4E7BCB322B1307B00951955 /* Config.xcconfig */; };
 		F4EC001C226F1A7400685B24 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC001B226F1A7400685B24 /* ChatListViewController.swift */; };
 		F4EC001E226F1AA100685B24 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC001D226F1AA100685B24 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
@@ -185,8 +187,8 @@
 		F4DAD0A02266014D0083FC1E /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4DAD0A12266014D0083FC1E /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		F4DAD0A42268804F0083FC1E /* TagsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTest.swift; sourceTree = "<group>"; };
-		F4E7BCB022B12E9800951955 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		F4E7BCB122B12ECE00951955 /* Config.xcconfig.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig.example.xcconfig; sourceTree = "<group>"; };
+		F4E7BCB222B1307B00951955 /* Config.xcconfig.example */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Config.xcconfig.example; sourceTree = "<group>"; };
+		F4E7BCB322B1307B00951955 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		F4EC001B226F1A7400685B24 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
 		F4EC001D226F1AA100685B24 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -486,10 +488,10 @@
 		F4E7BCAC22B12B8200951955 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F4E7BCB322B1307B00951955 /* Config.xcconfig */,
+				F4E7BCB222B1307B00951955 /* Config.xcconfig.example */,
 				F4E7BCAD22B12BDD00951955 /* SVG */,
 				F4BEE1FA2271ACDC00414E41 /* ChatMessageModel.xcdatamodeld */,
-				F4E7BCB022B12E9800951955 /* Config.xcconfig */,
-				F4E7BCB122B12ECE00951955 /* Config.xcconfig.example.xcconfig */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -615,8 +617,10 @@
 				F4DAD0A32266014D0083FC1E /* TagCollectionViewCell.xib in Resources */,
 				F434E3A8225393C90005BD3B /* Localizable.strings in Resources */,
 				F40B5EA122413925008E88BE /* avanade-logo.svg in Resources */,
+				F4E7BCB522B1307C00951955 /* Config.xcconfig in Resources */,
 				F4B624E8223FAE120098238C /* LaunchScreen.storyboard in Resources */,
 				F4B624E3223FAE110098238C /* Main.storyboard in Resources */,
+				F4E7BCB422B1307C00951955 /* Config.xcconfig.example in Resources */,
 				F434E38F224E610F0005BD3B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
