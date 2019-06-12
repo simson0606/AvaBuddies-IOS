@@ -3,4 +3,4 @@ osx_image: xcode10.2
 xcode_workspace: AvaBuddies.xcworkspace
 xcode_scheme: AvaBuddies
 xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone X
-before_script: pwd
+before_script: cp /Users/travis/build/simson0606/AvaBuddies-IOS/AvaBuddies/Data/Config.xcconfig.example /Users/travis/build/simson0606/AvaBuddies-IOS/AvaBuddies/Data/Config.xcconfig
