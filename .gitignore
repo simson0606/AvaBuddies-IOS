@@ -80,3 +80,4 @@ iOSInjectionProject/
 # Config
 Config.xcconfig
 AvaBuddies/Data/Config.xcconfig
+*.xcconfig
