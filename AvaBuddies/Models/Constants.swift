@@ -12,16 +12,22 @@ struct Constants {
     
     struct MSAL {
         // Update the below to your client ID you received in the portal.
-        static let ClientID = "cb6d5283-741e-4dc4-8cb2-e73d03629ced"
-        
+        static let ClientID = "1de0ccd6-b099-418b-adda-2248e0aeb325"
+
         // These settings you don't need to edit unless you wish to attempt deeper scenarios with the app.
-        static let GraphURI = "https://graph.microsoft.com/v1.0/me/"
+        static let GraphURI = "https://graph.microsoft.com/beta/me/"
+        static let PhotoRoute = "photo/$value"
         static let Scopes: [String] = ["https://graph.microsoft.com/user.read"]
         static let Authority = "https://login.microsoftonline.com/common"
     }
     
     struct ServerConnection {
+        #if DEBUGURL
         static let BaseURL = "https://dev.avabuddies.nl"
+        #else
+        static let BaseURL = "https://www.avabuddies.nl"
+        #endif
+        
         static let RegisterRoute = "/auth/signup"
         static let LoginRoute = "/auth/login"
         static let UsersRoute = "/users"
@@ -31,7 +37,7 @@ struct Constants {
         static let ChatRoute = "/chats"
         static let ChallengeListRoute = "/challenges"
         static let ChatAck = "messageAcked";
-        static let Secret = "SamplePassword"
+        static let Secret = Bundle.main.object(forInfoDictionaryKey: "Secret") as! String
     }
     
     static let LocalStoragePageSize = 15

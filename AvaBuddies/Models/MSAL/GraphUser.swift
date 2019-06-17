@@ -20,3 +20,5 @@ struct GraphUser : Codable {
     var surname : String?
     var userPrincipalName : String?
 }
+
+

@@ -16,7 +16,8 @@ class MSALClient: NSObject, URLSessionDelegate {
     
     var authenticationDelegate : MSALClientDelegate?
     var userInfo: GraphUser?
-    
+    var userImage: UIImage?
+
     public func signIn() {
         let contextResult = createContext()
         if contextResult.result {
@@ -218,7 +219,28 @@ class MSALClient: NSObject, URLSessionDelegate {
             self.userInfo = poso
             self.authenticationDelegate?.receivedUserInfo(userinfo: poso)
             
+            self.getPhoto()
+            
             }.resume()
+    }
+    
+    private func getPhoto() {
+        let url = URL(string: Constants.MSAL.GraphURI + Constants.MSAL.PhotoRoute)
+        var request = URLRequest(url: url!)
+        request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            if let error = error {
+                print("Couldn't get graph result: \(error)")
+                return
+            }
+            
+            let image = UIImage(data: data!)
+            self.userImage = image
+            
+        }.resume()
+        
     }
     
 }

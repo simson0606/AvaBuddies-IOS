@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-struct UserResponse : Codable {
-    var user: User
-}
-
 struct UsersResponse: Codable {
     var users: [User]
 }
