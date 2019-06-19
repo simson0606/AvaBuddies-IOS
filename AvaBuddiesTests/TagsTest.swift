@@ -35,7 +35,8 @@ class TagsTest: XCTestCase, TagDelegate {
         
         tagRepository.getTagList()
         
-        XCTAssertTrue(serverConnection.route == "/tag/list")
+        XCTAssertTrue(serverConnection.route == "/tags")
+        XCTAssertTrue(serverConnection.method == "get")
         XCTAssertTrue(tagRepository.tags?.first?.name == "Tag Test")
         XCTAssertTrue(tagListIsReceived)
         XCTAssertFalse(isFailed)
@@ -48,7 +49,8 @@ class TagsTest: XCTestCase, TagDelegate {
         
         tagRepository.getTagList()
         
-        XCTAssertTrue(serverConnection.route == "/tag/list")
+        XCTAssertTrue(serverConnection.route == "/tags")
+        XCTAssertTrue(serverConnection.method == "get")
         XCTAssertTrue(isFailed)
         XCTAssertFalse(tagListIsReceived)
     }
@@ -60,7 +62,8 @@ class TagsTest: XCTestCase, TagDelegate {
         
         tagRepository.getTagList()
         
-        XCTAssertTrue(serverConnection.route == "/tag/list")
+        XCTAssertTrue(serverConnection.route == "/tags")
+        XCTAssertTrue(serverConnection.method == "get")
         XCTAssertTrue(isFailed)
         XCTAssertFalse(tagListIsReceived)
     }

@@ -36,13 +36,14 @@ class UserTest: XCTestCase, UserDelegate, UserListDelegate {
     func testReceiveUser() {
         
         serverConnection.setMockResponse(response:
-            "{\"user\": {\"name\": \"User Test\",\"sharelocation\": true,\"isAdmin\": false,\"image\": \"\",\"_id\": \"5ca72bdad120192a4a4de201\",\"email\": \"UserTest@email.com\",\"password\": \"UserTest\"}}", success: true)
+            "{\"name\": \"User Test\",\"sharelocation\": true,\"isAdmin\": false,\"image\": \"\",\"_id\": \"5ca72bdad120192a4a4de201\",\"email\": \"UserTest@email.com\",\"password\": \"UserTest\"}", success: true)
         
         userRepository.getUser()
         
-        XCTAssertTrue(serverConnection.route == "/user/profile")
+        XCTAssertTrue(serverConnection.route == "/users/profile")
         XCTAssertTrue(userRepository.user?.name == "User Test")
-        
+        XCTAssertTrue(serverConnection.method == "get")
+
         XCTAssertTrue(userIsReceived)
         XCTAssertFalse(isFailed)
     }
@@ -54,8 +55,9 @@ class UserTest: XCTestCase, UserDelegate, UserListDelegate {
         
         userRepository.getUser()
         
-        XCTAssertTrue(serverConnection.route == "/user/profile")
-        
+        XCTAssertTrue(serverConnection.route == "/users/profile")
+        XCTAssertTrue(serverConnection.method == "get")
+
         XCTAssertFalse(userIsReceived)
         XCTAssertTrue(isFailed)
     }
@@ -67,8 +69,9 @@ class UserTest: XCTestCase, UserDelegate, UserListDelegate {
         
         userRepository.deleteProfile()
         
-        XCTAssertTrue(serverConnection.route == "/user/destroy/id-testDeleteUser")
-        
+        XCTAssertTrue(serverConnection.route == "/users/profile")
+        XCTAssertTrue(serverConnection.method == "delete")
+
         XCTAssertTrue(userIsDeleted)
         XCTAssertFalse(isFailed)
     }
@@ -80,8 +83,9 @@ class UserTest: XCTestCase, UserDelegate, UserListDelegate {
         
         userRepository.getUserList()
         
-        XCTAssertTrue(serverConnection.route == "/user/list")
-        
+        XCTAssertTrue(serverConnection.route == "/users")
+        XCTAssertTrue(serverConnection.method == "get")
+
         XCTAssertTrue(userListIsReceived)
         XCTAssertFalse(isFailed)
     }
@@ -93,8 +97,9 @@ class UserTest: XCTestCase, UserDelegate, UserListDelegate {
         
         userRepository.getUserList()
         
-        XCTAssertTrue(serverConnection.route == "/user/list")
-        
+        XCTAssertTrue(serverConnection.route == "/users")
+        XCTAssertTrue(serverConnection.method == "get")
+
         XCTAssertTrue(isFailed)
         XCTAssertFalse(userListIsReceived)
     }
